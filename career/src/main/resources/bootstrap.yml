@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: career-service
+  cloud:
+    config:
+      enabled: false
+      uri: http://localhost:8082
+      username: root
+      password: root
