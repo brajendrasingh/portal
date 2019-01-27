@@ -13,7 +13,7 @@ public class PaymentController {
 
 	private final static Log log = LogFactory.getLog(PaymentController.class);
 
-	@RequestMapping(value = "paymentDetails")
+	@RequestMapping(value = "/paymentDetails")
 	public PaymentDetails getPaymentDetails(@RequestParam(name = "eid", required = false) String enrollmentId) {
 
 		PaymentDetails pd = null;
@@ -24,6 +24,18 @@ public class PaymentController {
 			log.error("StackTrace ", e);
 		}
 		return pd;
+	}
 
+	@RequestMapping(value = "/feeByCoarse")
+	public String getFeesByCoarse(@RequestParam(name = "cid", required = false) String coarse) {
+
+		String fee = null;
+		try {
+			fee = "45987 INR";
+
+		} catch (Exception e) {
+			log.error("StackTrace ", e);
+		}
+		return fee;
 	}
 }
