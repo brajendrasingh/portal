@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: library-service
+server:
+  port: 8094
