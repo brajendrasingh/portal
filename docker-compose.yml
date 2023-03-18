@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  career-service:
+  container_name: career-service
+  image: 'career-service:1.0'
+  volume:
+   - './home/app:home/app'
+  mem_limit: 50mb
+  restart: always
+  networks:
+   - portal
+
+networks:
+  portal:
+    external:
+     name: portal
+     bridge: bridge
