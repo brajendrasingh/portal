@@ -1,17 +1,59 @@
 version: "3.9"
 services:
-  career-service:
+ career-service:
   container_name: career-service
   image: 'career-service:1.0'
-  volume:
-   - './home/app:home/app'
-  mem_limit: 50mb
+  mem_limit: 300mb
   restart: always
+  depends_on:
+   - db
+  ports:
+   - '8093:8093'
+  expose:
+   - '8093'
   networks:
    - portal
 
+ enrollment-service:
+  container_name: enrollment-service
+  image: 'enrollment-service:1.0'
+  ports:
+  - "8091:8091"
+  mem_limit: 300mb
+  restart: always
+  networks:
+   - portal
+ db:
+    image: mysql:8.0.32
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'test'
+     #MYSQL_USER: 'root' # it is bydefault created so commented
+      MYSQL_PASSWORD: 'root'
+     #Password for root access
+      MYSQL_ROOT_PASSWORD: 'root'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./cache/mysql:/var/lib/mysql
+      - ./conf-mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+    mem_limit: 300mb
+    networks:
+     - portal
+   
+ adminer:
+   image: adminer
+   container_name: db-adminer-ui
+   restart: always
+   mem_limit: 30mb
+   ports:
+    - 8080:8080
+	
 networks:
   portal:
-    external:
-     name: portal
-     bridge: bridge
+    external: false
+    name: portal
+    driver: bridge
