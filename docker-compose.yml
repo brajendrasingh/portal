@@ -14,6 +14,30 @@ services:
   networks:
    - portal
 
+ library-service:
+  container_name: library-service
+  image: 'library-service:1.0'
+  mem_limit: 300mb
+  restart: always
+  ports:
+   - '8094:8094'
+  expose:
+   - '8094'
+  networks:
+   - portal
+
+ payment-service:
+  container_name: payment-service
+  image: 'payment-service:1.0'
+  mem_limit: 300mb
+  restart: always
+  ports:
+   - '8092:8092'
+  expose:
+   - '8092'
+  networks:
+   - portal
+
  enrollment-service:
   container_name: enrollment-service
   image: 'enrollment-service:1.0'
@@ -43,7 +67,7 @@ services:
     mem_limit: 300mb
     networks:
      - portal
-   
+
  adminer:
    image: adminer
    container_name: db-adminer-ui
@@ -51,7 +75,7 @@ services:
    mem_limit: 30mb
    ports:
     - 8080:8080
-	
+
 networks:
   portal:
     external: false
