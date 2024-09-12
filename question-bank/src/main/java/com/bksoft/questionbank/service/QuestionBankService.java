@@ -1,4 +1,4 @@
-package com.bksoft.question_bank;
+package com.bksoft.questionbank;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
