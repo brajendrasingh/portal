@@ -1,12 +1,13 @@
-package com.bksoft.questionbank.service;
+package com.bksoft.questionbank;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@SpringBootApplication
+public class QuestionBankApplication {
 
-@Service
-public class QuestionBankService {
-
-	public String getQuestion(){
-		return "question";
+	public static void main(String[] args) {
+		SpringApplication.run(QuestionBankApplication.class, args);
 	}
 
 }
