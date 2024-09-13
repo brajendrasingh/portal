@@ -33,7 +33,7 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 	
 	implementation("org.mapstruct:mapstruct:1.6.0") // for annotation
-	implementation("org.mapstruct:mapstruct-processor:1.6.0") // for implementation
+	annotationProcessor("org.mapstruct:mapstruct-processor:1.6.0") // for implementation
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
