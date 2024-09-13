@@ -1,0 +1,14 @@
+[
+  {
+    "questionId": "1",
+    "question": "Capital of india",
+    "answer": {
+      "optionA": "Kanpur",
+      "optionB": "Delhi",
+      "optionC": "Lucknow",
+      "optionD": "Indore",
+      "optionE": "Mumbai"
+    },
+    "correctOption": "optionB"
+  }
+]
