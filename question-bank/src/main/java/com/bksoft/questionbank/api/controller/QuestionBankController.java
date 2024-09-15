@@ -20,20 +20,31 @@ public class QuestionBankController {
 
 	@RequestMapping(value = "/question", method = RequestMethod.GET)
 	public ResponseEntity<Question> getQuestionById(@RequestParam String questionId){
-		Question question = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestionById(questionId))
+		Question question = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestionById(questionId));
 		return ResponseEntity.ok().body(question);
 	}
 
 	@RequestMapping(value = "/questions", method = RequestMethod.GET)
 	public ResponseEntity<List<Question>> getAllQuestions(){
-		List<Question> questions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getAllQuestions())
+		List<Question> questions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getAllQuestions());
 		return ResponseEntity.ok().body(questions);
 	}
 
 	@RequestMapping(value = "/questions", method = RequestMethod.POST)
 	public ResponseEntity<String> addQuestions(@RequestBody List<Question> questionsRequest) {
-		List<com.bksoft.questionbank.dtos.Question> questions = QuestionMapper.INSTANCE.convertToApiQuestion(questionsRequest)
-		return ResponseEntity.ok().body(questionBankService.addQuestions(questionsRequest));
+		List<com.bksoft.questionbank.dtos.Question> questions = QuestionMapper.INSTANCE.convertToDtosQuestion(questionsRequest);
+		return ResponseEntity.ok().body(questionBankService.addQuestions(questions));
+	}
+
+	@RequestMapping(value = "/question", method = RequestMethod.PUT)
+	public ResponseEntity<String> updateQuestion(@RequestBody Question questionsRequest) {
+		com.bksoft.questionbank.dtos.Question question = QuestionMapper.INSTANCE.convertToDtosQuestion(questionsRequest);
+		return ResponseEntity.ok().body(questionBankService.updateQuestion(question));
+	}
+
+	@RequestMapping(value = "/question", method = RequestMethod.DELETE)
+	public ResponseEntity<String> deleteQuestionById(@RequestParam String questionsId) {
+		return ResponseEntity.ok().body(questionBankService.deleteQuestionById(questionsId));
 	}
 
 }
