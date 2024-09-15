@@ -16,7 +16,7 @@ public class QuestionBankService {
 
 	public Question getQuestionById(String questionId) {
 		com.bksoft.questionbank.dtos.Question question = QuestionEntityMapper.INSTANCE
-				.convertToDtosQuestion(questionRepository.findById(questionId));
+				.convertToDtosQuestion(questionRepository.findById(questionId).get());
 		return question;
 	}
 
@@ -27,17 +27,27 @@ public class QuestionBankService {
 	}
 
 	public String addQuestions(List<Question> questions) {
-		List<com.bksoft.questionbank.entities.QuestionEntity> questions = QuestionEntityMapper.INSTANCE
+		List<com.bksoft.questionbank.entities.QuestionEntity> questionsEntities = QuestionEntityMapper.INSTANCE
 				.convertToQuestionEntity(questions);
-		return questionRepository.saveAll(questions);
+		questionRepository.saveAll(questionsEntities);
+		return "success";
 	}
 
-	public String updateQuestion(Question questions) {
-		return null;
+	public String updateQuestion(Question question) {
+		com.bksoft.questionbank.entities.QuestionEntity questionEntity = QuestionEntityMapper.INSTANCE
+				.convertToQuestionEntity(question);
+		QuestionEntity response = questionRepository.save(questionEntity);
+		return response.getQuestionId();
 	}
 
-	public String deleteQuestionById(String questionsId) {
-		return null;
+	public String deleteQuestionById(String questionId) {
+		questionRepository.deleteById(questionId);
+		return "success";
+	}
+	
+	public String deleteAllQuestions() {
+		questionRepository.deleteAll();
+		return "success";
 	}
 
 }
