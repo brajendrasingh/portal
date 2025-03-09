@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+/* Ensure footer stays at the bottom of the page */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .content {
+    min-height: 100%;
+    padding-bottom: 60px; /* Ensure there's space for the footer */
+  }
+  
+  footer {
+    margin-top: auto; /* Push footer to the bottom */
+  }
+  

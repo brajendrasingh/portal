@@ -1,0 +1,26 @@
+<header class="header">
+    <div class="logo">
+      <img src="./../../assets/images/logo.png" alt="Logo" />
+    </div>
+
+    <nav>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/dashboard" *ngIf="isLoggedIn">Dashboard</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li> <a routerLink="/login" *ngIf="!isLoggedIn">Login</a></li>
+        <li> <a routerLink="/signup" *ngIf="!isLoggedIn">Sign Up</a></li>
+        <li><button (click)="logout()" *ngIf="isLoggedIn">Logout</button></li>
+      </ul>
+      <div class="navbar-actions">
+        <!-- Add login/logout buttons or user-related actions here -->
+
+      </div>
+    </nav>
+  </header>
+  
+
+
+
