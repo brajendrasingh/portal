@@ -1,6 +1,10 @@
 # WebPortal
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.1.
+# Version used in this
+Node -version:  v23.9.0
+NPM -version: 10.9.2
+NG Version : 19.2.1
 
 ## Development server
 
