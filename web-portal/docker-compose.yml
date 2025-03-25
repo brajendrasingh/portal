@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+#--------------------------------------------------------------
+  web-portal-ui:
+    container_name: web-portal-ui
+    image: 'web-portal-ui:1.0'
+    mem_limit: 800mb
+    restart: always
+    ports:
+      - '4200:80'
+    expose:
+      - '80'
+    networks:
+      - ngApp-network
+#--------------------------------------------------------------
+networks:
+  ngApp-network:
+    driver: bridge
