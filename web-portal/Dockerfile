@@ -28,7 +28,7 @@ RUN rm -rf ./*
 COPY --from=build-stage /app/dist/web-portal/browser .
 
 # Copy custom Nginx configuration
-#COPY nginx.conf /etc/nginx/conf.d/default.conf
+#COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
