@@ -7,14 +7,12 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class LoginResponse {
+public class SignupResponse {
     private String status;
-    private String token;
     private String message;
 
-    public LoginResponse(String status, String token, String message) {
+    public SignupResponse(String status, String message) {
         this.status = status;
-        this.token = token;
         this.message = message;
     }
 }

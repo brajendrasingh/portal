@@ -17,7 +17,7 @@ export class LoginComponent {
   onSubmit(): void {
     this.authService.login(this.email, this.password).subscribe(
       (response) => {
-        if (response.success) {
+        if (response.status === "success") {
           // alert('Login successful!');
           // this.router.navigate(['/dashboard']);
           localStorage.setItem('token', response['token']);
