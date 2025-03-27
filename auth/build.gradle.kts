@@ -30,6 +30,7 @@ dependencies {
 	// Password Encryption dependency
 	implementation("org.springframework.security:spring-security-crypto")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    //For testing without mysql db use this: implementation("com.h2database:h2:2.3.232")
 	implementation("mysql:mysql-connector-java:8.0.33")
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
