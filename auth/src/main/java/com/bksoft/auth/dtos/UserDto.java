@@ -1,14 +1,15 @@
-package com.bksoft.auth.api.models.request;
+package com.bksoft.auth.dtos;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
-public class LoginRequest {
+@AllArgsConstructor
+public class UserDto {
     private String email;
     private String password;
-
 }
