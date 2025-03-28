@@ -6,6 +6,7 @@ import com.bksoft.auth.api.models.response.LoginResponse;
 import com.bksoft.auth.api.models.response.SignupResponse;
 import com.bksoft.auth.dtos.UserDto;
 import com.bksoft.auth.services.UserService;
+import com.bksoft.auth.utils.JwtUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,9 +16,11 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
 
     private final UserService userService;
+    private final JwtUtils jwtUtils;
 
-    public AuthController(UserService userService) {
+    public AuthController(UserService userService, JwtUtils jwtUtils) {
         this.userService = userService;
+        this.jwtUtils = jwtUtils;
     }
 
     @GetMapping("/getAllUsers")
@@ -29,8 +32,7 @@ public class AuthController {
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         try {
             final UserDto userDetails = userService.findByEmail(request.getEmail()).orElseThrow();
-            final String token = "generateToken(userDetails.getUsername())";
-
+            final String token = jwtUtils.generateToken(userDetails.getEmail());
             return ResponseEntity.ok(new LoginResponse("success", token, "Login successful"));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
