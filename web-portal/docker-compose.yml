@@ -42,7 +42,21 @@ services:
       - mysql_data:/var/lib/mysql
     networks:
       - ngApp-network
-#----------------------------------------------------------
+#--------------------------mysql-ui--------------------------------
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:5.2.2
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=mysql
+      - PMA_USER=root
+      - PMA_PASSWORD=root
+    ports:
+      - "8083:80"  # phpMyAdmin UI port
+    depends_on:
+      - mysql
+    networks:
+      - ngApp-network
+#----------------------------------------------------------      
 networks:
   ngApp-network:
     driver: bridge
