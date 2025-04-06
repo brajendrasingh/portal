@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-#--------------------------------------------------------------
+#--------------------------web-ui--------------------------------
   web-portal-ui:
     container_name: web-portal-ui
     image: 'web-portal-ui:1.0'
@@ -13,7 +13,39 @@ services:
       - '80'
     networks:
       - ngApp-network
-#--------------------------------------------------------------
+#--------------------------auth-api--------------------------------
+  auth-service:
+    container_name: auth-service
+    image: 'auth-service:1.0'
+    mem_limit: 800mb
+    restart: always
+    depends_on:
+      - mysql
+    ports:
+      - '8080:8080'
+    expose:
+      - '8080'
+    networks:
+      - ngApp-network
+#--------------------------mysql-db--------------------------------
+  mysql:
+    image: mysql:9.2.0
+    container_name: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=mydatabase
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+    ports:
+      - "3306:3306"  # MySQL default port
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - ngApp-network
+#----------------------------------------------------------
 networks:
   ngApp-network:
     driver: bridge
+
+volumes:
+  mysql_data:
