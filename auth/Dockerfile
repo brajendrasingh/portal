@@ -16,4 +16,4 @@ WORKDIR /home/app
 
 USER cportal
 
-CMD java -jar -XX:MaxRAMPercentage=50.0 auth-service.jar
+CMD java -jar -XX:MaxRAMPercentage=50.0 auth-service.jar --spring.profiles.active=prod
