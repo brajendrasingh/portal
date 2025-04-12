@@ -1,5 +1,6 @@
 package com.bksoft.auth.entities;
 
+import com.bksoft.auth.dtos.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -23,5 +24,5 @@ public class UserEntity {
     @Column(nullable = true)
     private String token;
 
-    private String role = "USER"; // Default role
+    private String role = Role.ROLE_USER.name(); // Default role
 }

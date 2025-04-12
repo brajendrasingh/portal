@@ -8,13 +8,18 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 public class LoginResponse {
+    private String userName;
     private String status;
-    private String token;
+    private String accessToken;
+    private String refreshToken;
     private String message;
+    private String errorCode;
 
-    public LoginResponse(String status, String token, String message) {
+
+    public LoginResponse(String status, String accessToken, String refreshToken, String message) {
         this.status = status;
-        this.token = token;
+        this.accessToken = accessToken;
+        this.refreshToken = refreshToken;
         this.message = message;
     }
 }

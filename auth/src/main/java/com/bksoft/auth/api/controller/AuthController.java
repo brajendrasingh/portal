@@ -23,17 +23,13 @@ public class AuthController {
         this.jwtUtils = jwtUtils;
     }
 
-    @GetMapping("/getAllUsers")
-    public ResponseEntity<?> getAllUser() {
-        return ResponseEntity.status(HttpStatus.OK).body("");
-    }
-
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest request) {
         try {
             final UserDto userDetails = userService.findByEmail(request.getEmail()).orElseThrow();
-            final String token = jwtUtils.generateToken(userDetails.getEmail());
-            return ResponseEntity.ok(new LoginResponse("success", token, "Login successful"));
+            final String accessToken = jwtUtils.generateAccessToken(userDetails.getEmail());
+            final String refreshToken = jwtUtils.generateRefreshToken(userDetails.getEmail());
+            return ResponseEntity.ok(new LoginResponse("success", accessToken, refreshToken, "Login successful"));
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
         }
