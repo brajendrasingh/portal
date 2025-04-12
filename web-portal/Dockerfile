@@ -27,8 +27,11 @@ RUN rm -rf ./*
 # Copy built Angular app to Nginx HTML directory
 COPY --from=build-stage /app/dist/web-portal/browser .
 
+# Remove default NGINX config
+RUN rm -rf /etc/nginx/conf.d/default.conf
+
 # Copy custom Nginx configuration
-#COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
+COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
