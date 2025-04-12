@@ -9,13 +9,15 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';  
 import { AuthService } from './core/services/auth.service';
 import { SignupComponent } from './signup/signup.component';  
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptorService } from './core/services/token-interceptor.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FooterComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserProfileComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [AuthService,

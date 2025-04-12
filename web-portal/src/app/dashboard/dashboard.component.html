@@ -1,1 +1,14 @@
-<p>dashboard works!</p>
+
+  <div class="card-container">
+    <div class="card" *ngFor="let user of users">
+      <img [src]="user.profileImage" alt="{{ user.userName }}" class="card-img">
+      <div class="card-body">
+        <h3 class="card-title">{{ user.userName }}</h3>
+        <p class="card-email">{{ user.email }}</p>
+        <p class="card-role">Role: {{ user.role }}</p>
+        <button class="btn-details">View Details</button>
+      </div>
+    </div>
+  </div>
+  
+  

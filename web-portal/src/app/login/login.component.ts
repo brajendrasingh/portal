@@ -20,7 +20,7 @@ export class LoginComponent {
         if (response.status === "success") {
           // alert('Login successful!');
           // this.router.navigate(['/dashboard']);
-          localStorage.setItem('token', response['token']);
+          localStorage.setItem('token', response['accessToken']);
           this.router.navigate(['/dashboard']);
         } else {
           alert('Invalid credentials');
