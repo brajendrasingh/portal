@@ -55,7 +55,11 @@ public class UserController {
         for (SignupRequest request : addUserRequest) {
             UserDto user = new UserDto();
             user.setEmail(request.getEmail());
-            user.setPassword(request.getPassword());
+            if (request.getPassword() != null) {
+                user.setPassword(request.getPassword());
+            } else {
+                user.setPassword("TempPassword");
+            }
             response.add(userService.registerUser(user));
         }
         return ResponseEntity.ok(new SignupResponse("success", response.stream().map(UserDto::getEmail)

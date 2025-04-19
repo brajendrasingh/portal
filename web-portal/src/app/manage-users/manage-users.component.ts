@@ -29,4 +29,10 @@ export class ManageUsersComponent {
       }
     );
   }
+
+  deleteUser(userName: string) {
+    if (confirm('Are you sure you want to delete this user?')) {
+      this.userService.deleteUser([userName]);
+    }
+  }
 }

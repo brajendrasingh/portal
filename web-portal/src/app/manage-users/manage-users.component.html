@@ -8,6 +8,7 @@
         <p class="card-email">{{ user.email }}</p>
         <p class="card-role">Role: {{ user.role }}</p>
         <button class="btn-details">View Details</button>
+        <button (click)="deleteUser(user.userName)">Delete</button>
       </div>
     </div>
   </div>
