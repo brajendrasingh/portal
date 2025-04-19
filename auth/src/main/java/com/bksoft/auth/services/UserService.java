@@ -28,19 +28,19 @@ public class UserService {
         userEntity.setEmail(user.getEmail());
         userEntity.setPassword(user.getPassword());
         UserEntity response = userRepository.save(userEntity);
-        return new UserDto(response.getEmail(), response.getPassword(), userEntity.getRole());
+        return new UserDto(response.getUsername(), response.getEmail(), response.getPassword(), userEntity.getRole());
     }
 
     public Optional<UserDto> findByEmail(String email) {
-        Optional<UserEntity> userEntity = userRepository.findByEmail(email);
-        return Optional.of(new UserDto(userEntity.get().getEmail(), userEntity.get().getPassword(), userEntity.get().getRole()));
+        Optional<UserEntity> userEntity = userRepository.findByUsername(email);
+        return Optional.of(new UserDto(userEntity.get().getUsername(), userEntity.get().getEmail(), userEntity.get().getPassword(), userEntity.get().getRole()));
     }
 
     public List<UserDto> findAll() {
         List<UserDto> userList = new ArrayList<>();
         List<UserEntity> users = userRepository.findAll();
         for (UserEntity userEntity : users) {
-            userList.add(new UserDto(userEntity.getEmail(), userEntity.getPassword(), userEntity.getRole()));
+            userList.add(new UserDto(userEntity.getUsername(), userEntity.getEmail(), userEntity.getPassword(), userEntity.getRole()));
         }
         return userList;
     }
@@ -48,11 +48,11 @@ public class UserService {
     public UserDto update(UserDto user) {
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         UserEntity userEntity = new UserEntity();
-        userEntity.setUsername(user.getEmail());
+        userEntity.setUsername(user.getUsername());
         userEntity.setEmail(user.getEmail());
         userEntity.setPassword(user.getPassword());
         UserEntity response = userRepository.save(userEntity);
-        return new UserDto(response.getEmail(), response.getPassword(), userEntity.getRole());
+        return new UserDto(response.getUsername(), response.getEmail(), response.getPassword(), userEntity.getRole());
     }
 
     public boolean deleteByEmail(String email) {
@@ -60,4 +60,11 @@ public class UserService {
         userRepository.deleteById(userEntity.get().getId());
         return true;
     }
+
+    public boolean updateUser(UserDto user) {
+        UserEntity existingUser = userRepository.findByEmail(user.getUsername()).orElseThrow(() -> new RuntimeException("User not found"));
+        int response = userRepository.updateEmailByUserId(existingUser.getId(), user.getEmail());
+        return response > 0 ? true : false;
+    }
+
 }

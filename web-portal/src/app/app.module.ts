@@ -18,6 +18,7 @@ import { TokenInterceptorService } from './core/services/token-interceptor.servi
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { AddUserComponent } from './add-user/add-user.component';
     SignupComponent,
     DashboardComponent,
     UserProfileComponent,
-    AddUserComponent
+    AddUserComponent,
+    ManageUsersComponent
   ],
   imports: [
     BrowserModule,

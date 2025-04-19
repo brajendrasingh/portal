@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
@@ -30,7 +31,7 @@ public class UserController {
     public ResponseEntity<?> getAllUser() {
         List<UserProfileResponse> response = new ArrayList<>();
         for (UserDto user : userService.findAll()) {
-            response.add(new UserProfileResponse(user.getEmail(), "", user.getEmail(), user.getEmail(), "./../../assets/images/logo.png", user.getRole()));
+            response.add(new UserProfileResponse(user.getEmail(), "", user.getUsername(), user.getEmail(), "./../../assets/images/logo.png", user.getRole()));
         }
         return ResponseEntity.status(HttpStatus.OK).body(response);
     }
@@ -39,6 +40,12 @@ public class UserController {
     public ResponseEntity<?> getProfile(@RequestHeader("Authorization") String token, String username) {
         String tokenUserName = jwtUtils.extractUsername(token.substring(7));
         UserDto userInfo = userService.findByEmail(tokenUserName).get();
+        return ResponseEntity.ok(new UserProfileResponse(userInfo.getEmail(), "", userInfo.getUsername(), userInfo.getEmail(), "./../../assets/images/logo.png", userInfo.getRole()));
+    }
+
+    @GetMapping("/userDetail")
+    public ResponseEntity<?> getUserDetail(@RequestHeader("Authorization") String token, String username) {
+        UserDto userInfo = userService.findByEmail(username).get();
         return ResponseEntity.ok(new UserProfileResponse(userInfo.getEmail(), "", userInfo.getEmail(), userInfo.getEmail(), "./../../assets/images/logo.png", userInfo.getRole()));
     }
 
@@ -76,4 +83,19 @@ public class UserController {
         return ResponseEntity.ok(new SignupResponse("success", userNameList.stream().map(String::toString)
                 .collect(Collectors.joining(", ")) + " user deleted successfully"));
     }
+
+    @PutMapping("/update")
+    public ResponseEntity<?> updateProfile(@RequestHeader("Authorization") String token, @RequestBody Map<String, String> updates) {
+         String username = jwtUtils.extractUsername(token.substring(7));
+        UserDto existingUser = userService.findByEmail(username).orElseThrow(() -> new RuntimeException("User not found"));
+        if (updates.containsKey("email")) {
+            existingUser.setEmail(updates.get("email"));
+        }
+        if (updates.containsKey("password") && !updates.get("password").isEmpty()) {
+            existingUser.setPassword(updates.get("password"));
+        }
+        userService.updateUser(existingUser);
+        return ResponseEntity.ok("Profile updated successfully");
+    }
+
 }

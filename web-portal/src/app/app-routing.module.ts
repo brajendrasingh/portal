@@ -9,6 +9,7 @@ import{DashboardComponent} from'./dashboard/dashboard.component';
 import{AuthGuard} from'./core/services/auth.guard';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { ManageUsersComponent } from './manage-users/manage-users.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signup', pathMatch: 'full' },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'profile', component: UserProfileComponent },
   { path: 'addUser', component: AddUserComponent },
-  { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]}
+  { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]},
+  { path: 'manageUser', component: ManageUsersComponent }
 ];
 
 @NgModule({

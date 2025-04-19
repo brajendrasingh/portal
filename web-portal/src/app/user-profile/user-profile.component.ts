@@ -31,6 +31,8 @@ export class UserProfileComponent {
 
   updateProfile() {
     const updatedData = {
+      userId: this.user.userName, 
+      userName: this.user.userName, 
       email: this.user.email,
       password: this.newPassword || undefined
     };
