@@ -56,7 +56,7 @@ public class UserService {
     }
 
     public boolean deleteByEmail(String email) {
-        Optional<UserEntity> userEntity = userRepository.findByEmail(email);
+        Optional<UserEntity> userEntity = userRepository.findByUsername(email);
         userRepository.deleteById(userEntity.get().getId());
         return true;
     }

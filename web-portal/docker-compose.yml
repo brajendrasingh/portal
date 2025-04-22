@@ -11,6 +11,8 @@ services:
       - '4200:80'
     expose:
       - '80'
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
     networks:
       - ngApp-network
 #--------------------------auth-api--------------------------------
