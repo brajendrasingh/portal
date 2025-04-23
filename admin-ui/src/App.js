@@ -1,14 +1,29 @@
 import './App.css';
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function App() {
+  const apiUrl = process.env.REACT_APP_API_URL;
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log('Logging in with:', { username, password });
-    // Add actual login logic here
+    try {
+      const res = await axios.post(`${apiUrl}/auth/login`, {
+        email: username,
+        password: password,
+        rememberMe: "true"
+      }, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      console.log("Login success: ", res.data);
+    } catch (err) {
+      console.error(err.response?.data?.message || 'Something went wrong');
+    }
   };
 
   return (
