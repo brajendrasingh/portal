@@ -26,7 +26,7 @@ repositories {
 }
 
 dependencies {
-	// for jwt token
+	// JWT token Authentication
 	implementation("io.jsonwebtoken:jjwt-api:0.12.6")
 	implementation("io.jsonwebtoken:jjwt-impl:0.12.6")
 	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.6")
@@ -45,4 +45,8 @@ dependencies {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+	reports {
+		html.required.set(true)     // For browser-friendly report
+		junitXml.required.set(true) // For CI or raw test output
+	}
 }
