@@ -22,6 +22,19 @@ services:
       - mongo-network
     depends_on:
       - mongo
+  question-bank-service:
+    container_name: question-bank-service
+    image: 'question-bank-service:1.0'
+    mem_limit: 800mb
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - '8080:8080'
+    expose:
+      - '8080'
+    networks:
+      - mongo-network      
       
 volumes:
   mongo_data:
