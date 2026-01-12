@@ -1,4 +1,41 @@
 services:
+  mongo:
+    image: mongo:8.2.3
+    container_name: mongo-container
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - mongo-network
+      
+  mongo-express:
+    image: mongo-express:1.0.2-20
+    container_name: mongo-express
+    ports:
+      - "8081:8081"
+    environment:
+      - ME_CONFIG_MONGODB_URL=mongodb://mongo:27017
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=admin
+    networks:
+      - mongo-network
+    depends_on:
+      - mongo
+  question-bank-service:
+    container_name: question-bank-service
+    image: 'question-bank-service:1.0'
+    mem_limit: 800mb
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - '8080:8080'
+    expose:
+      - '8080'
+    networks:
+      - mongo-network      
+
   prometheus:
     image: prom/prometheus:v3.9.1
     container_name: prometheus
@@ -9,7 +46,9 @@ services:
     ports:
       - "9090:9090"
     restart: unless-stopped
-
+    networks:
+      - mongo-network      
+      
   grafana:
     image: grafana/grafana:12.3.1
     container_name: grafana
@@ -21,3 +60,13 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
     restart: unless-stopped
+    networks:
+      - mongo-network      
+      
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  mongo-network:
+    driver: bridge

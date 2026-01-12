@@ -9,4 +9,4 @@ scrape_configs:
   - job_name: "question-bank"
     metrics_path: "/qbs/actuator/prometheus"
     static_configs:
-      - targets: ["172.26.0.1:8080"]
+      - targets: ["question-bank-service:8080"]
