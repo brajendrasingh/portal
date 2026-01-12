@@ -22,3 +22,11 @@ services:
       - mongo-network
     depends_on:
       - mongo
+      
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  mongo-network:
+    driver: bridge
