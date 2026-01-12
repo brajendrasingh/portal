@@ -24,6 +24,11 @@ repositories {
 }
 
 dependencies {
+    // Actuator
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    // Prometheus registry
+    implementation("io.micrometer:micrometer-registry-prometheus")
+
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	
