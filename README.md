@@ -1,6 +1,5 @@
 Kafka Setup:
 
-version: "3.8"
 services:
   zookeeper:
     image: zookeeper:3.9.4
@@ -13,6 +12,8 @@ services:
     volumes:
       - zookeeper-data:/var/lib/zookeeper/data
       - zookeeper-log:/var/lib/zookeeper/log
+    networks:
+      - kafka-network
 
   kafka:
     image: apache/kafka:3.9.1
@@ -33,12 +34,17 @@ services:
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
-
+    command: [
+      "sh", "-c",
+      "/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties --override zookeeper.connect=zookeeper:2181 --override broker.id=1 --override listeners=PLAINTEXT://0.0.0.0:29092,PLAINTEXT_HOST://0.0.0.0:9092 --override advertised.listeners=PLAINTEXT://kafka:29092,PLAINTEXT_HOST://localhost:9092 --override listener.security.protocol.map=PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT --override inter.broker.listener.name=PLAINTEXT"
+    ]
+    networks:
+      - kafka-network
     volumes:
       - kafka-data:/var/lib/kafka/data
 
   kafka-ui:
-    image: provectuslabs/kafka-ui:1.6.0
+    image: provectuslabs/kafka-ui:v0.7.2
     container_name: kafka-ui
     depends_on:
       - kafka
@@ -48,8 +54,13 @@ services:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:29092
       KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
-
+    networks:
+      - kafka-network
 volumes:
   zookeeper-data:
   zookeeper-log:
   kafka-data:
+  
+networks:
+  kafka-network:
+    driver: bridge
