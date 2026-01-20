@@ -4,8 +4,10 @@
 
     <!-- Logstash TCP appender -->
     <appender name="LOGSTASH_TCP" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-      <destination>logstash:5000</destination> <!-- Logstash server IP and port -->
-      <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+        <destination>logstash:5000</destination> <!-- Logstash server IP and port like: 172.26.8.66:5000 -->
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeMdc>true</includeMdc>
+        </encoder>
     </appender>
 
     <!-- JSON Console appender -->

@@ -13,6 +13,8 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
     networks:
       - elk-network
       
@@ -22,9 +24,10 @@ services:
     ports:
       - "5000:5000"   # TCP input from Spring Boot
       - "9600:9600"   # Logstash monitoring API
+    depends_on:
+      - elasticsearch
     volumes:
       - ./logstash/pipeline:/usr/share/logstash/pipeline
-      - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
     environment:
       LS_JAVA_OPTS: "-Xms512m -Xmx512m"
     networks:
@@ -44,8 +47,7 @@ services:
       - elasticsearch
 
 volumes:
-  elk_data:
-    driver: local
+  es-data:
 
 networks:
   elk-network:
