@@ -7,7 +7,7 @@ services:
     volumes:
       - mongo_data:/data/db
     networks:
-      - mongo-network
+      - portal-network
       
   mongo-express:
     image: mongo-express:1.0.2-20
@@ -19,7 +19,7 @@ services:
       - ME_CONFIG_BASICAUTH_USERNAME=admin
       - ME_CONFIG_BASICAUTH_PASSWORD=admin
     networks:
-      - mongo-network
+      - portal-network
     depends_on:
       - mongo
   question-bank-service:
@@ -34,12 +34,13 @@ services:
     expose:
       - '8080'
     networks:
-      - mongo-network      
+      - portal-network      
       
 volumes:
   mongo_data:
     driver: local
 
 networks:
-  mongo-network:
+  portal-network:
     driver: bridge
+    #external: true #Use an existing network (created via: docker network create portal-network)

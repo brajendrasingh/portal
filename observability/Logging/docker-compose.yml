@@ -16,7 +16,7 @@ services:
     volumes:
       - es-data:/usr/share/elasticsearch/data
     networks:
-      - elk-network
+      - portal-network
       
   logstash:
     image: docker.elastic.co/logstash/logstash:9.2.4
@@ -31,7 +31,7 @@ services:
     environment:
       LS_JAVA_OPTS: "-Xms512m -Xmx512m"
     networks:
-      - elk-network
+      - portal-network
       
   kibana:
     image: docker.elastic.co/kibana/kibana:9.2.4
@@ -42,7 +42,7 @@ services:
     ports:
       - "5601:5601"
     networks:
-      - elk-network
+      - portal-network
     depends_on:
       - elasticsearch
 
@@ -50,5 +50,6 @@ volumes:
   es-data:
 
 networks:
-  elk-network:
+  portal-network:
     driver: bridge
+    #external: true #Use an existing network (created via: docker network create portal-network)
