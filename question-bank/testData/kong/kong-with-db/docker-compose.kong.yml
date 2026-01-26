@@ -1,10 +1,56 @@
 services:
+  postgres:
+    image: postgres:18.1
+    container_name: postgres-db
+    restart: always
+    environment:
+      POSTGRES_DB: kong
+      POSTGRES_USER: kong
+      POSTGRES_PASSWORD: kong
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -h localhost -U kong -d kong"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s      
+    networks:
+      - portal-network      
+      
+  kong-migrations:
+    image: kong:3.9
+    container_name: kong-migrations
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: postgres
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: kong
+      KONG_PG_DATABASE: kong
+    command: kong migrations bootstrap
+    restart: "no"
+    networks:
+      - portal-network
+      
   kong:
     image: kong:3.9
-    container_name: kong-dbless
+    container_name: kong-with-db
+    depends_on:
+      postgres:
+        condition: service_healthy
+      kong-migrations:  
+        condition: service_completed_successfully
     environment:
-      KONG_DATABASE: "off"
-      KONG_DECLARATIVE_CONFIG: /kong/declarative/kong.yaml
+      KONG_DATABASE: postgres
+      KONG_PG_HOST: postgres
+      KONG_PG_USER: kong
+      KONG_PG_PASSWORD: kong
+      KONG_PG_DATABASE: kong
       KONG_PROXY_LISTEN: 0.0.0.0:8000
       KONG_ADMIN_LISTEN: 0.0.0.0:8001 #Admin API
       KONG_ADMIN_GUI_LISTEN: 0.0.0.0:8002 #Admin GUI     
@@ -12,8 +58,6 @@ services:
       KONG_ADMIN_ACCESS_LOG: /dev/stdout
       KONG_PROXY_ERROR_LOG: /dev/stderr
       KONG_ADMIN_ERROR_LOG: /dev/stderr
-    volumes:
-      - ./kong.yaml:/kong/declarative/kong.yaml:ro
     ports:
       - "8000:8000"
       - "8001:8001"  #Admin API
@@ -21,32 +65,18 @@ services:
     networks:
       - portal-network
 
-  postgres:
-    image: postgres:18.1
-    container_name: postgres-db
-    restart: always
-    environment:
-      POSTGRES_DB: kong_db
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: admin
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - portal-network      
-
   pgadmin:
     image: dpage/pgadmin4:9.11.0
     container_name: pgadmin
     restart: always
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: kong@kong.com
+      PGADMIN_DEFAULT_PASSWORD: kong
     ports:
       - "5050:80"
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     networks:
       - portal-network      
 
