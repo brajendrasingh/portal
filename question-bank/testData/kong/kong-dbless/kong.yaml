@@ -1,0 +1,15 @@
+_format_version: "3.0"
+
+services:
+  - name: question-bank-service
+    url: http://question-bank-service:8080
+    routes:
+      - name: question-bank-route
+        paths:
+          - /questions
+        strip_path: true
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE

@@ -6,24 +6,21 @@ services:
       KONG_DATABASE: "off"
       KONG_DECLARATIVE_CONFIG: /kong/declarative/kong.yaml
       KONG_PROXY_LISTEN: 0.0.0.0:8000
-      KONG_ADMIN_LISTEN: 0.0.0.0:8001
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001 #Admin API
+      KONG_ADMIN_GUI_LISTEN: 0.0.0.0:8002 #Admin GUI     
       KONG_PROXY_ACCESS_LOG: /dev/stdout
       KONG_ADMIN_ACCESS_LOG: /dev/stdout
       KONG_PROXY_ERROR_LOG: /dev/stderr
       KONG_ADMIN_ERROR_LOG: /dev/stderr
     volumes:
-      - ./kong.yaml:/kong/declarative/kong.yaml
+      - ./kong.yaml:/kong/declarative/kong.yaml:ro
     ports:
       - "8000:8000"
-      - "8001:8001"
+      - "8001:8001"  #Admin API
+      - "8002:8002"  #Admin GUI     
     networks:
       - portal-network
       
-      
-volumes:
-  kong_data:
-    driver: local
-
 networks:
   portal-network:
     driver: bridge
