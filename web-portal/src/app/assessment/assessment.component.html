@@ -1,0 +1,61 @@
+<div class="assessment-shell">
+    <!-- Header -->
+    <header class="assessment-header">
+        <div class="header-left">
+            <h1 class="assessment-title">Technical Assessment</h1>
+            <p class="assessment-subtitle">Role-based Skill Evaluation</p>
+        </div>
+        <div class="header-right" *ngIf="timeLeft > 0 && !submitted">
+            <span class="timer-label">Time Remaining</span>
+            <span class="timer-value">{{ timeLeft }}s</span>
+        </div>
+    </header>
+    <!-- Body -->
+    <form class="assessment-body" (ngSubmit)="submit()" *ngIf="!submitted">
+        <section class="question-panel" *ngFor="let q of questions; let i = index">
+            <div class="question-header">
+                <span class="question-index">Question {{ i + 1 }}</span>
+            </div>
+
+
+            <p class="question-text">{{ q.text }}</p>
+
+
+            <div class="options">
+                <label class="option-item" *ngFor="let opt of q.options; let oi = index">
+                    <input type="radio" name="question-{{ q.id }}" [checked]="q.selectedIndex === oi"
+                        (change)="selectOption(q, oi)" />
+                    <span class="option-label">{{ opt }}</span>
+                </label>
+            </div>
+        </section>
+
+        <div class="action-bar">
+            <button type="submit" class="btn-primary">Submit Assessment</button>
+        </div>
+    </form>
+
+
+    <!-- Result -->
+    <section class="result-panel" *ngIf="submitted">
+        <div class="result-header">
+            <h2>Assessment Summary</h2>
+            <p class="score">
+                Score: <strong>{{ score }} / {{ questions.length }}</strong>
+            </p>
+        </div>
+
+        <div class="review-card" *ngFor="let q of questions; let i = index">
+            <p class="review-question">
+                {{ i + 1 }}. {{ q.text }}
+            </p>
+            <p class="review-answer">
+                <strong>Your Answer:</strong>
+                {{ q.selectedIndex !== undefined ? q.options[q.selectedIndex] : 'Not Answered' }}
+            </p>
+            <p class="review-correct" *ngIf="q.correctIndex !== undefined">
+                <strong>Correct Answer:</strong> {{ q.options[q.correctIndex] }}
+            </p>
+        </div>
+    </section>
+</div>
