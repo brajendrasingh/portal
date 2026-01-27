@@ -10,8 +10,13 @@
 			"Mumbai"
 		],
 		"correctOption": 1,
+		"correctAnswer": "Delhi",
 		"subject": "GS",
-		"category": "History"
+		"topic": "History",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "NA"
 	},
 	{
 		"questionId": 2,
@@ -23,8 +28,13 @@
 			"Operating System"
 		],
 		"correctOption": 1,
+		"correctAnswer": "Frontend framework",
 		"subject": "UI",
-		"category": "Angular"
+		"topic": "Angular",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "NA"
 	},
 	{
 		"questionId": 3,
@@ -36,8 +46,13 @@
 			"*ngLoop"
 		],
 		"correctOption": 1,
+		"correctAnswer": "ngFor",
 		"subject": "UI",
-		"category": "Angular"
+		"topic": "Angular",
+		"category": "MCQ",
+		"difficulty": "EASY",
+		"marks": 1,
+		"explanation": "NA"
 	},
 	{
 		"questionId": 4,
@@ -49,7 +64,12 @@
 			"C++"
 		],
 		"correctOption": 2,
+		"correctAnswer": "TypeScript",
 		"subject": "UI",
-		"category": "Angular"
+		"topic": "Angular",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "NA"
 	}
 ]

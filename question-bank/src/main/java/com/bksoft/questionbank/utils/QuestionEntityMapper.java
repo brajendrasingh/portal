@@ -11,7 +11,7 @@ public interface QuestionEntityMapper {
 	QuestionEntityMapper INSTANCE = Mappers.getMapper(QuestionEntityMapper.class);
 
 	@Mapping(target = "questionId", source = "questionId")
-	@Mapping(target = "question", source = "question")
+	@Mapping(target = "question", source = "questionText")
 	@Mapping(target = "optionA", source = "answer.optionA")
 	@Mapping(target = "optionB", source = "answer.optionB")
 	@Mapping(target = "optionC", source = "answer.optionC")
@@ -21,7 +21,7 @@ public interface QuestionEntityMapper {
 			com.bksoft.questionbank.dtos.Question question);
 
 	@Mapping(target = "questionId", source = "questionId")
-	@Mapping(target = "question", source = "question")
+	@Mapping(target = "questionText", source = "question")
 	@Mapping(target = "answer.optionA", source = "optionA")
 	@Mapping(target = "answer.optionB", source = "optionB")
 	@Mapping(target = "answer.optionC", source = "optionC")

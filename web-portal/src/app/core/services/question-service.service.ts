@@ -14,5 +14,6 @@ export class QuestionServiceService {
   getQuestions(): Observable<Question[]> {
     const mockurl = './../../../assets/mock/assessment/mock-assessment.json';
     return this.http.get<Question[]>(mockurl);
+    // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`);
   }
 }

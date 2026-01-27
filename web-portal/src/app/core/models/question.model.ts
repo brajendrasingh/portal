@@ -8,9 +8,13 @@ export interface Question {
     selectedIndex?: number;
     // correct answer index
     correctOption?: number;
+    correctAnswer?: string;
 
     // Assessment optional metadata
     subject?: string;     // e.g. "Computer Science", "Java", "Angular"
-    category?: string;    // e.g. "OOP", "DI", "Components"
+    topic?: string;    // e.g. "OOP", "DI", "Components"
+    category?: string;    // e.g. "MCQ", "Descriptive"
+    marks?: number;
     difficulty?: 'EASY' | 'MEDIUM' | 'HARD';
+    explanation?: string; 
 }
