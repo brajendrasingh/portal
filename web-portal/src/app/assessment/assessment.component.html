@@ -18,12 +18,12 @@
             </div>
 
 
-            <p class="question-text">{{ q.text }}</p>
+            <p class="question-text">{{ q.questionText }}</p>
 
 
             <div class="options">
-                <label class="option-item" *ngFor="let opt of q.options; let oi = index">
-                    <input type="radio" name="question-{{ q.id }}" [checked]="q.selectedIndex === oi"
+                <label class="option-item" *ngFor="let opt of q.answerOptions; let oi = index">
+                    <input type="radio" name="question-{{ q.questionId }}" [checked]="q.selectedIndex === oi"
                         (change)="selectOption(q, oi)" />
                     <span class="option-label">{{ opt }}</span>
                 </label>
@@ -47,14 +47,14 @@
 
         <div class="review-card" *ngFor="let q of questions; let i = index">
             <p class="review-question">
-                {{ i + 1 }}. {{ q.text }}
+                {{ i + 1 }}. {{ q.questionText }}
             </p>
             <p class="review-answer">
                 <strong>Your Answer:</strong>
-                {{ q.selectedIndex !== undefined ? q.options[q.selectedIndex] : 'Not Answered' }}
+                {{ q.selectedIndex !== undefined ? q.answerOptions[q.selectedIndex] : 'Not Answered' }}
             </p>
-            <p class="review-correct" *ngIf="q.correctIndex !== undefined">
-                <strong>Correct Answer:</strong> {{ q.options[q.correctIndex] }}
+            <p class="review-correct" *ngIf="q.correctOption !== undefined">
+                <strong>Correct Answer:</strong> {{ q.answerOptions[q.correctOption] }}
             </p>
         </div>
     </section>

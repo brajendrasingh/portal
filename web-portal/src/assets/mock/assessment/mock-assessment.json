@@ -1,0 +1,55 @@
+[
+	{
+		"questionId": "1",
+		"questionText": "Capital of india",
+		"answerOptions": [
+			"Kanpur",
+			"Delhi",
+			"Lucknow",
+			"Indore",
+			"Mumbai"
+		],
+		"correctOption": 1,
+		"subject": "GS",
+		"category": "History"
+	},
+	{
+		"questionId": 2,
+		"questionText": "What is Angular?",
+		"answerOptions": [
+			"Database",
+			"Frontend framework",
+			"Backend framework",
+			"Operating System"
+		],
+		"correctOption": 1,
+		"subject": "UI",
+		"category": "Angular"
+	},
+	{
+		"questionId": 3,
+		"questionText": "Which directive is used for looping in Angular?",
+		"answerOptions": [
+			"*ngIf",
+			"*ngFor",
+			"*ngSwitch",
+			"*ngLoop"
+		],
+		"correctOption": 1,
+		"subject": "UI",
+		"category": "Angular"
+	},
+	{
+		"questionId": 4,
+		"questionText": "Which language is primarily used with Angular?",
+		"answerOptions": [
+			"Java",
+			"Python",
+			"TypeScript",
+			"C++"
+		],
+		"correctOption": 2,
+		"subject": "UI",
+		"category": "Angular"
+	}
+]

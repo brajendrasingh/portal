@@ -1,12 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Question } from '../core/models/question.model';
+import { QuestionServiceService } from './../core/services/question-service.service';
 
-interface Question {
-  id: number;
-  text: string;
-  options: string[];
-  correctIndex?: number;
-  selectedIndex?: number;
-}
 @Component({
   selector: 'app-assessment',
   standalone: false,
@@ -14,6 +9,8 @@ interface Question {
   styleUrl: './assessment.component.css'
 })
 export class AssessmentComponent implements OnInit, OnDestroy {
+
+  constructor(private questionServiceService: QuestionServiceService) { }
 
   questions: Question[] = [];
   submitted = false;
@@ -32,26 +29,13 @@ export class AssessmentComponent implements OnInit, OnDestroy {
   }
 
   loadQuestions(): void {
-    this.questions = [
-      {
-        id: 1,
-        text: 'What is Angular?',
-        options: ['Database', 'Frontend framework', 'Backend framework', 'Operating System'],
-        correctIndex: 1
-      },
-      {
-        id: 2,
-        text: 'Which directive is used for looping in Angular?',
-        options: ['*ngIf', '*ngFor', '*ngSwitch', '*ngLoop'],
-        correctIndex: 1
-      },
-      {
-        id: 3,
-        text: 'Which language is primarily used with Angular?',
-        options: ['Java', 'Python', 'TypeScript', 'C++'],
-        correctIndex: 2
+    this.questionServiceService.getQuestions().subscribe(
+      (response) => {
+        this.questions = response;
+      }, (error) => {
+        alert('Get questions failed. Please try again.');
       }
-    ];
+    );
   }
 
 
@@ -68,7 +52,7 @@ export class AssessmentComponent implements OnInit, OnDestroy {
 
   calculateScore(): void {
     this.score = this.questions.filter(
-      q => q.correctIndex !== undefined && q.selectedIndex === q.correctIndex
+      q => q.correctOption !== undefined && q.selectedIndex === q.correctOption
     ).length;
   }
 
