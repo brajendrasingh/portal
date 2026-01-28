@@ -1,0 +1,152 @@
+.assessment-shell {
+    max-width: 960px;
+    margin: 2rem auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* Header */
+.assessment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.assessment-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.assessment-subtitle {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+.timer-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #6b7280;
+}
+
+.timer-value {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #dc2626;
+}
+
+/* Body */
+.assessment-body {
+    padding: 2rem;
+}
+
+.question-panel {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.question-header {
+    margin-bottom: 0.75rem;
+}
+
+.question-index {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2563eb;
+    text-transform: uppercase;
+}
+
+.question-text {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.options {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.option-item {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.option-item:hover {
+    background: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+.option-label {
+    margin-left: 0.5rem;
+}
+
+/* Action bar */
+.action-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+
+/* Result */
+.result-panel {
+    padding: 2rem;
+}
+
+.result-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.score {
+    font-size: 1.1rem;
+}
+
+.review-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.review-question {
+    font-weight: 500;
+}
+
+.review-answer {
+    color: #374151;
+}
+
+.review-correct {
+    color: #15803d;
+    font-weight: 500;
+}

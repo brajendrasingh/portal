@@ -26,6 +26,7 @@ repositories {
 }
 
 dependencies {
+	implementation("com.azure:azure-storage-blob:12.33.0")
 	// JWT token Authentication
 	implementation("io.jsonwebtoken:jjwt-api:0.12.6")
 	implementation("io.jsonwebtoken:jjwt-impl:0.12.6")

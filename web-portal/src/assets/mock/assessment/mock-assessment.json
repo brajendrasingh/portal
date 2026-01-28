@@ -1,0 +1,75 @@
+[
+	{
+		"questionId": "1",
+		"questionText": "Capital of india",
+		"answerOptions": [
+			"Kanpur",
+			"Delhi",
+			"Lucknow",
+			"Indore",
+			"Mumbai"
+		],
+		"correctOption": 1,
+		"correctAnswer": "Delhi",
+		"subject": "GS",
+		"topic": "History",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "NA"
+	},
+	{
+		"questionId": 2,
+		"questionText": "What is Angular?",
+		"answerOptions": [
+			"Database",
+			"Frontend framework",
+			"Backend framework",
+			"Operating System"
+		],
+		"correctOption": 1,
+		"correctAnswer": "Frontend framework",
+		"subject": "UI",
+		"topic": "Angular",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "NA"
+	},
+	{
+		"questionId": 3,
+		"questionText": "Which directive is used for looping in Angular?",
+		"answerOptions": [
+			"*ngIf",
+			"*ngFor",
+			"*ngSwitch",
+			"*ngLoop"
+		],
+		"correctOption": 1,
+		"correctAnswer": "ngFor",
+		"subject": "UI",
+		"topic": "Angular",
+		"category": "MCQ",
+		"difficulty": "EASY",
+		"marks": 1,
+		"explanation": "NA"
+	},
+	{
+		"questionId": 4,
+		"questionText": "Which language is primarily used with Angular?",
+		"answerOptions": [
+			"Java",
+			"Python",
+			"TypeScript",
+			"C++"
+		],
+		"correctOption": 2,
+		"correctAnswer": "TypeScript",
+		"subject": "UI",
+		"topic": "Angular",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "NA"
+	}
+]

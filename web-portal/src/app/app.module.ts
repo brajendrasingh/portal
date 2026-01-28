@@ -19,6 +19,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { AssessmentComponent } from './assessment/assessment.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
     DashboardComponent,
     UserProfileComponent,
     AddUserComponent,
-    ManageUsersComponent
+    ManageUsersComponent,
+    AssessmentComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,

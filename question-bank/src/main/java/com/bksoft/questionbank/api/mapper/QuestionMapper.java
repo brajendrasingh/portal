@@ -22,12 +22,12 @@ public interface QuestionMapper {
 	 * @return the question
 	 */
 	@Mapping(target = "questionId", source = "questionId")
-	@Mapping(target = "question", source = "question")
+	@Mapping(target = "questionText", source = "questionText")
 	@Mapping(target = "answer", source = "answer")
 	Question convertToApiQuestion(com.bksoft.questionbank.dtos.Question question);
 
 	@Mapping(target = "questionId", source = "questionId")
-	@Mapping(target = "question", source = "question")
+	@Mapping(target = "questionText", source = "questionText")
 	@Mapping(target = "answer", source = "answer")
 	com.bksoft.questionbank.dtos.Question convertToDtosQuestion(Question question);
 

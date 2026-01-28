@@ -10,6 +10,8 @@ import{AuthGuard} from'./core/services/auth.guard';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
+import { AssessmentComponent } from './assessment/assessment.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signup', pathMatch: 'full' },
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: 'profile', component: UserProfileComponent },
   { path: 'addUser', component: AddUserComponent },
   { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]},
-  { path: 'manageUser', component: ManageUsersComponent }
+  { path: 'manageUser', component: ManageUsersComponent },
+  { path: 'assessment', component: AssessmentComponent },
+  { path: 'fileUpload', component: FileUploadComponent}
 ];
 
 @NgModule({
