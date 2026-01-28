@@ -1,0 +1,36 @@
+<div class="file-upload-container">
+    <h2 class="title">Upload File</h2>
+
+    <div class="upload-card">
+        <input type="file" #fileInput hidden (change)="onFileSelected($event)" />
+
+        <button type="button" class="btn primary" (click)="fileInput.click()">
+            Choose File
+        </button>
+
+        <span class="file-name" *ngIf="selectedFile">
+            {{ selectedFile.name }}
+        </span>
+
+        <button type="button" class="btn success" [disabled]="!selectedFile || uploading" (click)="uploadFile()">
+            Upload
+        </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-wrapper" *ngIf="uploadProgress >= 0">
+        <div class="progress-bar">
+            <div class="progress-fill" [style.width.%]="uploadProgress"></div>
+        </div>
+        <span class="progress-text">{{ uploadProgress }}%</span>
+    </div>
+
+    <!-- Status -->
+    <p class="status success-text" *ngIf="uploadSuccess">
+        ✔ File uploaded successfully
+    </p>
+
+    <p class="status error-text" *ngIf="uploadError">
+        ✖ File upload failed
+    </p>
+</div>

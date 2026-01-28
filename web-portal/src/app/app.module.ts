@@ -20,6 +20,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { AssessmentComponent } from './assessment/assessment.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { AssessmentComponent } from './assessment/assessment.component';
     UserProfileComponent,
     AddUserComponent,
     ManageUsersComponent,
-    AssessmentComponent
+    AssessmentComponent,
+    FileUploadComponent
   ],
   imports: [
     BrowserModule,
