@@ -2,6 +2,7 @@ plugins {
 	java
 	id("org.springframework.boot") version "4.0.1"
 	id("io.spring.dependency-management") version "1.1.7"
+    id("jacoco")
 }
 
 group = "com.bksoft"
@@ -50,4 +51,16 @@ tasks.withType<Test> {
 		html.required.set(true)     // For browser-friendly report
 		junitXml.required.set(true) // For CI or raw test output
 	}
+}
+
+jacoco {
+    toolVersion = "0.8.14"
+}
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+        csv.required.set(false)
+    }
 }
