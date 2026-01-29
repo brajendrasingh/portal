@@ -1,0 +1,55 @@
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:9.2.4
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ELASTIC_PASSWORD=changeme
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    networks:
+      - portal-network
+      
+  logstash:
+    image: docker.elastic.co/logstash/logstash:9.2.4
+    container_name: logstash
+    ports:
+      - "5000:5000"   # TCP input from Spring Boot
+      - "9600:9600"   # Logstash monitoring API
+    depends_on:
+      - elasticsearch
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+    environment:
+      LS_JAVA_OPTS: "-Xms512m -Xmx512m"
+    networks:
+      - portal-network
+      
+  kibana:
+    image: docker.elastic.co/kibana/kibana:9.2.4
+    container_name: kibana    
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - ELASTICSEARCH_PASSWORD=changeme
+    ports:
+      - "5601:5601"
+    networks:
+      - portal-network
+    depends_on:
+      - elasticsearch
+
+volumes:
+  es-data:
+
+networks:
+  portal-network:
+    driver: bridge
+    #external: true #Use an existing network (created via: docker network create portal-network)

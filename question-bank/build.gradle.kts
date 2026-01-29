@@ -1,7 +1,7 @@
 plugins {
 	java
-	id("org.springframework.boot") version "3.3.3"
-	id("io.spring.dependency-management") version "1.1.6"
+	id("org.springframework.boot") version "4.0.1"
+	id("io.spring.dependency-management") version "1.1.7"
 }
 
 group = "com.bksoft"
@@ -9,7 +9,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
 	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
+		languageVersion = JavaLanguageVersion.of(25)
 	}
 }
 
@@ -24,6 +24,12 @@ repositories {
 }
 
 dependencies {
+	implementation("net.logstash.logback:logstash-logback-encoder:9.0") //For converting text base log to json based log
+    // Actuator
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+    // Prometheus registry
+    implementation("io.micrometer:micrometer-registry-prometheus")
+
 	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	
