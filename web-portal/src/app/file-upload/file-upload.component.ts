@@ -38,9 +38,7 @@ export class FileUploadComponent {
       .subscribe({
         next: (event: HttpEvent<any>) => {
           if (event.type === HttpEventType.UploadProgress && event.total) {
-            this.uploadProgress = Math.round(
-              (100 * event.loaded) / event.total
-            );
+            this.uploadProgress = Math.round((100 * event.loaded) / event.total);
           }
 
           if (event.type === HttpEventType.Response) {

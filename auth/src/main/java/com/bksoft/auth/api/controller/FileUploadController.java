@@ -12,7 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/file")
+@RequestMapping("/files")
 public class FileUploadController {
 
     private final AzureBlobService blobService;
@@ -25,7 +25,8 @@ public class FileUploadController {
 
     @PostMapping("/upload")
     public ResponseEntity<String> uploadFile(@RequestParam MultipartFile file) throws IOException {
-        return ResponseEntity.ok(fileUploadService.uploadFile(file));
+        String fileName = fileUploadService.uploadFile(file);
+        return ResponseEntity.ok("File uploaded successfully: " + fileName);
     }
 
     @PostMapping("/azure-blob/upload")
