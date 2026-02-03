@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]},
   { path: 'manageUser', component: ManageUsersComponent },
   { path: 'assessment', component: AssessmentComponent },
-  { path: 'result', component: ResultComponent },
+  { path: 'result/:userId/:assessmentId/:attemptNo', component: ResultComponent },
   { path: 'resultsDashboard', component: AssessmentResultsDashboardComponent },
   { path: 'fileUpload', component: FileUploadComponent}
 ];

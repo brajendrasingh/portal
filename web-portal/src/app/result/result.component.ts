@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { AnswerSubmission } from '../core/models/answerSubmission.model';
 import { QuestionServiceService } from './../core/services/question-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-result',
@@ -9,6 +10,9 @@ import { QuestionServiceService } from './../core/services/question-service.serv
   styleUrl: './result.component.css'
 })
 export class ResultComponent {
+  userId!: string;
+  assessmentId!: string
+  attemptNo!: number
 
   // Result data
   questions: AnswerSubmission[] = [];
@@ -18,14 +22,17 @@ export class ResultComponent {
   @Input() correctAnswers = 0;
   @Input() passingPercentage = 60;
 
-  constructor(private questionService: QuestionServiceService) { }
+  constructor(private route: ActivatedRoute, private questionService: QuestionServiceService) { }
 
   ngOnInit(): void {
+    this.userId = this.route.snapshot.paramMap.get('userId')!;
+    this.assessmentId = this.route.snapshot.paramMap.get('assessmentId')!;
+    this.attemptNo = Number(this.route.snapshot.paramMap.get('attemptNo'));
     this.loadResults();
   }
 
   loadResults(): void {
-    this.questionService.getResults('').subscribe({
+    this.questionService.getResult(this.userId, this.assessmentId, this.attemptNo).subscribe({
       next: (response: AnswerSubmission[]) => {
         this.questions = response || [];
 

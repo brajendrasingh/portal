@@ -22,10 +22,10 @@ export class QuestionServiceService {
     return this.http.post<AnswerSubmission[]>(`${environment.apiUrl}/qbs/assessment/submit`, payload);
   }
 
-  getResults(requestPayload: any): Observable<AnswerSubmission[]> {
+  getResult(userId: string, assessmentId: string, attemptNo: number): Observable<AnswerSubmission[]> {
     const mockurl = './../../../assets/mock/assessment/mock-assessment-results.json';
     return this.http.get<AnswerSubmission[]>(mockurl);
-    // return this.http.get<AnswerSubmission[]>(`${environment.apiUrl}/qbs/assessment/result`);
+    // return this.http.get<AnswerSubmission[]>(`${environment.apiUrl}/qbs/assessment/result/${userId}/${assessmentId}/${attemptNo}`);
   }
 
   getAllResults(): Observable<any[]> {
