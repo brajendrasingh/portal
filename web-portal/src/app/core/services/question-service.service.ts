@@ -28,4 +28,10 @@ export class QuestionServiceService {
     // return this.http.get<AnswerSubmission[]>(`${environment.apiUrl}/qbs/assessment/result`);
   }
 
+  getAllResults(): Observable<any[]> {
+    const mockurl = './../../../assets/mock/assessment/mock-assessment-resultsDashboard.json';
+    return this.http.get<any[]>(mockurl);
+    // return this.http.get<any[]>(`${environment.apiUrl}/qbs/assessment/allResults`);
+  }
+
 }

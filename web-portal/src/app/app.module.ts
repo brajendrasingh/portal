@@ -22,6 +22,7 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { AssessmentComponent } from './assessment/assessment.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ResultComponent } from './result/result.component';
+import { AssessmentResultsDashboardComponent } from './assessment-results-dashboard/assessment-results-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ResultComponent } from './result/result.component';
     ManageUsersComponent,
     AssessmentComponent,
     FileUploadComponent,
-    ResultComponent
+    ResultComponent,
+    AssessmentResultsDashboardComponent
   ],
   imports: [
     BrowserModule,

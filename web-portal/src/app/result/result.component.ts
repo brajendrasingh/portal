@@ -18,9 +18,7 @@ export class ResultComponent {
   @Input() correctAnswers = 0;
   @Input() passingPercentage = 60;
 
-  constructor(
-    private questionService: QuestionServiceService
-  ) { }
+  constructor(private questionService: QuestionServiceService) { }
 
   ngOnInit(): void {
     this.loadResults();
@@ -33,9 +31,7 @@ export class ResultComponent {
 
         // Calculate summary values
         this.totalQuestions = this.questions.length;
-        this.correctAnswers = this.questions.filter(
-          q => q.selectedAnswer === q.correctAnswer
-        ).length;
+        this.correctAnswers = this.questions.filter(q => q.selectedAnswer === q.correctAnswer).length;
       },
       error: () => {
         alert('Failed to load assessment results. Please try again.');
@@ -47,9 +43,7 @@ export class ResultComponent {
     if (this.totalQuestions === 0) {
       return 0;
     }
-    return Math.round(
-      (this.correctAnswers / this.totalQuestions) * 100
-    );
+    return Math.round((this.correctAnswers / this.totalQuestions) * 100);
   }
 
   get resultStatus(): string {

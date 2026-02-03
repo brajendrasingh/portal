@@ -13,6 +13,7 @@ import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { AssessmentComponent } from './assessment/assessment.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ResultComponent } from './result/result.component';
+import { AssessmentResultsDashboardComponent } from './assessment-results-dashboard/assessment-results-dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signup', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'manageUser', component: ManageUsersComponent },
   { path: 'assessment', component: AssessmentComponent },
   { path: 'result', component: ResultComponent },
+  { path: 'resultsDashboard', component: AssessmentResultsDashboardComponent },
   { path: 'fileUpload', component: FileUploadComponent}
 ];
 

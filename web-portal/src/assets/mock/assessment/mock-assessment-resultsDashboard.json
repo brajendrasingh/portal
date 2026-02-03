@@ -1,0 +1,92 @@
+[
+	{
+		"userId": "USR1001",
+		"assessmentName": "EOHS Safety Awareness",
+		"attemptNo": 1,
+		"totalQuestions": 20,
+		"scorePercentage": 85,
+		"status": "PASS",
+		"attemptedOn": "12 Jan 2026"
+	},
+	{
+		"userId": "USR1002",
+		"assessmentName": "ISO 45001 Training",
+		"attemptNo": 1,
+		"totalQuestions": 15,
+		"scorePercentage": 55,
+		"status": "FAIL",
+		"attemptedOn": "10 Jan 2026"
+	},
+	{
+		"userId": "USR1003",
+		"assessmentName": "Fire Safety & Emergency Response",
+		"attemptNo": 2,
+		"totalQuestions": 18,
+		"scorePercentage": 78,
+		"status": "PASS",
+		"attemptedOn": "08 Jan 2026"
+	},
+	{
+		"userId": "USR1001",
+		"assessmentName": "Environmental Management Basics",
+		"attemptNo": 1,
+		"totalQuestions": 20,
+		"scorePercentage": 62,
+		"status": "PASS",
+		"attemptedOn": "06 Jan 2026"
+	},
+	{
+		"userId": "USR1004",
+		"assessmentName": "Hazard Identification & Risk Assessment",
+		"attemptNo": 2,
+		"totalQuestions": 25,
+		"scorePercentage": 48,
+		"status": "FAIL",
+		"attemptedOn": "04 Jan 2026"
+	},
+	{
+		"userId": "USR1002",
+		"assessmentName": "Electrical Safety Training",
+		"attemptNo": 1,
+		"totalQuestions": 15,
+		"scorePercentage": 80,
+		"status": "PASS",
+		"attemptedOn": "02 Jan 2026"
+	},
+	{
+		"userId": "USR1003",
+		"assessmentName": "Waste Management & Segregation",
+		"attemptNo": 1,
+		"totalQuestions": 12,
+		"scorePercentage": 92,
+		"status": "PASS",
+		"attemptedOn": "30 Dec 2025"
+	},
+	{
+		"userId": "USR1004",
+		"assessmentName": "Workplace Ergonomics",
+		"attemptNo": 1,
+		"totalQuestions": 10,
+		"scorePercentage": 70,
+		"status": "PASS",
+		"attemptedOn": "28 Dec 2025"
+	},
+	{
+		"userId": "USR1002",
+		"assessmentName": "Chemical Handling & MSDS",
+		"attemptNo": 3,
+		"totalQuestions": 22,
+		"scorePercentage": 58,
+		"status": "FAIL",
+		"attemptedOn": "26 Dec 2025"
+	},
+	{
+		"userId": "USR1003",
+		"assessmentName": "Contractor Safety Induction",
+		"attemptNo": 1,
+		"totalQuestions": 15,
+		"scorePercentage": 88,
+		"status": "PASS",
+		"attemptedOn": "24 Dec 2025"
+	}
+]
