@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Question } from '../core/models/question.model';
 import { QuestionServiceService } from './../core/services/question-service.service';
+import { AnswerSubmission } from '../core/models/answerSubmission.model';
 
 @Component({
   selector: 'app-assessment',
@@ -48,6 +49,9 @@ export class AssessmentComponent implements OnInit, OnDestroy {
     this.submitted = true;
     this.stopTimer();
     this.calculateScore();
+    const payload = this.prepareSubmissionPayload();
+    console.log("Final submission payload: ", payload);
+    this.submitToBackend(payload);
   }
 
   calculateScore(): void {
@@ -72,4 +76,19 @@ export class AssessmentComponent implements OnInit, OnDestroy {
     }
   }
 
+  prepareSubmissionPayload(): AnswerSubmission[] {
+    return this.questions.map(q => ({
+      questionId: q.questionId,
+      questionText: q.questionText,
+      answerOptions: q.answerOptions,
+      selectedAnswer: q.selectedIndex !== undefined ? q.answerOptions[q.selectedIndex] : null
+    }));
+  }
+
+  submitToBackend(payload: AnswerSubmission[]): void {
+    this.questionServiceService.submitAssessment(payload).subscribe({
+      next: () => { console.log("answer submitted successfully"); },
+      error: () => { console.log("answer submition failed"); }
+    });
+  }
 }
