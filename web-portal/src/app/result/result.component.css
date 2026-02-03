@@ -119,5 +119,41 @@
   
   .wrong {
     color: #c62828;
-    font-weigh
+    font-weight: 600;
+  }
+  
+  /* Footer Buttons */
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  
+  .btn-primary {
+    background: #0052cc;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background: #003f9e;
+  }
+  
+  .btn-secondary {
+    background: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-secondary:hover {
+    background: #d6d6d6;
+  }
+
   

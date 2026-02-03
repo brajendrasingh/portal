@@ -59,5 +59,29 @@
 		],
 		"selectedAnswer": "TypeScript",
 		"correctAnswer": "Java"
-	  }
-  ]
+	},
+	{
+		"questionId": 6,
+		"questionText": "Capital of Uttar Pradesh",
+		"answerOptions": [
+			"Kanpur",
+			"Delhi",
+			"Lucknow",
+			"Indore",
+			"Mumbai"
+		],
+		"selectedAnswer": null,
+		"correctAnswer": "Lucknow"
+	},
+	{
+		"questionId": 7,
+		"questionText": "Which language is primarily used with React?",
+		"answerOptions": [
+			"Java",
+			"Python",
+			"TypeScript",
+			"C++"
+		],
+		"correctAnswer": "TypeScript"
+	}
+]
