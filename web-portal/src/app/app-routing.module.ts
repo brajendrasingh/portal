@@ -12,6 +12,7 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { AssessmentComponent } from './assessment/assessment.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ResultComponent } from './result/result.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signup', pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]},
   { path: 'manageUser', component: ManageUsersComponent },
   { path: 'assessment', component: AssessmentComponent },
+  { path: 'result', component: ResultComponent },
   { path: 'fileUpload', component: FileUploadComponent}
 ];
 

@@ -1,0 +1,63 @@
+[
+	{
+	  "questionId": "1",
+	  "questionText": "Capital of india",
+	  "answerOptions": [
+		"Kanpur",
+		"Delhi",
+		"Lucknow",
+		"Indore",
+		"Mumbai"
+	  ],
+	  "selectedAnswer": "Delhi",
+	  "correctAnswer": "Delhi"
+	},
+	{
+	  "questionId": 2,
+	  "questionText": "What is Angular?",
+	  "answerOptions": [
+		"Database",
+		"Frontend framework",
+		"Backend framework",
+		"Operating System"
+	  ],
+	  "selectedAnswer": "Frontend framework",
+	  "correctAnswer": "Frontend framework"
+	},
+	{
+	  "questionId": 3,
+	  "questionText": "Which directive is used for looping in Angular?",
+	  "answerOptions": [
+		"*ngIf",
+		"*ngFor",
+		"*ngSwitch",
+		"*ngLoop"
+	  ],
+	  "selectedAnswer": "*ngFor",
+	  "correctAnswer": "*ngFor"
+	},
+	{
+	  "questionId": 4,
+	  "questionText": "Which language is primarily used with Angular?",
+	  "answerOptions": [
+		"Java",
+		"Python",
+		"TypeScript",
+		"C++"
+	  ],
+	  "selectedAnswer": "TypeScript",
+	  "correctAnswer": "TypeScript"
+	},
+	{
+		"questionId": 5,
+		"questionText": "Which language is primarily used with SpringBoot?",
+		"answerOptions": [
+		  "Java",
+		  "Python",
+		  "TypeScript",
+		  "C++"
+		],
+		"selectedAnswer": "TypeScript",
+		"correctAnswer": "Java"
+	  }
+  ]

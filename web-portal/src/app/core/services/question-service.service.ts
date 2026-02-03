@@ -13,7 +13,7 @@ export class QuestionServiceService {
   constructor(private http: HttpClient) { }
 
   getQuestions(): Observable<Question[]> {
-    const mockurl = './../../../assets/mock/assessment/mock-assessment.json';
+    const mockurl = './../../../assets/mock/assessment/mock-assessment-questions.json';
     return this.http.get<Question[]>(mockurl);
     // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`);
   }
@@ -21,4 +21,11 @@ export class QuestionServiceService {
   submitAssessment(payload: AnswerSubmission[]) {
     return this.http.post<AnswerSubmission[]>(`${environment.apiUrl}/qbs/assessment/submit`, payload);
   }
+
+  getResults(requestPayload: any): Observable<AnswerSubmission[]> {
+    const mockurl = './../../../assets/mock/assessment/mock-assessment-results.json';
+    return this.http.get<AnswerSubmission[]>(mockurl);
+    // return this.http.get<AnswerSubmission[]>(`${environment.apiUrl}/qbs/assessment/result`);
+  }
+
 }

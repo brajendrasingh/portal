@@ -1,0 +1,123 @@
+/* Page Wrapper */
+.result-wrapper {
+    min-height: 100vh;
+    padding: 24px;
+    display: flex;
+    justify-content: center;
+    background: #eef2f6;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  /* Main Card */
+  .result-card {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  
+  .header h2 {
+    margin: 0;
+    color: #2c3e50;
+  }
+  
+  /* Status Badge */
+  .status-badge {
+    padding: 6px 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 14px;
+  }
+  
+  .status-badge.pass {
+    background: #e6f4ea;
+    color: #2e7d32;
+  }
+  
+  .status-badge.fail {
+    background: #fdecea;
+    color: #c62828;
+  }
+  
+  /* Summary Section */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  
+  .summary-item {
+    background: #f7f9fc;
+    padding: 14px;
+    border-radius: 6px;
+  }
+  
+  .summary-item label {
+    font-size: 13px;
+    color: #6c757d;
+  }
+  
+  .summary-item p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 6px 0 0;
+    color: #212529;
+  }
+  
+  /* Question Review */
+  .result-panel {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 24px;
+  }
+  
+  .review-title {
+    margin-bottom: 16px;
+    color: #374151;
+  }
+  
+  .review-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background: #fafafa;
+  }
+  
+  .review-question {
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .review-answer {
+    color: #374151;
+    margin-bottom: 6px;
+  }
+  
+  .review-correct {
+    color: #15803d;
+    font-weight: 600;
+  }
+  
+  /* Answer Status */
+  .correct {
+    color: #15803d;
+    font-weight: 600;
+  }
+  
+  .wrong {
+    color: #c62828;
+    font-weigh
+  
