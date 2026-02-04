@@ -2,29 +2,35 @@ package com.bksoft.questionbank.service;
 
 import com.bksoft.questionbank.api.models.AssessmentSubmissionRequest;
 import com.bksoft.questionbank.entities.AssessmentSubmission;
+import com.bksoft.questionbank.entities.QuestionEntity;
 import com.bksoft.questionbank.entities.QuestionResponse;
 import com.bksoft.questionbank.repositories.AssessmentSubmissionRepository;
+import com.bksoft.questionbank.repositories.QuestionRepository;
+import jakarta.persistence.EntityNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 @Transactional
 public class AssessmentSubmissionService {
 
+    private final QuestionRepository questionRepository;
     private final AssessmentSubmissionRepository submissionRepo;
 
-    public AssessmentSubmissionService(AssessmentSubmissionRepository submissionRepo) {
+    public AssessmentSubmissionService(AssessmentSubmissionRepository submissionRepo, QuestionRepository questionRepository) {
         this.submissionRepo = submissionRepo;
+        this.questionRepository = questionRepository;
     }
 
     public AssessmentSubmission submit(AssessmentSubmissionRequest request) {
-
-        // ⚠️ In real life, fetch correct answers from DB
-        int total = request.answers.size();
+        int total = request.questionAnswers.size();
         int correct = 0;
 
         AssessmentSubmission submission = new AssessmentSubmission();
@@ -36,13 +42,15 @@ public class AssessmentSubmissionService {
 
         List<QuestionResponse> responses = new ArrayList<>();
 
-        for (var ans : request.answers) {
-            boolean isCorrect = evaluateAnswer(ans.questionId, ans.selectedAnswer);
+        for (var qna : request.questionAnswers) {
+            QuestionEntity q = questionRepository.findById(qna.questionId).orElseThrow(() -> new EntityNotFoundException("Question not found"));
+            boolean isCorrect = evaluateAnswer(List.of(q.getCorrectOption()), qna.selectedAnswers);
+
             if (isCorrect) correct++;
 
             QuestionResponse r = new QuestionResponse();
-            r.setQuestionId(ans.questionId);
-            r.setSelectedAnswer(ans.selectedAnswer);
+            r.setQuestionId(qna.questionId);
+            r.setSelectedAnswer(qna.selectedAnswers.get(0));
             r.setCorrect(isCorrect);
             r.setSubmission(submission);
 
@@ -57,8 +65,17 @@ public class AssessmentSubmissionService {
         return submissionRepo.save(submission);
     }
 
-    private boolean evaluateAnswer(Long questionId, String answer) {
-        // placeholder logic
-        return "A".equalsIgnoreCase(answer);
+    private boolean evaluateAnswer(List<String> correctAnswers, List<String> selectedAnswers) {
+        if (correctAnswers == null || selectedAnswers == null) {
+            return false;
+        }
+        if (correctAnswers.size() != selectedAnswers.size()) {
+            return false;
+        }
+        Set<String> correctSet = correctAnswers.stream().map(String::toLowerCase).collect(Collectors.toSet());
+
+        Set<String> selectedSet = selectedAnswers.stream().map(String::toLowerCase).collect(Collectors.toSet());
+
+        return correctSet.equals(selectedSet);
     }
 }
