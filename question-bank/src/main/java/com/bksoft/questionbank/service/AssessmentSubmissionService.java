@@ -97,15 +97,16 @@ public class AssessmentSubmissionService {
         submittedAnswerDetail.correctAnswers = res.getCorrectAnswers();
         submittedAnswerDetail.submittedAt = res.getSubmittedAt();
 
-        SubmittedAnswerDetail.QuestionAnswer qa = new SubmittedAnswerDetail.QuestionAnswer();
-        QuestionEntity q = questionRepository.findById(res.getResponses().get(0).getQuestionId()).orElseThrow(() -> new EntityNotFoundException("Question not found"));
-        qa.questionId = res.getResponses().get(0).getQuestionId();
-        qa.questionText = q.getQuestion();
-        qa.correctAnswers = List.of(q.getCorrectAnswer());
-        qa.questionType = res.getResponses().get(0).getQuestionType();
-        qa.selectedAnswers = res.getResponses().get(0).getSelectedAnswers();
-        submittedAnswerDetail.questionAnswers = List.of(qa);
-
+        for (QuestionResponse qr : res.getResponses()) {
+            SubmittedAnswerDetail.QuestionAnswer qa = new SubmittedAnswerDetail.QuestionAnswer();
+            QuestionEntity q = questionRepository.findById(qr.getQuestionId()).orElseThrow(() -> new EntityNotFoundException("Question not found"));
+            qa.questionId = qr.getQuestionId();
+            qa.questionText = q.getQuestion();
+            qa.correctAnswers = List.of(q.getCorrectAnswer());
+            qa.questionType = qr.getQuestionType();
+            qa.selectedAnswers = qr.getSelectedAnswers();
+            submittedAnswerDetail.questionAnswers.add(qa);
+        }
         return submittedAnswerDetail;
     }
 

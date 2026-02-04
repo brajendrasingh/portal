@@ -29,7 +29,7 @@ export class QuestionServiceService {
     // return this.http.get<AnswerSubmission[]>(`${environment.apiUrl}/qbs/assessment/result/${userId}/${assessmentId}/${attemptNo}`);
   }
 
-  getResultByAssessmentId(userId: string, assessmentId: string, attemptNo: number): Observable<any[]> {
+  getResultByAssessmentId(userId: string, assessmentId: string, attemptNo: number): Observable<any> {
     let params = new HttpParams();
     if (assessmentId) {
       params = params.set('assessmentId', assessmentId);
@@ -40,7 +40,7 @@ export class QuestionServiceService {
     if (attemptNo !== null && attemptNo !== undefined) {
       params = params.set('attemptNo', attemptNo.toString());
     }
-    return this.http.get<any[]>(`${environment.apiUrl}/qbs/assessment/submissions`, { params });
+    return this.http.get<any>(`${environment.apiUrl}/qbs/assessment/submittedAnswerDetail`, { params });
   }
 
   getAllResults(): Observable<any[]> {

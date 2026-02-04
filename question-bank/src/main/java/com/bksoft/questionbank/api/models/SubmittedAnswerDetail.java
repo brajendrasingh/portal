@@ -1,6 +1,7 @@
 package com.bksoft.questionbank.api.models;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SubmittedAnswerDetail {
@@ -11,7 +12,7 @@ public class SubmittedAnswerDetail {
     public Integer correctAnswers;
     public Integer totalQuestions;
     public LocalDateTime submittedAt;
-    public List<QuestionAnswer> questionAnswers;
+    public List<QuestionAnswer> questionAnswers = new ArrayList<>();
 
     public static class QuestionAnswer {
         public String questionId;

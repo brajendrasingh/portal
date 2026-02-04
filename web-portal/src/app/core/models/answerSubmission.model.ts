@@ -6,7 +6,7 @@ export interface AnswerSubmission {
     questionType: string;
     // selected by user
     selectedAnswers?: string[];
-    correctAnswer?: string;
+    correctAnswers?: string[];
     userId?: string;
     assessmentId?: string;
     attemptNo?: number;
