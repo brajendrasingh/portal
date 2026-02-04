@@ -28,7 +28,7 @@
                 </td>
                 <td>{{ r.submittedAt | date:'dd MMM yyyy, hh:mm a' }}</td>
                 <td>
-                    <button class="btn-view" [routerLink]="['/result', r.userId, r.assessmentName, r.attemptNo]"> View </button>
+                    <button class="btn-view" [routerLink]="['/result', r.userId, r.assessmentId, r.attemptNo]"> View </button>
                 </td>
             </tr>
         </tbody>

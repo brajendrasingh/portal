@@ -20,10 +20,9 @@ public class AssessmentSubmissionController {
         return ResponseEntity.ok(service.submit(request));
     }
 
-    @GetMapping("/submission")
-    public ResponseEntity<?> getSubmission(@RequestParam String userId, @RequestParam String assessmentId, @RequestParam(required = false) Integer attemptNo) {
-        return ResponseEntity.ok(service.getSubmission(userId, assessmentId, attemptNo)
-        );
+    @GetMapping("/submittedAnswerDetail")
+    public ResponseEntity<?> getSubmittedAnswerDetail(@RequestParam String assessmentId, @RequestParam(required = false) String userId, @RequestParam(required = false) Integer attemptNo) {
+        return ResponseEntity.ok(service.getSubmittedAnswerDetail(userId, assessmentId, attemptNo));
     }
 
     @GetMapping("/submissions")

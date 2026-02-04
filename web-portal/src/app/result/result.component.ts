@@ -32,13 +32,12 @@ export class ResultComponent {
   }
 
   loadResults(): void {
-    this.questionService.getResult(this.userId, this.assessmentId, this.attemptNo).subscribe({
-      next: (response: AnswerSubmission[]) => {
-        this.questions = response || [];
-
+    this.questionService.getResultByAssessmentId(this.userId, this.assessmentId, this.attemptNo).subscribe({
+      next: (response: any[]) => {
+        this.questions = response[0].responses || [];
         // Calculate summary values
-        this.totalQuestions = this.questions.length;
-        this.correctAnswers = this.questions.filter(q => q.selectedAnswers === q.correctAnswer).length;
+        this.totalQuestions = response[0].totalQuestions;
+        this.correctAnswers = response[0].correctAnswers;
       },
       error: () => {
         alert('Failed to load assessment results. Please try again.');

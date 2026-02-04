@@ -1,6 +1,7 @@
 package com.bksoft.questionbank.service;
 
 import com.bksoft.questionbank.api.models.AssessmentSubmissionRequest;
+import com.bksoft.questionbank.api.models.SubmittedAnswerDetail;
 import com.bksoft.questionbank.entities.AssessmentSubmission;
 import com.bksoft.questionbank.entities.QuestionEntity;
 import com.bksoft.questionbank.entities.QuestionResponse;
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -34,7 +36,7 @@ public class AssessmentSubmissionService {
 
         AssessmentSubmission submission = new AssessmentSubmission();
         submission.setUserId(request.userId);
-        submission.setAssessmentId(request.assessmentId);
+        submission.setAssessmentId(UUID.randomUUID().toString().replace("-", ""));
         submission.setAttemptNo(request.attemptNo);
         submission.setTimeTakenSeconds(request.timeTakenSeconds);
         submission.setSubmittedAt(LocalDateTime.now());
@@ -83,15 +85,28 @@ public class AssessmentSubmissionService {
         return correctSet.equals(selectedSet);
     }
 
-    public AssessmentSubmission getSubmission(String userId, String assessmentId, Integer attemptNo) {
-        if (attemptNo != null) {
-            return submissionRepo.findByUserIdAndAssessmentIdAndAttemptNo(userId, assessmentId, attemptNo)
-                    .orElseThrow(() -> new RuntimeException("Submission not found"));
-        }
+    public SubmittedAnswerDetail getSubmittedAnswerDetail(String userId, String assessmentId, Integer attemptNo) {
+        SubmittedAnswerDetail submittedAnswerDetail = new SubmittedAnswerDetail();
+        AssessmentSubmission res = submissionRepo.findByAssessmentId(assessmentId).get(0);
 
-        // latest attempt
-        return submissionRepo.findTopByUserIdAndAssessmentIdOrderByAttemptNoDesc(userId, assessmentId)
-                .orElseThrow(() -> new RuntimeException("Submission not found"));
+        submittedAnswerDetail.userId = res.getUserId();
+        submittedAnswerDetail.assessmentId = res.getAssessmentId();
+        submittedAnswerDetail.timeTakenSeconds = res.getTimeTakenSeconds();
+        submittedAnswerDetail.attemptNo = res.getAttemptNo();
+        submittedAnswerDetail.totalQuestions = res.getTotalQuestions();
+        submittedAnswerDetail.correctAnswers = res.getCorrectAnswers();
+        submittedAnswerDetail.submittedAt = res.getSubmittedAt();
+
+        SubmittedAnswerDetail.QuestionAnswer qa = new SubmittedAnswerDetail.QuestionAnswer();
+        QuestionEntity q = questionRepository.findById(res.getResponses().get(0).getQuestionId()).orElseThrow(() -> new EntityNotFoundException("Question not found"));
+        qa.questionId = res.getResponses().get(0).getQuestionId();
+        qa.questionText = q.getQuestion();
+        qa.correctAnswers = List.of(q.getCorrectAnswer());
+        qa.questionType = res.getResponses().get(0).getQuestionType();
+        qa.selectedAnswers = res.getResponses().get(0).getSelectedAnswers();
+        submittedAnswerDetail.questionAnswers = List.of(qa);
+
+        return submittedAnswerDetail;
     }
 
     public List<AssessmentSubmission> getAllSubmissions(String userId, String assessmentId) {
