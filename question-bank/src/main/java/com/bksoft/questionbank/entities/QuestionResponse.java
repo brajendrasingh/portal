@@ -1,5 +1,6 @@
 package com.bksoft.questionbank.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,5 +24,6 @@ public class QuestionResponse {
 
     @ManyToOne
     @JoinColumn(name = "submission_id")
+    @JsonBackReference //For fixing exception of nested json
     private AssessmentSubmission submission;
 }

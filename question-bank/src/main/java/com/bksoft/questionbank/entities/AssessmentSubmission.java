@@ -1,5 +1,6 @@
 package com.bksoft.questionbank.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -34,6 +35,7 @@ public class AssessmentSubmission {
     private LocalDateTime evaluatedAt;
 
     @OneToMany(mappedBy = "submission", cascade = CascadeType.ALL)
+    @JsonManagedReference //For fixing exception of nested json
     private List<QuestionResponse> responses;
 
     public enum Status {
