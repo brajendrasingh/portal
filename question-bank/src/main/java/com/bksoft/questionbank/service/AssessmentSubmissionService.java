@@ -36,6 +36,7 @@ public class AssessmentSubmissionService {
         AssessmentSubmission submission = new AssessmentSubmission();
         submission.setUserId(request.userId);
         submission.setAssessmentId(request.assessmentId);
+        submission.setAttemptNo(request.attemptNo);
         submission.setTimeTakenSeconds(request.timeTakenSeconds);
         submission.setSubmittedAt(LocalDateTime.now());
         submission.setStatus(AssessmentSubmission.Status.EVALUATED);
@@ -44,13 +45,14 @@ public class AssessmentSubmissionService {
 
         for (var qna : request.questionAnswers) {
             QuestionEntity q = questionRepository.findById(qna.questionId).orElseThrow(() -> new EntityNotFoundException("Question not found"));
-            boolean isCorrect = evaluateAnswer(List.of(q.getCorrectOption()), qna.selectedAnswers);
+            boolean isCorrect = evaluateAnswer(List.of(q.getCorrectAnswer()), qna.selectedAnswers);
 
             if (isCorrect) correct++;
 
             QuestionResponse r = new QuestionResponse();
             r.setQuestionId(qna.questionId);
-            r.setSelectedAnswer(qna.selectedAnswers.get(0));
+            r.setQuestionType(qna.questionType);
+            r.setSelectedAnswers(qna.selectedAnswers);
             r.setCorrect(isCorrect);
             r.setSubmission(submission);
 
@@ -60,6 +62,9 @@ public class AssessmentSubmissionService {
         submission.setTotalQuestions(total);
         submission.setCorrectAnswers(correct);
         submission.setScore(correct * 1); // customize scoring
+        submission.setPassed(true);
+        submission.setEvaluatedBy("AUTO");
+        submission.setEvaluatedAt(LocalDateTime.now());
         submission.setResponses(responses);
 
         return submissionRepo.save(submission);

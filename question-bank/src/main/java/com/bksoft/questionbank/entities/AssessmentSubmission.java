@@ -19,17 +19,19 @@ public class AssessmentSubmission {
 
     private Long userId;
     private Long assessmentId;
-
+    public Integer attemptNo;
     private Integer totalQuestions;
     private Integer correctAnswers;
     private Integer score;
-
+    private Boolean passed;
     private Integer timeTakenSeconds;
 
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    private String evaluatedBy;
     private LocalDateTime submittedAt;
+    private LocalDateTime evaluatedAt;
 
     @OneToMany(mappedBy = "submission", cascade = CascadeType.ALL)
     private List<QuestionResponse> responses;

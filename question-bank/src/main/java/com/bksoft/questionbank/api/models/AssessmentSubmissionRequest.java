@@ -13,8 +13,8 @@ public class AssessmentSubmissionRequest {
 
     public static class QuestionAnswer {
         public String questionId;
-        private String questionText;
-        private List<String> answerOptions;
+        public String questionText;
+        public List<String> answerOptions;
         public String questionType;
         public List<String> correctAnswers;
         public List<String> selectedAnswers;
