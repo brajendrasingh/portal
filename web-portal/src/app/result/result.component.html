@@ -50,14 +50,14 @@
           <p class="review-answer">
             <strong>Your Answer:</strong>
             <span
-              [ngClass]="q.selectedAnswer === q.correctAnswer ? 'correct' : 'wrong'">
-              {{ q.selectedAnswer || 'Not Answered' }}
+              [ngClass]="q.selectedAnswers === q.correctAnswer ? 'correct' : 'wrong'">
+              {{ q.selectedAnswers || 'Not Answered' }}
             </span>
           </p>
   
           <p
             class="review-correct"
-            *ngIf="q.selectedAnswer !== q.correctAnswer">
+            *ngIf="q.selectedAnswers !== q.correctAnswer">
             <strong>Correct Answer:</strong> {{ q.correctAnswer }}
           </p>
   

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Question } from '../../core/models/question.model';
+import { AssessmentSubmissionPayload } from '../../core/models/assessmentSubmissionPayload.model';
 import { AnswerSubmission } from '../../core/models/answerSubmission.model';
 import { environment } from '../../../environments/environment';
 
@@ -18,8 +19,8 @@ export class QuestionServiceService {
     // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`);
   }
 
-  submitAssessment(payload: AnswerSubmission[]) {
-    return this.http.post<AnswerSubmission[]>(`${environment.apiUrl}/qbs/assessment/submit`, payload);
+  submitAssessment(payload: AssessmentSubmissionPayload) {
+    return this.http.post<AssessmentSubmissionPayload>(`${environment.apiUrl}/qbs/assessment/submit`, payload);
   }
 
   getResult(userId: string, assessmentId: string, attemptNo: number): Observable<AnswerSubmission[]> {

@@ -3,9 +3,9 @@ export interface AnswerSubmission {
     questionId: number;
     questionText: string;
     answerOptions: string[];
-
+    questionType: string;
     // selected by user
-    selectedAnswer?: string | null;
+    selectedAnswers?: string[];
     correctAnswer?: string;
     userId?: string;
     assessmentId?: string;

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Question } from '../core/models/question.model';
 import { QuestionServiceService } from './../core/services/question-service.service';
 import { AnswerSubmission } from '../core/models/answerSubmission.model';
-
+import { AssessmentSubmissionPayload } from '../core/models/assessmentSubmissionPayload.model'
 @Component({
   selector: 'app-assessment',
   standalone: false,
@@ -76,16 +76,27 @@ export class AssessmentComponent implements OnInit, OnDestroy {
     }
   }
 
-  prepareSubmissionPayload(): AnswerSubmission[] {
-    return this.questions.map(q => ({
+  prepareSubmissionPayload(): AssessmentSubmissionPayload {
+
+    const questionAnswers: AnswerSubmission[] = this.questions.map(q => ({
       questionId: q.questionId,
       questionText: q.questionText,
       answerOptions: q.answerOptions,
-      selectedAnswer: q.selectedIndex !== undefined ? q.answerOptions[q.selectedIndex] : null
+      selectedAnswers: q.selectedIndex !== undefined ? [q.answerOptions[q.selectedIndex]] : [],
+      questionType: 'MCQ'
     }));
+
+    return {
+      userId: "anonymous",
+      assessmentId: "123458",
+      attemptNo: 1,
+      timeTakenSeconds: 3600,
+      submissionStatus: 'submitted',
+      questionAnswers
+    };
   }
 
-  submitToBackend(payload: AnswerSubmission[]): void {
+  submitToBackend(payload: AssessmentSubmissionPayload): void {
     this.questionServiceService.submitAssessment(payload).subscribe({
       next: () => { console.log("answer submitted successfully"); },
       error: () => { console.log("answer submition failed"); }

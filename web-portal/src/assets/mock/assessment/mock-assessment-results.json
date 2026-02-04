@@ -9,7 +9,7 @@
 		"Indore",
 		"Mumbai"
 	  ],
-	  "selectedAnswer": "Delhi",
+	  "selectedAnswers": ["Delhi"],
 	  "correctAnswer": "Delhi"
 	},
 	{
@@ -21,7 +21,7 @@
 		"Backend framework",
 		"Operating System"
 	  ],
-	  "selectedAnswer": "Frontend framework",
+	  "selectedAnswers": ["Frontend framework"],
 	  "correctAnswer": "Frontend framework"
 	},
 	{
@@ -33,7 +33,7 @@
 		"*ngSwitch",
 		"*ngLoop"
 	  ],
-	  "selectedAnswer": "*ngFor",
+	  "selectedAnswers": ["*ngFor"],
 	  "correctAnswer": "*ngFor"
 	},
 	{
@@ -45,7 +45,7 @@
 		"TypeScript",
 		"C++"
 	  ],
-	  "selectedAnswer": "TypeScript",
+	  "selectedAnswers": ["TypeScript"],
 	  "correctAnswer": "TypeScript"
 	},
 	{
@@ -57,7 +57,7 @@
 		  "TypeScript",
 		  "C++"
 		],
-		"selectedAnswer": "TypeScript",
+		"selectedAnswers": ["TypeScript"],
 		"correctAnswer": "Java"
 	},
 	{
@@ -70,7 +70,7 @@
 			"Indore",
 			"Mumbai"
 		],
-		"selectedAnswer": null,
+		"selectedAnswers": null,
 		"correctAnswer": "Lucknow"
 	},
 	{

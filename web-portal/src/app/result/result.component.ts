@@ -38,7 +38,7 @@ export class ResultComponent {
 
         // Calculate summary values
         this.totalQuestions = this.questions.length;
-        this.correctAnswers = this.questions.filter(q => q.selectedAnswer === q.correctAnswer).length;
+        this.correctAnswers = this.questions.filter(q => q.selectedAnswers === q.correctAnswer).length;
       },
       error: () => {
         alert('Failed to load assessment results. Please try again.');
