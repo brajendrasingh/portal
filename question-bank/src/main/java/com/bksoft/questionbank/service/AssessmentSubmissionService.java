@@ -7,7 +7,6 @@ import com.bksoft.questionbank.entities.QuestionResponse;
 import com.bksoft.questionbank.repositories.AssessmentSubmissionRepository;
 import com.bksoft.questionbank.repositories.QuestionRepository;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -82,5 +81,33 @@ public class AssessmentSubmissionService {
         Set<String> selectedSet = selectedAnswers.stream().map(String::toLowerCase).collect(Collectors.toSet());
 
         return correctSet.equals(selectedSet);
+    }
+
+    public AssessmentSubmission getSubmission(String userId, String assessmentId, Integer attemptNo) {
+        if (attemptNo != null) {
+            return submissionRepo.findByUserIdAndAssessmentIdAndAttemptNo(userId, assessmentId, attemptNo)
+                    .orElseThrow(() -> new RuntimeException("Submission not found"));
+        }
+
+        // latest attempt
+        return submissionRepo.findTopByUserIdAndAssessmentIdOrderByAttemptNoDesc(userId, assessmentId)
+                .orElseThrow(() -> new RuntimeException("Submission not found"));
+    }
+
+    public List<AssessmentSubmission> getAllSubmissions(String userId, String assessmentId) {
+
+        if (userId != null && assessmentId != null) {
+            return submissionRepo.findByUserIdAndAssessmentId(userId, assessmentId);
+        }
+
+        if (userId != null) {
+            return submissionRepo.findByUserId(userId);
+        }
+
+        if (assessmentId != null) {
+            return submissionRepo.findByAssessmentId(assessmentId);
+        }
+
+        return submissionRepo.findAll();
     }
 }

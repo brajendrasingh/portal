@@ -18,8 +18,8 @@ public class AssessmentSubmission {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long userId;
-    private Long assessmentId;
+    private String userId;
+    private String assessmentId;
     public Integer attemptNo;
     private Integer totalQuestions;
     private Integer correctAnswers;

@@ -4,8 +4,8 @@ import java.util.List;
 
 public class AssessmentSubmissionRequest {
 
-    public Long userId;
-    public Long assessmentId;
+    public String userId;
+    public String assessmentId;
     public Integer timeTakenSeconds;
     public Integer attemptNo;
     public String submissionStatus;
