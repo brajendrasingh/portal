@@ -16,7 +16,13 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "NA"
+		"explanation": "NA",
+		"tags": [
+			"GS",
+			"History",
+			"Govt",
+			"GeneralKnowledge"
+		]
 	},
 	{
 		"questionId": 2,
@@ -34,7 +40,13 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "NA"
+		"explanation": "NA",
+		"tags": [
+			"Angular",
+			"UI",
+			"Frontend",
+			"Tech"
+		]
 	},
 	{
 		"questionId": 3,
@@ -51,8 +63,13 @@
 		"topic": "Angular",
 		"category": "MCQ",
 		"difficulty": "EASY",
-		"marks": 1,
-		"explanation": "NA"
+		"explanation": "NA",
+		"tags": [
+			"Angular",
+			"Directives",
+			"UI",
+			"Tech"
+		]
 	},
 	{
 		"questionId": 4,
@@ -70,7 +87,13 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "NA"
+		"explanation": "NA",
+		"tags": [
+			"Angular",
+			"TypeScript",
+			"Frontend",
+			"Tech"
+		]
 	},
 	{
 		"questionId": "101",
@@ -89,7 +112,13 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "12 multiplied by 8 equals 96."
+		"explanation": "12 multiplied by 8 equals 96.",
+		"tags": [
+			"Math",
+			"Arithmetic",
+			"Calculation",
+			"Govt"
+		]
 	},
 	{
 		"questionId": "102",
@@ -108,7 +137,13 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "12 × 12 = 144."
+		"explanation": "12 × 12 = 144.",
+		"tags": [
+			"Math",
+			"Roots",
+			"Govt",
+			"Basics"
+		]
 	},
 	{
 		"questionId": "103",
@@ -127,7 +162,12 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "x = 40 − 15 = 25."
+		"explanation": "x = 40 − 15 = 25.",
+		"tags": [
+			"Math",
+			"Algebra",
+			"Govt"
+		]
 	},
 	{
 		"questionId": "104",
@@ -146,7 +186,13 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "Perimeter of a square = 4 × side = 4 × 5 = 20 cm."
+		"explanation": "Perimeter of a square = 4 × side = 20 cm.",
+		"tags": [
+			"Math",
+			"Mensuration",
+			"Geometry",
+			"Govt"
+		]
 	},
 	{
 		"questionId": "105",
@@ -165,7 +211,13 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "MEDIUM",
-		"explanation": "23 has only two factors: 1 and itself."
+		"explanation": "23 has only two factors.",
+		"tags": [
+			"Math",
+			"NumberSystem",
+			"Prime",
+			"Govt"
+		]
 	},
 	{
 		"questionId": "201",
@@ -184,7 +236,12 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "Nitrogen makes up about 78% of the Earth's atmosphere."
+		"explanation": "Nitrogen makes up about 78% of the Earth's atmosphere.",
+		"tags": [
+			"Science",
+			"Geography",
+			"Govt"
+		]
 	},
 	{
 		"questionId": "202",
@@ -203,7 +260,12 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "The symbol Na comes from the Latin name 'Natrium'."
+		"explanation": "Na comes from Natrium.",
+		"tags": [
+			"Science",
+			"Chemistry",
+			"Govt"
+		]
 	},
 	{
 		"questionId": "203",
@@ -222,7 +284,12 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "Leaves contain chlorophyll which helps in photosynthesis."
+		"explanation": "Leaves contain chlorophyll.",
+		"tags": [
+			"Science",
+			"Biology",
+			"Govt"
+		]
 	},
 	{
 		"questionId": "204",
@@ -241,7 +308,12 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "EASY",
-		"explanation": "Mars appears red due to the presence of iron oxide on its surface."
+		"explanation": "Iron oxide gives Mars its red color.",
+		"tags": [
+			"Science",
+			"Space",
+			"Govt"
+		]
 	},
 	{
 		"questionId": "205",
@@ -260,6 +332,11 @@
 		"category": "MCQ",
 		"marks": 1,
 		"difficulty": "MEDIUM",
-		"explanation": "Electric current is measured in amperes (A)."
+		"explanation": "Electric current is measured in amperes (A).",
+		"tags": [
+			"Science",
+			"Physics",
+			"Govt"
+		]
 	}
 ]

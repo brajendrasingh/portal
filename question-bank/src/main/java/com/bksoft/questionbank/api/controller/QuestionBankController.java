@@ -2,18 +2,18 @@ package com.bksoft.questionbank.api.controller;
 
 import com.bksoft.questionbank.api.mapper.QuestionMapper;
 import com.bksoft.questionbank.api.models.Question;
+import com.bksoft.questionbank.api.response.ApiResponse;
+import com.bksoft.questionbank.api.response.Meta;
 import com.bksoft.questionbank.service.QuestionBankService;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 public class QuestionBankController {
@@ -41,6 +41,21 @@ public class QuestionBankController {
 		log.info("Fetch questions by filters");
 		List<Question> questions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestions(examType, subject, questionsType, difficulty));
 		return ResponseEntity.ok().body(questions);
+	}
+
+	@RequestMapping(value = "/v1/questions", method = RequestMethod.GET)
+	public ResponseEntity<ApiResponse> getQuestionsV1(@RequestParam(required = false) String examType, @RequestParam(required = false) List<String> subjects, @RequestParam(required = false) String questionsType, @RequestParam(required = false) String difficulty) {
+		log.info("Fetch list of questions by filters");
+		List<Question> mathQuestions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestions(examType, subjects.get(0), questionsType, difficulty));
+		ApiResponse<Map<String, List<Question>>> response = new ApiResponse<>();
+		Map<String, List<Question>> map = new HashMap<>();
+		map.put("Math", mathQuestions);
+
+		List<Question> gsQuestions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestions(examType, subjects.get(1), questionsType, difficulty));
+		map.put("GS", gsQuestions);
+		response.setData(map);
+		response.setMeta(new Meta(subjects.size(), mathQuestions.size() + mathQuestions.size(), 1, 10));
+		return ResponseEntity.ok().body(response);
 	}
 
 	@RequestMapping(value = "/questions", method = RequestMethod.POST)

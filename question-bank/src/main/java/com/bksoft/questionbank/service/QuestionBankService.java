@@ -38,7 +38,7 @@ public class QuestionBankService {
 		List<com.bksoft.questionbank.dtos.Question> questions = QuestionEntityMapper.INSTANCE.convertToDtosQuestion(questionRepository.findAll());
 		List<Question> filteredResponse = new ArrayList<>();
 		for (Question question : questions) {
-			if (question.getTags().contains(examType) || question.getSubject().equals(subject) || question.getCategory().name().equals(questionsType) || question.getDifficulty().name().equals(difficulty)) {
+			if ((question.getTags() != null && question.getTags().contains(examType)) || question.getSubject().equals(subject) || question.getCategory().name().equals(questionsType) || question.getDifficulty().name().equals(difficulty)) {
 				filteredResponse.add(question);
 			}
 		}
