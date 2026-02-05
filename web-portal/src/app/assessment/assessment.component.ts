@@ -92,7 +92,7 @@ export class AssessmentComponent implements OnInit, OnDestroy, OnChanges {
       questionId: q.questionId,
       questionText: q.questionText,
       answerOptions: q.answerOptions,
-      selectedAnswers: q.selectedIndex !== undefined ? [q.answerOptions[q.selectedIndex]] : [],
+      selectedAnswers: q.selectedIndex != null ? [q.answerOptions[q.selectedIndex]] : [],
       questionType: 'MCQ'
     }));
 

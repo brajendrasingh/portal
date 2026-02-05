@@ -39,6 +39,11 @@ export class QuestionServiceService {
     // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`, { params });
   }
 
+  getV1Questions(): Observable<any> {
+    const mockurl = './../../../assets/mock/assessment/mock-assessment-v1-questions.json';
+    return this.http.get<Question[]>(mockurl);
+  }
+
   submitAssessment(payload: AssessmentSubmissionPayload) {
     return this.http.post<AssessmentSubmissionPayload>(`${environment.apiUrl}/qbs/assessment/submit`, payload);
   }

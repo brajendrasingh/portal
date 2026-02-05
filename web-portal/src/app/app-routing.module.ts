@@ -14,6 +14,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ResultComponent } from './result/result.component';
 import { AssessmentResultsDashboardComponent } from './assessment-results-dashboard/assessment-results-dashboard.component';
 import { AssessmentContainerComponent } from './assessment/assessment-container/assessment-container.component';
+import { QuestionAreaComponent } from './assessment/question-area/question-area.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signup', pathMatch: 'full' },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'addUser', component: AddUserComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'manageUser', component: ManageUsersComponent },
+  { path: 'assessments', component: QuestionAreaComponent, data: { hideGlobalLayoutForAssessmentPage: true } },
   { path: 'assessmentContainer', component: AssessmentContainerComponent },
   { path: 'result/:userId/:assessmentId/:attemptNo', component: ResultComponent },
   { path: 'resultsDashboard', component: AssessmentResultsDashboardComponent },
