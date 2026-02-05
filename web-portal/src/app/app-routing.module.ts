@@ -27,8 +27,8 @@ const routes: Routes = [
   { path: 'addUser', component: AddUserComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'manageUser', component: ManageUsersComponent },
-  { path: 'assessments', component: QuestionAreaComponent, data: { hideGlobalLayoutForAssessmentPage: true } },
-  { path: 'assessmentContainer', component: AssessmentContainerComponent },
+  // { path: 'assessments', component: QuestionAreaComponent, data: { hideGlobalLayoutForAssessmentPage: true } },
+  { path: 'assessmentContainer', component: AssessmentContainerComponent , data: { hideGlobalLayoutForAssessmentPage: true } },
   { path: 'result/:userId/:assessmentId/:attemptNo', component: ResultComponent },
   { path: 'resultsDashboard', component: AssessmentResultsDashboardComponent },
   { path: 'fileUpload', component: FileUploadComponent }

@@ -39,7 +39,12 @@ export class QuestionServiceService {
     // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`, { params });
   }
 
-  getV1Questions(): Observable<any> {
+  getV1Questions(filters?: {
+    examType: string;
+    subject: string;
+    questionType: string;
+    difficulty: string;
+  }): Observable<any> {
     const mockurl = './../../../assets/mock/assessment/mock-assessment-v1-questions.json';
     return this.http.get<Question[]>(mockurl);
   }

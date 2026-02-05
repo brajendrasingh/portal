@@ -51,7 +51,7 @@
             </p>
             <p class="review-answer">
                 <strong>Your Answer:</strong>
-                {{ q.selectedIndex !== undefined ? q.answerOptions[q.selectedIndex] : 'Not Answered' }}
+                {{ q.selectedIndex != null ? q.answerOptions[q.selectedIndex] : 'Not Answered' }}
             </p>
             <p class="review-correct" *ngIf="q.correctOption !== undefined">
                 <strong>Correct Answer:</strong> {{ q.answerOptions[q.correctOption] }}

@@ -1,4 +1,5 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, OnChanges, Input, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { Question } from '../../core/models/question.model';
 import { QuestionServiceService } from './../../core/services/question-service.service';
 import { AnswerSubmission } from '../../core/models/answerSubmission.model';
@@ -22,9 +23,15 @@ interface AssessmentResponse {
   styleUrl: './question-area.component.css'
 })
 
-export class QuestionAreaComponent implements OnInit, OnDestroy {
+export class QuestionAreaComponent implements OnInit, OnDestroy, OnChanges {
+  @Input() filters!: {
+    examType: string;
+    subject: string;
+    questionType: string;
+    difficulty: string;
+  };
 
-  constructor(private questionServiceService: QuestionServiceService) { }
+  constructor(private router: Router, private questionServiceService: QuestionServiceService) { }
 
   /* ================= HEADER ================= */
   assessmentName = 'Science & Math Assessment';
@@ -46,14 +53,19 @@ export class QuestionAreaComponent implements OnInit, OnDestroy {
     this.loadAssessment();
     this.startTimer();
   }
-
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['filters'] && this.filters) {
+      console.log('Asses89898989smentComponent: Filters received:', this.filters);
+      this.loadAssessment();
+    }
+  }
   ngOnDestroy(): void {
     clearInterval(this.timer);
   }
 
   /* ================= LOAD JSON ================= */
   loadAssessment(): void {
-    this.questionServiceService.getV1Questions().subscribe({
+    this.questionServiceService.getV1Questions(this.filters).subscribe({
       next: (response: AssessmentResponse) => {
         this.sections = Object.keys(response.data).map(sectionName => ({
           sectionName,
@@ -127,7 +139,7 @@ export class QuestionAreaComponent implements OnInit, OnDestroy {
 
   hasAnyAnswer(): boolean {
     return this.sections.some(sec =>
-      sec.questions.some(q => q.selectedIndex !== null)
+      sec.questions.some(q => q.selectedIndex != null)
     );
   }
 
@@ -164,6 +176,7 @@ export class QuestionAreaComponent implements OnInit, OnDestroy {
     const payload = this.prepareSubmissionPayload();
     console.log("Final submission payload: ", payload);
     this.submitToBackend(payload);
+    this.router.navigate(['/dashboard']);
   }
 
   /* ================= For SUBMIT payload================= */
