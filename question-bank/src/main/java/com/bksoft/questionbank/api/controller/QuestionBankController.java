@@ -29,10 +29,17 @@ public class QuestionBankController {
 		return ResponseEntity.ok().body(question);
 	}
 
-	@RequestMapping(value = "/questions", method = RequestMethod.GET)
+	@RequestMapping(value = "/allQuestions", method = RequestMethod.GET)
 	public ResponseEntity<List<Question>> getAllQuestions(){
 		log.info("Fetch all questions");
 		List<Question> questions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getAllQuestions());
+		return ResponseEntity.ok().body(questions);
+	}
+
+	@RequestMapping(value = "/questions", method = RequestMethod.GET)
+	public ResponseEntity<List<Question>> getQuestions(@RequestParam String examType, @RequestParam String subjectOrExam, @RequestParam String questionsType, @RequestParam String difficulty){
+		log.info("Fetch all questions");
+		List<Question> questions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestions(examType, subjectOrExam, questionsType, difficulty));
 		return ResponseEntity.ok().body(questions);
 	}
 

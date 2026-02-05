@@ -1,15 +1,16 @@
 package com.bksoft.questionbank.service;
 
-import com.bksoft.questionbank.repositories.QuestionRepository;
 import com.bksoft.questionbank.dtos.Question;
 import com.bksoft.questionbank.entities.QuestionEntity;
+import com.bksoft.questionbank.repositories.QuestionRepository;
 import com.bksoft.questionbank.utils.QuestionEntityMapper;
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class QuestionBankService {
@@ -30,6 +31,18 @@ public class QuestionBankService {
 		List<com.bksoft.questionbank.dtos.Question> questions = QuestionEntityMapper.INSTANCE
 				.convertToDtosQuestion(questionRepository.findAll());
 		return questions;
+	}
+
+	public List<Question> getQuestions(String examType, String subjectOrExam, String questionsType, String difficulty) {
+		log.info("Fetch questions by filters");
+		List<com.bksoft.questionbank.dtos.Question> questions = QuestionEntityMapper.INSTANCE.convertToDtosQuestion(questionRepository.findAll());
+		List<Question> filteredResponse = new ArrayList<>();
+		for (Question question : questions) {
+			if (question.getCategory().equals(examType) || question.getCategory().equals(subjectOrExam) || question.getCategory().equals(questionsType) || question.getCategory().equals(difficulty)) {
+				filteredResponse.add(question);
+			}
+		}
+		return filteredResponse;
 	}
 
 	public String addQuestions(List<Question> questions) {
