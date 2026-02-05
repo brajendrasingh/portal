@@ -13,6 +13,7 @@ export class AssessmentContainerComponent {
   started = false;
 
   filters = {
+    examType: '',
     subject: '',
     questionType: '',
     difficulty: ''

@@ -10,18 +10,21 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class AssessmentSubjectSelectionComponentComponent {
 
   @Output() filterChange = new EventEmitter<{
+    examType: string;
     subject: string;
     questionType: string;
     difficulty: string;
   }>();
 
   @Output() startAssessment = new EventEmitter<{
+    examType: string;
     subject: string;
     questionType: string;
     difficulty: string;
   }>();
 
   filter = {
+    examType: '',
     subject: '',
     questionType: '',
     difficulty: ''

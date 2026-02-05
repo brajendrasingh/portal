@@ -1,11 +1,21 @@
 <div class="filter-page-center">
     <form class="gov-filter-card">
 
-        <h2 class="filter-title">Select Question Criteria</h2>
+        <h2 class="filter-title">Select Assessment Type</h2>
+        <!-- Exam Type -->
+        <div class="filter-row">
+            <label class="filter-label">Exam Type</label>
+            <select class="filter-select" [(ngModel)]="filter.examType" name="examType" (change)="onChange()">
+                <option value="">-- Select Exam Type --</option>
+                <option value="Govt">Govt.</option>
+                <option value="SubjectWise">Subject Wise</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
 
         <!-- Subject -->
         <div class="filter-row">
-            <label class="filter-label">Subject</label>
+            <label class="filter-label">Subject or Exam</label>
             <select class="filter-select" [(ngModel)]="filter.subject" name="subject" (change)="onChange()">
                 <option value="">-- Select Subject --</option>
                 <option value="Math">Mathematics</option>

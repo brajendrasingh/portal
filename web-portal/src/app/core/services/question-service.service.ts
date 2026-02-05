@@ -14,6 +14,7 @@ export class QuestionServiceService {
   constructor(private http: HttpClient) { }
 
   getQuestions(filters?: {
+    examType: string;
     subject: string;
     questionType: string;
     difficulty: string;
@@ -21,17 +22,19 @@ export class QuestionServiceService {
     const mockurl = './../../../assets/mock/assessment/mock-assessment-questions.json';
     return this.http.get<Question[]>(mockurl);
 
-    let params = new HttpParams();
-
-    if (filters?.subject) {
-      params = params.set('subject', filters.subject);
-    }
-    if (filters?.questionType) {
-      params = params.set('questionType', filters.questionType);
-    }
-    if (filters?.difficulty) {
-      params = params.set('difficulty', filters.difficulty);
-    }
+    // let params = new HttpParams();
+    // if (filters?.examType) {
+    //   params = params.set('examType', filters.examType);
+    // }
+    // if (filters?.subject) {
+    //   params = params.set('subject', filters.subject);
+    // }
+    // if (filters?.questionType) {
+    //   params = params.set('questionType', filters.questionType);
+    // }
+    // if (filters?.difficulty) {
+    //   params = params.set('difficulty', filters.difficulty);
+    // }
 
     // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`, { params });
   }
