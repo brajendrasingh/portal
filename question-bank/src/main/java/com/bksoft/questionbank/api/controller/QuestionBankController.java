@@ -44,17 +44,20 @@ public class QuestionBankController {
 	}
 
 	@RequestMapping(value = "/v1/questions", method = RequestMethod.GET)
-	public ResponseEntity<ApiResponse> getQuestionsV1(@RequestParam(required = false) String examType, @RequestParam(required = false) List<String> subjects, @RequestParam(required = false) String questionsType, @RequestParam(required = false) String difficulty) {
+	public ResponseEntity<ApiResponse<Map<String, List<Question>>>> getQuestionsV1(@RequestParam(required = false) String examType, @RequestParam(required = false) List<String> subjects, @RequestParam(required = false) String questionsType, @RequestParam(required = false) String difficulty) {
 		log.info("Fetch list of questions by filters");
-		List<Question> mathQuestions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestions(examType, subjects.get(0), questionsType, difficulty));
 		ApiResponse<Map<String, List<Question>>> response = new ApiResponse<>();
 		Map<String, List<Question>> map = new HashMap<>();
-		map.put("Math", mathQuestions);
-
-		List<Question> gsQuestions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestions(examType, subjects.get(1), questionsType, difficulty));
-		map.put("GS", gsQuestions);
+		int totalQuestions = 0;
+		if (subjects != null && !subjects.isEmpty()) {
+			for (String subject : subjects) {
+				List<Question> questions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestions(examType, subject, questionsType, difficulty));
+				map.put(subject, questions);
+				totalQuestions += questions.size();
+			}
+		}
 		response.setData(map);
-		response.setMeta(new Meta(subjects.size(), mathQuestions.size() + mathQuestions.size(), 1, 10));
+		response.setMeta(new Meta(subjects != null ? subjects.size() : 0, totalQuestions, 1, totalQuestions));
 		return ResponseEntity.ok().body(response);
 	}
 
