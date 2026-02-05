@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Question } from '../core/models/question.model';
 import { QuestionServiceService } from './../core/services/question-service.service';
 import { AnswerSubmission } from '../core/models/answerSubmission.model';
@@ -9,10 +9,14 @@ import { AssessmentSubmissionPayload } from '../core/models/assessmentSubmission
   templateUrl: './assessment.component.html',
   styleUrl: './assessment.component.css'
 })
-export class AssessmentComponent implements OnInit, OnDestroy {
+export class AssessmentComponent implements OnInit, OnDestroy, OnChanges {
 
   constructor(private questionServiceService: QuestionServiceService) { }
-
+  @Input() filters!: {
+    subject: string;
+    questionType: string;
+    difficulty: string;
+  };
   questions: Question[] = [];
   submitted = false;
   score = 0;
@@ -24,19 +28,24 @@ export class AssessmentComponent implements OnInit, OnDestroy {
     this.loadQuestions();
     this.startTimer();
   }
-
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['filters'] && this.filters) {
+      console.log('AssessmentComponent: Filters received:', this.filters);
+      this.loadQuestions();
+    }
+  }
   ngOnDestroy(): void {
     this.stopTimer(); // cleanup
   }
 
   loadQuestions(): void {
-    this.questionServiceService.getQuestions().subscribe(
-      (response) => {
+    this.questionServiceService.getQuestions(this.filters).subscribe({
+      next: (response) => {
         this.questions = response;
-      }, (error) => {
+      }, error: (error) => {
         alert('Get questions failed. Please try again.');
       }
-    );
+    });
   }
 
 

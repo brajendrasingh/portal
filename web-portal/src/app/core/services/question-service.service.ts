@@ -13,10 +13,27 @@ export class QuestionServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getQuestions(): Observable<Question[]> {
+  getQuestions(filters?: {
+    subject: string;
+    questionType: string;
+    difficulty: string;
+  }): Observable<Question[]> {
     const mockurl = './../../../assets/mock/assessment/mock-assessment-questions.json';
     return this.http.get<Question[]>(mockurl);
-    // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`);
+
+    let params = new HttpParams();
+
+    if (filters?.subject) {
+      params = params.set('subject', filters.subject);
+    }
+    if (filters?.questionType) {
+      params = params.set('questionType', filters.questionType);
+    }
+    if (filters?.difficulty) {
+      params = params.set('difficulty', filters.difficulty);
+    }
+
+    // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`, { params });
   }
 
   submitAssessment(payload: AssessmentSubmissionPayload) {

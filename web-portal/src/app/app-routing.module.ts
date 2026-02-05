@@ -5,15 +5,15 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import{DashboardComponent} from'./dashboard/dashboard.component';
-import{AuthGuard} from'./core/services/auth.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGuard } from './core/services/auth.guard';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
-import { AssessmentComponent } from './assessment/assessment.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ResultComponent } from './result/result.component';
 import { AssessmentResultsDashboardComponent } from './assessment-results-dashboard/assessment-results-dashboard.component';
+import { AssessmentContainerComponent } from './assessment/assessment-container/assessment-container.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signup', pathMatch: 'full' },
@@ -24,12 +24,12 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'profile', component: UserProfileComponent },
   { path: 'addUser', component: AddUserComponent },
-  { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'manageUser', component: ManageUsersComponent },
-  { path: 'assessment', component: AssessmentComponent },
+  { path: 'assessmentContainer', component: AssessmentContainerComponent },
   { path: 'result/:userId/:assessmentId/:attemptNo', component: ResultComponent },
   { path: 'resultsDashboard', component: AssessmentResultsDashboardComponent },
-  { path: 'fileUpload', component: FileUploadComponent}
+  { path: 'fileUpload', component: FileUploadComponent }
 ];
 
 @NgModule({

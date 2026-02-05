@@ -1,0 +1,38 @@
+import { Component, EventEmitter, Output } from '@angular/core';
+
+
+@Component({
+  selector: 'app-assessment-subject-selection-component',
+  standalone: false,
+  templateUrl: './assessment-subject-selection-component.component.html',
+  styleUrl: './assessment-subject-selection-component.component.css'
+})
+export class AssessmentSubjectSelectionComponentComponent {
+
+  @Output() filterChange = new EventEmitter<{
+    subject: string;
+    questionType: string;
+    difficulty: string;
+  }>();
+
+  @Output() startAssessment = new EventEmitter<{
+    subject: string;
+    questionType: string;
+    difficulty: string;
+  }>();
+
+  filter = {
+    subject: '',
+    questionType: '',
+    difficulty: ''
+  };
+
+  onChange() {
+    this.filterChange.emit({ ...this.filter });
+  }
+
+  startTest() {
+    console.log('AssessmentSubjectSelectionComponentComponent: Start Test clicked', this.filter);
+    this.startAssessment.emit({ ...this.filter });
+  }
+}
