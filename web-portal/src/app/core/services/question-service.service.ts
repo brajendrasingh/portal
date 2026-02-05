@@ -30,7 +30,7 @@ export class QuestionServiceService {
     //   params = params.set('subject', filters.subject);
     // }
     // if (filters?.questionType) {
-    //   params = params.set('questionType', filters.questionType);
+    //   params = params.set('questionsType', filters.questionType);
     // }
     // if (filters?.difficulty) {
     //   params = params.set('difficulty', filters.difficulty);

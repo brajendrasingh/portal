@@ -3,13 +3,17 @@ package com.bksoft.questionbank.api.models;
 
 import com.bksoft.questionbank.dtos.QuestionCategory;
 import com.bksoft.questionbank.dtos.QuestionDifficulty;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Builder
 @Getter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Question {
 
     private String questionId;
@@ -24,4 +28,5 @@ public class Question {
     private Integer marks;
     private QuestionDifficulty difficulty;
     private String explanation;
+    private List<String> tags;
 }

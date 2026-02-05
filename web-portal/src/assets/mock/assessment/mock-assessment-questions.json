@@ -71,5 +71,195 @@
 		"marks": 1,
 		"difficulty": "EASY",
 		"explanation": "NA"
+	},
+	{
+		"questionId": "101",
+		"questionText": "What is the value of 12 × 8?",
+		"answerOptions": [
+			"86",
+			"94",
+			"96",
+			"108",
+			"88"
+		],
+		"correctOption": 2,
+		"correctAnswer": "96",
+		"subject": "Math",
+		"topic": "Arithmetic",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "12 multiplied by 8 equals 96."
+	},
+	{
+		"questionId": "102",
+		"questionText": "What is the square root of 144?",
+		"answerOptions": [
+			"10",
+			"11",
+			"12",
+			"14",
+			"16"
+		],
+		"correctOption": 2,
+		"correctAnswer": "12",
+		"subject": "Math",
+		"topic": "Squares and Roots",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "12 × 12 = 144."
+	},
+	{
+		"questionId": "103",
+		"questionText": "If x + 15 = 40, what is the value of x?",
+		"answerOptions": [
+			"15",
+			"20",
+			"25",
+			"30",
+			"35"
+		],
+		"correctOption": 2,
+		"correctAnswer": "25",
+		"subject": "Math",
+		"topic": "Linear Equations",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "x = 40 − 15 = 25."
+	},
+	{
+		"questionId": "104",
+		"questionText": "What is the perimeter of a square with side length 5 cm?",
+		"answerOptions": [
+			"10 cm",
+			"15 cm",
+			"20 cm",
+			"25 cm",
+			"30 cm"
+		],
+		"correctOption": 2,
+		"correctAnswer": "20 cm",
+		"subject": "Math",
+		"topic": "Mensuration",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "Perimeter of a square = 4 × side = 4 × 5 = 20 cm."
+	},
+	{
+		"questionId": "105",
+		"questionText": "Which of the following is a prime number?",
+		"answerOptions": [
+			"9",
+			"15",
+			"21",
+			"23",
+			"27"
+		],
+		"correctOption": 3,
+		"correctAnswer": "23",
+		"subject": "Math",
+		"topic": "Number System",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"explanation": "23 has only two factors: 1 and itself."
+	},
+	{
+		"questionId": "201",
+		"questionText": "Which gas is most abundant in the Earth's atmosphere?",
+		"answerOptions": [
+			"Oxygen",
+			"Carbon Dioxide",
+			"Nitrogen",
+			"Hydrogen",
+			"Argon"
+		],
+		"correctOption": 2,
+		"correctAnswer": "Nitrogen",
+		"subject": "Science",
+		"topic": "Atmosphere",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "Nitrogen makes up about 78% of the Earth's atmosphere."
+	},
+	{
+		"questionId": "202",
+		"questionText": "What is the chemical symbol for Sodium?",
+		"answerOptions": [
+			"So",
+			"Sn",
+			"Na",
+			"Sd",
+			"Sa"
+		],
+		"correctOption": 2,
+		"correctAnswer": "Na",
+		"subject": "Science",
+		"topic": "Chemistry Basics",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "The symbol Na comes from the Latin name 'Natrium'."
+	},
+	{
+		"questionId": "203",
+		"questionText": "Which part of the plant is responsible for photosynthesis?",
+		"answerOptions": [
+			"Root",
+			"Stem",
+			"Leaf",
+			"Flower",
+			"Fruit"
+		],
+		"correctOption": 2,
+		"correctAnswer": "Leaf",
+		"subject": "Science",
+		"topic": "Biology",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "Leaves contain chlorophyll which helps in photosynthesis."
+	},
+	{
+		"questionId": "204",
+		"questionText": "Which planet is known as the Red Planet?",
+		"answerOptions": [
+			"Venus",
+			"Mars",
+			"Jupiter",
+			"Saturn",
+			"Mercury"
+		],
+		"correctOption": 1,
+		"correctAnswer": "Mars",
+		"subject": "Science",
+		"topic": "Astronomy",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "Mars appears red due to the presence of iron oxide on its surface."
+	},
+	{
+		"questionId": "205",
+		"questionText": "What is the SI unit of electric current?",
+		"answerOptions": [
+			"Volt",
+			"Ohm",
+			"Ampere",
+			"Watt",
+			"Coulomb"
+		],
+		"correctOption": 2,
+		"correctAnswer": "Ampere",
+		"subject": "Science",
+		"topic": "Physics",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"explanation": "Electric current is measured in amperes (A)."
 	}
 ]

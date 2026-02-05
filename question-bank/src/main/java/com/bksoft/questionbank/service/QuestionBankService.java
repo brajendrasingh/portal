@@ -33,12 +33,12 @@ public class QuestionBankService {
 		return questions;
 	}
 
-	public List<Question> getQuestions(String examType, String subjectOrExam, String questionsType, String difficulty) {
+	public List<Question> getQuestions(String examType, String subject, String questionsType, String difficulty) {
 		log.info("Fetch questions by filters");
 		List<com.bksoft.questionbank.dtos.Question> questions = QuestionEntityMapper.INSTANCE.convertToDtosQuestion(questionRepository.findAll());
 		List<Question> filteredResponse = new ArrayList<>();
 		for (Question question : questions) {
-			if (question.getCategory().equals(examType) || question.getCategory().equals(subjectOrExam) || question.getCategory().equals(questionsType) || question.getCategory().equals(difficulty)) {
+			if (question.getTags().contains(examType) || question.getSubject().equals(subject) || question.getCategory().name().equals(questionsType) || question.getDifficulty().name().equals(difficulty)) {
 				filteredResponse.add(question);
 			}
 		}

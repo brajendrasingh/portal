@@ -37,9 +37,9 @@ public class QuestionBankController {
 	}
 
 	@RequestMapping(value = "/questions", method = RequestMethod.GET)
-	public ResponseEntity<List<Question>> getQuestions(@RequestParam String examType, @RequestParam String subjectOrExam, @RequestParam String questionsType, @RequestParam String difficulty){
-		log.info("Fetch all questions");
-		List<Question> questions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestions(examType, subjectOrExam, questionsType, difficulty));
+	public ResponseEntity<List<Question>> getQuestions(@RequestParam(required = false) String examType, @RequestParam(required = false) String subject, @RequestParam(required = false) String questionsType, @RequestParam(required = false) String difficulty){
+		log.info("Fetch questions by filters");
+		List<Question> questions = QuestionMapper.INSTANCE.convertToApiQuestion(questionBankService.getQuestions(examType, subject, questionsType, difficulty));
 		return ResponseEntity.ok().body(questions);
 	}
 
