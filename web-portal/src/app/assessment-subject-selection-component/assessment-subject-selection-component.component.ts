@@ -32,22 +32,20 @@ export class AssessmentSubjectSelectionComponentComponent {
     questionType: '',
     difficulty: ''
   };
-  
+
   canSubmit = false;
   isGovtExam = false;
 
   onChange() {
     this.isGovtExam = this.filter.examType === 'Govt';
     if (this.isGovtExam) {
-      this.filter.examName = ''
       this.filter.subject = ''
       this.filter.questionType = ''
       this.filter.difficulty = ''
-      this.canSubmit = true;
+    } else {
+      this.filter.examName = '';
     }
-    else {
-      this.canSubmit = !!(this.filter.subject && this.filter.questionType && this.filter.difficulty);
-    }
+    this.canSubmit = this.isGovtExam ? !!this.filter.examName : !!(this.filter.subject && this.filter.questionType && this.filter.difficulty);
     this.filterChange.emit({ ...this.filter });
   }
 
