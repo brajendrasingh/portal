@@ -47,6 +47,21 @@ export class QuestionServiceService {
   }): Observable<any> {
     const mockurl = './../../../assets/mock/assessment/mock-assessment-v1-questions.json';
     return this.http.get<Question[]>(mockurl);
+    // let params = new HttpParams();
+    // if (filters?.examType) {
+    //   params = params.set('examType', filters.examType);
+    // }
+    // if (filters?.subject) {
+    //   params = params.set('subjects', filters.subject);
+    // }
+    // if (filters?.questionType) {
+    //   params = params.set('questionsType', filters.questionType);
+    // }
+    // if (filters?.difficulty) {
+    //   params = params.set('difficulty', filters.difficulty);
+    // }
+
+    // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/v1/questions`, { params });
   }
 
   submitAssessment(payload: AssessmentSubmissionPayload) {

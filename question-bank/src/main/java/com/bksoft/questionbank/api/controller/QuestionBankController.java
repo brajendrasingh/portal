@@ -46,6 +46,11 @@ public class QuestionBankController {
 	@RequestMapping(value = "/v1/questions", method = RequestMethod.GET)
 	public ResponseEntity<ApiResponse<Map<String, List<Question>>>> getQuestionsV1(@RequestParam(required = false) String examType, @RequestParam(required = false) List<String> subjects, @RequestParam(required = false) String questionsType, @RequestParam(required = false) String difficulty) {
 		log.info("Fetch list of questions by filters");
+		if (examType.equalsIgnoreCase("Govt")) {
+			subjects.addAll(List.of("English", "Math", "Science", "History"));
+			questionsType = "";
+			difficulty = "";
+		}
 		ApiResponse<Map<String, List<Question>>> response = new ApiResponse<>();
 		Map<String, List<Question>> map = new HashMap<>();
 		int totalQuestions = 0;
