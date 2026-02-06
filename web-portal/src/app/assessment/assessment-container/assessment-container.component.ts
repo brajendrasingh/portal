@@ -14,6 +14,7 @@ export class AssessmentContainerComponent {
 
   filters = {
     examType: '',
+    examName: '',
     subject: '',
     questionType: '',
     difficulty: ''

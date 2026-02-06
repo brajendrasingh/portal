@@ -26,6 +26,7 @@ interface AssessmentResponse {
 export class QuestionAreaComponent implements OnInit, OnDestroy, OnChanges {
   @Input() filters!: {
     examType: string;
+    examName: string;
     subject: string;
     questionType: string;
     difficulty: string;

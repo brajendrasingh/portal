@@ -12,10 +12,20 @@
                 <option value="Others">Others</option>
             </select>
         </div>
+        <!-- Exam Name -->
+        <div class="filter-row">
+            <label class="filter-label">Exam Name</label>
+            <select class="filter-select" [(ngModel)]="filter.examName" name="examName" [disabled]="!isGovtExam" (change)="onChange()">
+                <option value="">-- Select Exam Name --</option>
+                <option value="ssc">SSC</option>
+                <option value="upsc">UPSC</option>
+                <option value="railway">railway</option>
+            </select>
+        </div>
 
         <!-- Subject -->
         <div class="filter-row">
-            <label class="filter-label">Subject or Exam</label>
+            <label class="filter-label">Subject</label>
             <select class="filter-select" [(ngModel)]="filter.subject" name="subject" [disabled]="isGovtExam"
                 (change)="onChange()">
                 <option value="">-- Select Subject --</option>

@@ -11,6 +11,7 @@ export class AssessmentSubjectSelectionComponentComponent {
 
   @Output() filterChange = new EventEmitter<{
     examType: string;
+    examName: string;
     subject: string;
     questionType: string;
     difficulty: string;
@@ -18,6 +19,7 @@ export class AssessmentSubjectSelectionComponentComponent {
 
   @Output() startAssessment = new EventEmitter<{
     examType: string;
+    examName: string;
     subject: string;
     questionType: string;
     difficulty: string;
@@ -25,6 +27,7 @@ export class AssessmentSubjectSelectionComponentComponent {
 
   filter = {
     examType: '',
+    examName: '',
     subject: '',
     questionType: '',
     difficulty: ''
@@ -36,6 +39,7 @@ export class AssessmentSubjectSelectionComponentComponent {
   onChange() {
     this.isGovtExam = this.filter.examType === 'Govt';
     if (this.isGovtExam) {
+      this.filter.examName = ''
       this.filter.subject = ''
       this.filter.questionType = ''
       this.filter.difficulty = ''

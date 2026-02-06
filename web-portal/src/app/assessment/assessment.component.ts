@@ -14,6 +14,7 @@ export class AssessmentComponent implements OnInit, OnDestroy, OnChanges {
   constructor(private questionServiceService: QuestionServiceService) { }
   @Input() filters!: {
     examType: string;
+    examName: string;
     subject: string;
     questionType: string;
     difficulty: string;

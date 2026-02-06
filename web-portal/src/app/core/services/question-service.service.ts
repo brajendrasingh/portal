@@ -15,6 +15,7 @@ export class QuestionServiceService {
 
   getQuestions(filters?: {
     examType: string;
+    examName: string;
     subject: string;
     questionType: string;
     difficulty: string;
@@ -25,6 +26,9 @@ export class QuestionServiceService {
     // let params = new HttpParams();
     // if (filters?.examType) {
     //   params = params.set('examType', filters.examType);
+    // }
+    // if (filters?.examName) {
+    //   params = params.set('examName', filters.examName);
     // }
     // if (filters?.subject) {
     //   params = params.set('subject', filters.subject);
@@ -41,6 +45,7 @@ export class QuestionServiceService {
 
   getV1Questions(filters?: {
     examType: string;
+    examName: string;
     subject: string;
     questionType: string;
     difficulty: string;
@@ -53,6 +58,9 @@ export class QuestionServiceService {
     // }
     // if (filters?.subject) {
     //   params = params.set('subjects', filters.subject);
+    // }
+    // if (filters?.examName) {
+    //   params = params.set('examName', filters.examName);
     // }
     // if (filters?.questionType) {
     //   params = params.set('questionsType', filters.questionType);
