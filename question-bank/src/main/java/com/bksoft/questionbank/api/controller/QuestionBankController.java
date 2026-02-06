@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @RestController
 public class QuestionBankController {
@@ -44,7 +45,7 @@ public class QuestionBankController {
 	}
 
 	@RequestMapping(value = "/v1/questions", method = RequestMethod.GET)
-	public ResponseEntity<ApiResponse<Map<String, List<Question>>>> getQuestionsV1(@RequestParam(required = false) String examType, @RequestParam(required = false) List<String> subjects, @RequestParam(required = false) String questionsType, @RequestParam(required = false) String difficulty) {
+	public ResponseEntity<ApiResponse<Map<String, List<Question>>>> getQuestionsV1(@RequestParam(required = false) String examType, @RequestParam(required = false) Set<String> subjects, @RequestParam(required = false) String questionsType, @RequestParam(required = false) String difficulty) {
 		log.info("Fetch list of questions by filters");
 		if (examType.equalsIgnoreCase("Govt")) {
 			subjects.addAll(List.of("English", "Math", "Science", "History"));
