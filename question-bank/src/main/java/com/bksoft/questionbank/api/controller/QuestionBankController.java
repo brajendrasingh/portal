@@ -48,8 +48,8 @@ public class QuestionBankController {
 	public ResponseEntity<ApiResponse<Map<String, List<Question>>>> getQuestionsV1(@RequestParam(required = false) String examType, @RequestParam(required = false) Set<String> subjects, @RequestParam(required = false) String questionsType, @RequestParam(required = false) String difficulty) {
 		log.info("Fetch list of questions by filters");
 		if (examType.equalsIgnoreCase("Govt")) {
-			subjects.addAll(List.of("English", "Math", "Science", "History"));
-			questionsType = "";
+			subjects = Set.of("English", "Math", "Science", "History");
+			questionsType = "MCQ";
 			difficulty = "";
 		}
 		ApiResponse<Map<String, List<Question>>> response = new ApiResponse<>();
