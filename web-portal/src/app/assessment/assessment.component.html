@@ -1,4 +1,7 @@
-<app-pre-assessment-subject-selection *ngIf="!started"
+<app-pre-assessment-subject-selection *ngIf="screen === 'SELECT'"
     (startAssessment)="onStartAssessment($event)"></app-pre-assessment-subject-selection>
 
-<app-question-area *ngIf="started" [filters]="filters"></app-question-area>
+<app-assessment-instructions *ngIf="screen === 'INSTRUCTIONS'" [config]="filters"
+    (startTest)="onInstructionsAccepted($event)"> </app-assessment-instructions>
+
+<app-question-area *ngIf="screen === 'TEST'" [filters]="filters" [language]="selectedLanguage"></app-question-area>

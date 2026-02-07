@@ -1,0 +1,108 @@
+/* Page wrapper */
+.instruction-container {
+  max-width: 820px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Title */
+.instruction-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1f2937;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+/* Instruction list */
+.instructions {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.instructions li {
+  padding: 10px 0;
+  font-size: 15px;
+  color: #374151;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* Bullet dot */
+.instructions li::before {
+  content: '•';
+  color: #2563eb;
+  font-size: 20px;
+  line-height: 1;
+}
+
+/* Highlighted values */
+.instructions b {
+  color: #111827;
+}
+
+/* Agreement checkbox */
+.agreement {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px dashed #e5e7eb;
+  font-size: 14px;
+  color: #374151;
+}
+
+.agreement input {
+  margin-right: 8px;
+  transform: scale(1.1);
+}
+
+/* Start button */
+.btn-primary {
+  margin-top: 25px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover + Active */
+.btn-primary:hover:not(:disabled) {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Disabled button */
+.btn-primary:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .instruction-container {
+    margin: 20px;
+    padding: 22px;
+  }
+
+  .instruction-container h2 {
+    font-size: 20px;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+}

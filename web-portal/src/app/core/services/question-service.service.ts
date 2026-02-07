@@ -49,7 +49,8 @@ export class QuestionServiceService {
     subject: string;
     questionType: string;
     difficulty: string;
-  }): Observable<any> {
+  }, assessmentLanguage?: string): Observable<any> {
+    console.log("QuestionServiceService:assessmentLanguage: ", assessmentLanguage);
     const mockurl = './../../../assets/mock/assessment/mock-assessment-v1-questions.json';
     return this.http.get<Question[]>(mockurl);
     // let params = new HttpParams();
@@ -67,6 +68,9 @@ export class QuestionServiceService {
     // }
     // if (filters?.difficulty) {
     //   params = params.set('difficulty', filters.difficulty);
+    // }
+    // if (assessmentLanguage) {
+    //   params = params.set('assessmentLanguage', assessmentLanguage);
     // }
 
     // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/v1/questions`, { params });

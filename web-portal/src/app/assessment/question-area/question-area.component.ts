@@ -31,7 +31,7 @@ export class QuestionAreaComponent implements OnInit, OnDestroy, OnChanges {
     questionType: string;
     difficulty: string;
   };
-
+  @Input() language!: string;
   constructor(private router: Router, private questionServiceService: QuestionServiceService) { }
 
   /* ================= HEADER ================= */
@@ -67,7 +67,7 @@ export class QuestionAreaComponent implements OnInit, OnDestroy, OnChanges {
   /* ================= LOAD JSON ================= */
   loadAssessment(): void {
     this.assessmentName = this.filters.examName ? this.filters.examName : this.filters.subject
-    this.questionServiceService.getV1Questions(this.filters).subscribe({
+    this.questionServiceService.getV1Questions(this.filters, this.language).subscribe({
       next: (response: AssessmentResponse) => {
         this.sections = Object.keys(response.data).map(sectionName => ({
           sectionName,

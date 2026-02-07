@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+type Screen = 'SELECT' | 'INSTRUCTIONS' | 'TEST';
+
 @Component({
   selector: 'app-assessment',
   standalone: false,
@@ -7,11 +9,9 @@ import { Component } from '@angular/core';
   styleUrl: './assessment.component.css'
 })
 export class AssessmentComponent {
-  constructor() {
-    console.log('AssessmentComponent LOADED');
-  }
-  started = false;
 
+  screen: Screen = 'SELECT';
+  selectedLanguage!: string;
   filters = {
     examType: '',
     examName: '',
@@ -19,10 +19,16 @@ export class AssessmentComponent {
     questionType: '',
     difficulty: ''
   };
-
+  // Step 1: selection completed
   onStartAssessment(filters: any) {
     console.log('AssessmentComponent: Received in container:', filters);
     this.filters = filters;
-    this.started = true;
+    this.screen = 'INSTRUCTIONS';
+  }
+
+  // Step 2: instructions accepted
+  onInstructionsAccepted(language: string) {
+    this.selectedLanguage = language;
+    this.screen = 'TEST';
   }
 }
