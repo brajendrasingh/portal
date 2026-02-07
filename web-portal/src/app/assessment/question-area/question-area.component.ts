@@ -56,7 +56,7 @@ export class QuestionAreaComponent implements OnInit, OnDestroy, OnChanges {
   }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['filters'] && this.filters) {
-      console.log('Asses89898989smentComponent: Filters received:', this.filters);
+      console.log('AssessmentComponent: Filters received:', this.filters);
       this.loadAssessment();
     }
   }
@@ -66,6 +66,7 @@ export class QuestionAreaComponent implements OnInit, OnDestroy, OnChanges {
 
   /* ================= LOAD JSON ================= */
   loadAssessment(): void {
+    this.assessmentName = this.filters.examName ? this.filters.examName : this.filters.subject
     this.questionServiceService.getV1Questions(this.filters).subscribe({
       next: (response: AssessmentResponse) => {
         this.sections = Object.keys(response.data).map(sectionName => ({

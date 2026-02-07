@@ -21,10 +21,9 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
 import { AssessmentComponent } from './assessment/assessment.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
-import { ResultComponent } from './result/result.component';
-import { AssessmentResultsDashboardComponent } from './assessment-results-dashboard/assessment-results-dashboard.component';
-import { AssessmentSubjectSelectionComponentComponent } from './assessment-subject-selection-component/assessment-subject-selection-component.component';
-import { AssessmentContainerComponent } from './assessment/assessment-container/assessment-container.component';
+import { AssessmentResultComponent } from './assessment/assessment-result/assessment-result.component';
+import { AssessmentAllResultsDashboardComponent } from './assessment/assessment-all-results-dashboard/assessment-all-results-dashboard.component';
+import { PreAssessmentSubjectSelectionComponent } from './assessment/pre-assessment-subject-selection/pre-assessment-subject-selection.component';
 import { QuestionAreaComponent } from './assessment/question-area/question-area.component';
 
 @NgModule({
@@ -43,10 +42,9 @@ import { QuestionAreaComponent } from './assessment/question-area/question-area.
     ManageUsersComponent,
     AssessmentComponent,
     FileUploadComponent,
-    ResultComponent,
-    AssessmentResultsDashboardComponent,
-    AssessmentSubjectSelectionComponentComponent,
-    AssessmentContainerComponent,
+    AssessmentResultComponent,
+    AssessmentAllResultsDashboardComponent,
+    PreAssessmentSubjectSelectionComponent,
     QuestionAreaComponent
   ],
   imports: [

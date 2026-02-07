@@ -2,12 +2,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
 
 @Component({
-  selector: 'app-assessment-subject-selection-component',
+  selector: 'app-pre-assessment-subject-selection',
   standalone: false,
-  templateUrl: './assessment-subject-selection-component.component.html',
-  styleUrl: './assessment-subject-selection-component.component.css'
+  templateUrl: './pre-assessment-subject-selection.component.html',
+  styleUrl: './pre-assessment-subject-selection.component.css'
 })
-export class AssessmentSubjectSelectionComponentComponent {
+export class PreAssessmentSubjectSelectionComponent {
 
   @Output() filterChange = new EventEmitter<{
     examType: string;
@@ -50,7 +50,7 @@ export class AssessmentSubjectSelectionComponentComponent {
   }
 
   startTest() {
-    console.log('AssessmentSubjectSelectionComponentComponent: Start Test clicked', this.filter);
+    console.log('PreAssessmentSubjectSelectionComponent: Start Test clicked', this.filter);
     this.startAssessment.emit({ ...this.filter });
   }
 }
