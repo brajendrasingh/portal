@@ -66,4 +66,8 @@
     background-color: #94a3b8;
     cursor: not-allowed;
   }
-  
+
+  select:disabled {
+    background-color: #f2f2f2;
+    cursor: not-allowed;
+  }

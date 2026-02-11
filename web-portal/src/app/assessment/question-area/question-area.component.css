@@ -1,0 +1,131 @@
+/* ======================
+   PAGE WRAPPER
+====================== */
+.assessment-page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* ======================
+     HEADER
+  ====================== */
+  .assessment-header {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    background: #0b3c5d;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  
+  /* ======================
+     BODY GRID (3 COLUMNS)
+  ====================== */
+  .assessment-body {
+    flex: 1; /* ⭐ critical */
+    display: grid;
+    grid-template-columns: 180px 1fr 220px;
+    overflow: hidden;
+  }
+  
+  /* ======================
+     SECTION TABS (LEFT)
+  ====================== */
+  .section-tabs {
+    background: #e9edf2;
+    border-right: 1px solid #cfd6df;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+  }
+  
+  .section-tabs button {
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #ffffff;
+    font-weight: 600;
+    text-align: left;
+    transition: background 0.2s ease;
+  }
+  
+  .section-tabs button:hover {
+    background: #dde7f0;
+  }
+  
+  .section-tabs button.active {
+    background: #0b3c5d;
+    color: #ffffff;
+  }
+  
+  /* ======================
+     QUESTION NAV (RIGHT)
+  ====================== */
+  .question-nav {
+    background: #f5f6f8;
+    padding: 12px;
+    border-left: 1px solid #cfd6df;
+    overflow-y: auto;
+  }
+  
+  .question-nav button {
+    width: 40px;
+    height: 40px;
+    margin: 6px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  .question-nav button.active {
+    background: #0b3c5d;
+    color: #fff;
+  }
+  
+  .question-nav button.attempted {
+    border: 2px solid #2ecc71;
+  }
+  
+  /* ======================
+     QUESTION AREA (CENTER)
+  ====================== */
+  .question-area {
+    padding: 24px;
+    overflow-y: auto;
+  }
+  
+  .question-text {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  
+  .option {
+    display: block;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  /* ======================
+     FOOTER
+  ====================== */
+  .assessment-footer {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    border-top: 1px solid #cfd6df;
+    background: #ffffff;
+    flex-shrink: 0;
+  }
+  

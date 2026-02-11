@@ -338,5 +338,281 @@
 			"Physics",
 			"Govt"
 		]
+	},
+	{
+		"questionId": "7",
+		"questionText": "What is the value of 12 × 8?",
+		"answerOptions": [
+			"80",
+			"86",
+			"96",
+			"108",
+			"72"
+		],
+		"correctOption": 2,
+		"correctAnswer": "96",
+		"subject": "Math",
+		"topic": "Multiplication",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "12 multiplied by 8 equals 96.",
+		"tags": [
+			"Math",
+			"Arithmetic"
+		]
+	},
+	{
+		"questionId": "8",
+		"questionText": "What is the square root of 64?",
+		"answerOptions": [
+			"6",
+			"7",
+			"8",
+			"9",
+			"10"
+		],
+		"correctOption": 2,
+		"correctAnswer": "8",
+		"subject": "Math",
+		"topic": "Square Root",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "8 × 8 = 64.",
+		"tags": [
+			"Math",
+			"Roots"
+		]
+	},
+	{
+		"questionId": "9",
+		"questionText": "What is 15% of 200?",
+		"answerOptions": [
+			"20",
+			"25",
+			"30",
+			"35",
+			"40"
+		],
+		"correctOption": 2,
+		"correctAnswer": "30",
+		"subject": "Math",
+		"topic": "Percentage",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"explanation": "15% of 200 = 30.",
+		"tags": [
+			"Math",
+			"Percentage"
+		]
+	},
+	{
+		"questionId": "11",
+		"questionText": "Which gas is essential for breathing?",
+		"answerOptions": [
+			"Hydrogen",
+			"Carbon Dioxide",
+			"Oxygen",
+			"Nitrogen",
+			"Helium"
+		],
+		"correctOption": 2,
+		"correctAnswer": "Oxygen",
+		"subject": "Science",
+		"topic": "Biology",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "Humans require oxygen for respiration.",
+		"tags": [
+			"Science",
+			"Biology"
+		]
+	},
+	{
+		"questionId": "12",
+		"questionText": "What planet is known as the Red Planet?",
+		"answerOptions": [
+			"Earth",
+			"Venus",
+			"Mars",
+			"Jupiter",
+			"Saturn"
+		],
+		"correctOption": 2,
+		"correctAnswer": "Mars",
+		"subject": "Science",
+		"topic": "Astronomy",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "Mars appears red due to iron oxide.",
+		"tags": [
+			"Science",
+			"Space"
+		]
+	},
+	{
+		"questionId": "22",
+		"questionText": "Who is known as the Father of the Nation?",
+		"answerOptions": [
+			"Jawaharlal Nehru",
+			"Bhagat Singh",
+			"Mahatma Gandhi",
+			"Subhash Bose",
+			"Rajendra Prasad"
+		],
+		"correctOption": 2,
+		"correctAnswer": "Mahatma Gandhi",
+		"subject": "GS",
+		"topic": "National Leaders",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "Mahatma Gandhi led India's freedom movement.",
+		"tags": [
+			"GS",
+			"Freedom"
+		]
+	},
+	{
+		"questionId": "31",
+		"questionText": "Who was the first Mughal emperor of India?",
+		"answerOptions": [
+			"Akbar",
+			"Babur",
+			"Humayun",
+			"Aurangzeb",
+			"Shah Jahan"
+		],
+		"correctOption": 1,
+		"correctAnswer": "Babur",
+		"subject": "History",
+		"topic": "Mughal Empire",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"explanation": "Babur founded the Mughal dynasty in India.",
+		"tags": [
+			"History",
+			"Mughal"
+		]
+	},
+	{
+		"questionId": "32",
+		"questionText": "In which year did India gain independence?",
+		"answerOptions": [
+			"1945",
+			"1946",
+			"1947",
+			"1950",
+			"1952"
+		],
+		"correctOption": 2,
+		"correctAnswer": "1947",
+		"subject": "History",
+		"topic": "Independence",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "India became independent on 15 August 1947.",
+		"tags": [
+			"History",
+			"Independence"
+		]
+	},
+	{
+		"questionId": "41",
+		"questionText": "Choose the correct synonym of 'Happy'",
+		"answerOptions": [
+			"Sad",
+			"Angry",
+			"Joyful",
+			"Lazy",
+			"Weak"
+		],
+		"correctOption": 2,
+		"correctAnswer": "Joyful",
+		"subject": "English",
+		"topic": "Vocabulary",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "Joyful means happy.",
+		"tags": [
+			"English",
+			"Vocabulary"
+		]
+	},
+	{
+		"questionId": "42",
+		"questionText": "Identify the noun in the sentence: 'The boy is playing.'",
+		"answerOptions": [
+			"Boy",
+			"Playing",
+			"Is",
+			"The",
+			"None"
+		],
+		"correctOption": 0,
+		"correctAnswer": "Boy",
+		"subject": "English",
+		"topic": "Grammar",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "Boy is a noun.",
+		"tags": [
+			"English",
+			"Grammar"
+		]
+	},
+	{
+		"questionId": "51",
+		"questionText": "What does CPU stand for?",
+		"answerOptions": [
+			"Central Process Unit",
+			"Central Processing Unit",
+			"Computer Personal Unit",
+			"Central Power Unit",
+			"Core Processing Unit"
+		],
+		"correctOption": 1,
+		"correctAnswer": "Central Processing Unit",
+		"subject": "Computer",
+		"topic": "Basics",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "CPU is the brain of the computer.",
+		"tags": [
+			"Computer",
+			"Hardware"
+		]
+	},
+	{
+		"questionId": "52",
+		"questionText": "Which of the following is an operating system?",
+		"answerOptions": [
+			"MS Word",
+			"Google Chrome",
+			"Windows",
+			"Excel",
+			"PowerPoint"
+		],
+		"correctOption": 2,
+		"correctAnswer": "Windows",
+		"subject": "Computer",
+		"topic": "Software",
+		"category": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"explanation": "Windows is an operating system.",
+		"tags": [
+			"Computer",
+			"OS"
+		]
 	}
 ]

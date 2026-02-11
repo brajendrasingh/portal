@@ -15,6 +15,7 @@ export class QuestionServiceService {
 
   getQuestions(filters?: {
     examType: string;
+    examName: string;
     subject: string;
     questionType: string;
     difficulty: string;
@@ -25,6 +26,9 @@ export class QuestionServiceService {
     // let params = new HttpParams();
     // if (filters?.examType) {
     //   params = params.set('examType', filters.examType);
+    // }
+    // if (filters?.examName) {
+    //   params = params.set('examName', filters.examName);
     // }
     // if (filters?.subject) {
     //   params = params.set('subject', filters.subject);
@@ -37,6 +41,39 @@ export class QuestionServiceService {
     // }
 
     // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`, { params });
+  }
+
+  getV1Questions(filters?: {
+    examType: string;
+    examName: string;
+    subject: string;
+    questionType: string;
+    difficulty: string;
+  }, assessmentLanguage?: string): Observable<any> {
+    console.log("QuestionServiceService:assessmentLanguage: ", assessmentLanguage);
+    const mockurl = './../../../assets/mock/assessment/mock-assessment-v1-questions.json';
+    return this.http.get<Question[]>(mockurl);
+    // let params = new HttpParams();
+    // if (filters?.examType) {
+    //   params = params.set('examType', filters.examType);
+    // }
+    // if (filters?.subject) {
+    //   params = params.set('subjects', filters.subject);
+    // }
+    // if (filters?.examName) {
+    //   params = params.set('examName', filters.examName);
+    // }
+    // if (filters?.questionType) {
+    //   params = params.set('questionsType', filters.questionType);
+    // }
+    // if (filters?.difficulty) {
+    //   params = params.set('difficulty', filters.difficulty);
+    // }
+    // if (assessmentLanguage) {
+    //   params = params.set('assessmentLanguage', assessmentLanguage);
+    // }
+
+    // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/v1/questions`, { params });
   }
 
   submitAssessment(payload: AssessmentSubmissionPayload) {

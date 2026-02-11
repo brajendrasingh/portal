@@ -1,0 +1,58 @@
+<div class="assessment-page">
+
+    <!-- HEADER -->
+    <header class="assessment-header">
+        <h2>{{ assessmentName }}</h2>
+        <div class="timer">⏱️ {{ formatTime() }}</div>
+    </header>
+
+    <!-- BODY -->
+    <div class="assessment-body">
+
+        <!-- LEFT: SECTIONS -->
+        <aside class="section-tabs">
+            <button *ngFor="let sec of sections; let i = index" (click)="switchSection(i)"
+                [class.active]="i === currentSectionIndex">
+                {{ sec.sectionName  }}
+            </button>
+        </aside>
+
+        <!-- CENTER: QUESTION -->
+        <section class="question-area">
+            <h3>
+                {{ currentSection.sectionName  }} – Question {{ currentQuestionIndex + 1 }}
+            </h3>
+
+            <p class="question-text">
+                {{ currentQuestion.questionText }}
+            </p>
+
+            <label *ngFor="let opt of currentQuestion.answerOptions; let i = index" class="option">
+                <input type="radio" [checked]="currentQuestion.selectedIndex === i" (change)="selectOption(i)" />
+                {{ opt }}
+            </label>
+        </section>
+
+        <!-- RIGHT: QUESTION NAV -->
+        <aside class="question-nav">
+            <button *ngFor="let q of currentSection.questions; let i = index" (click)="goToQuestion(i)"
+                [class.active]="i === currentQuestionIndex" [class.attempted]="q.selectedIndex !== null">
+                {{ i + 1 }}
+            </button>
+        </aside>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="assessment-footer">
+        <button class="btn-outline" (click)="nextQuestion()">
+            Save & Next
+        </button>
+
+        <button class="btn-primary" [disabled]="!hasAnyAnswer()" (click)="submit()">
+            Submit Test
+        </button>
+
+    </footer>
+
+</div>

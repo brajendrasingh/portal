@@ -12,11 +12,22 @@
                 <option value="Others">Others</option>
             </select>
         </div>
+        <!-- Exam Name -->
+        <div class="filter-row">
+            <label class="filter-label">Exam Name</label>
+            <select class="filter-select" [(ngModel)]="filter.examName" name="examName" [disabled]="!isGovtExam" (change)="onChange()">
+                <option value="">-- Select Exam Name --</option>
+                <option value="ssc">SSC</option>
+                <option value="upsc">UPSC</option>
+                <option value="railway">railway</option>
+            </select>
+        </div>
 
         <!-- Subject -->
         <div class="filter-row">
-            <label class="filter-label">Subject or Exam</label>
-            <select class="filter-select" [(ngModel)]="filter.subject" name="subject" (change)="onChange()">
+            <label class="filter-label">Subject</label>
+            <select class="filter-select" [(ngModel)]="filter.subject" name="subject" [disabled]="isGovtExam"
+                (change)="onChange()">
                 <option value="">-- Select Subject --</option>
                 <option value="Math">Mathematics</option>
                 <option value="Science">Science</option>
@@ -27,7 +38,8 @@
         <!-- Question Type -->
         <div class="filter-row">
             <label class="filter-label">Question Type</label>
-            <select class="filter-select" [(ngModel)]="filter.questionType" name="questionType" (change)="onChange()">
+            <select class="filter-select" [(ngModel)]="filter.questionType" name="questionType" [disabled]="isGovtExam"
+                (change)="onChange()">
                 <option value="">-- Select Type --</option>
                 <option value="MCQ">MCQ</option>
                 <option value="Numerical">Numerical</option>
@@ -38,7 +50,8 @@
         <!-- Difficulty -->
         <div class="filter-row">
             <label class="filter-label">Difficulty Level</label>
-            <select class="filter-select" [(ngModel)]="filter.difficulty" name="difficulty" (change)="onChange()">
+            <select class="filter-select" [(ngModel)]="filter.difficulty" name="difficulty" [disabled]="isGovtExam"
+                (change)="onChange()">
                 <option value="">-- Select Level --</option>
                 <option value="Easy">Easy</option>
                 <option value="Medium">Medium</option>
@@ -48,7 +61,7 @@
 
         <!-- Action -->
         <div class="filter-actions">
-            <button type="button" class="btn-primary" [disabled]="!filter.subject" (click)="startTest()">
+            <button type="button" class="btn-primary" [disabled]="!canSubmit" (click)="startTest()">
                 Start Test
             </button>
         </div>

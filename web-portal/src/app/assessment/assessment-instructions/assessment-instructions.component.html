@@ -1,0 +1,32 @@
+<div class="instruction-container">
+  <h2>Assessment Instructions</h2>
+
+  <!-- Language Selection -->
+  <div class="language-box">
+    <label for="language"><b>Select Question Language</b></label>
+    <select id="language" [(ngModel)]="selectedLanguage">
+      <option value="" disabled>Select language</option>
+      <option *ngFor="let lang of languages" [value]="lang.code">
+        {{ lang.label }}
+      </option>
+    </select>
+  </div>
+
+  <ul class="instructions">
+    <li>Total Questions: <b>20</b></li>
+    <li>Duration: <b>30 minutes</b></li>
+    <li>No negative marking</li>
+    <li>Do not refresh the browser</li>
+  </ul>
+
+  <div class="agreement">
+    <label>
+      <input type="checkbox" [(ngModel)]="accepted" />
+      I have read and understood the instructions
+    </label>
+  </div>
+
+  <button class="btn-primary" [disabled]="!accepted || !selectedLanguage" (click)="startTestClick()">
+    Start Test
+  </button>
+</div>
