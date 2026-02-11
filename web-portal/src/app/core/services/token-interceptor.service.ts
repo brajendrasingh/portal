@@ -5,11 +5,16 @@ import { HttpInterceptor, HttpRequest, HttpHandler } from '@angular/common/http'
 export class TokenInterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler) {
     let token = localStorage.getItem('token');
+    const lang = localStorage.getItem('lang') || 'en';
+
+    let headers: any = { 'Accept-Language': lang };
+
     if (token) {
-      req = req.clone({
-        setHeaders: { Authorization: `Bearer ${token}` }
-      });
+      headers['Authorization'] = `Bearer ${token}`;
     }
-    return next.handle(req);
+
+    const modifiedReq = req.clone({ setHeaders: headers });
+
+    return next.handle(modifiedReq);
   }
 }
