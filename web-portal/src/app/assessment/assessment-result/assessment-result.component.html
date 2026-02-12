@@ -1,0 +1,71 @@
+<div class="result-wrapper" *ngIf="questions?.length">
+
+  <div class="result-card">
+
+    <!-- Header -->
+    <div class="header">
+      <h2>Assessment Result</h2>
+      <span class="status-badge" [ngClass]="resultStatus === 'PASS' ? 'pass' : 'fail'">
+        {{ resultStatus }}
+      </span>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-grid">
+      <div class="summary-item">
+        <label>Total Questions</label>
+        <p>{{ totalQuestions }}</p>
+      </div>
+
+      <div class="summary-item">
+        <label>Correct Answers</label>
+        <p>{{ correctAnswers }}</p>
+      </div>
+
+      <div class="summary-item">
+        <label>Score</label>
+        <p>{{ scorePercentage }}%</p>
+      </div>
+
+      <div class="summary-item">
+        <label>Passing Criteria</label>
+        <p>{{ passingPercentage }}%</p>
+      </div>
+    </div>
+
+    <!-- Question Review -->
+    <section class="result-panel">
+      <h3 class="review-title">Question Review</h3>
+
+      <div class="review-card" *ngFor="let q of questions; let i = index">
+
+        <p class="review-question"> {{ i + 1 }}. {{ q.questionText }} </p>
+
+        <p class="review-answer">
+          <strong>Your Answer:</strong>
+          <span [ngClass]="q.selectedAnswers === q.correctAnswers ? 'correct' : 'wrong'">
+            {{ q.selectedAnswers || 'Not Answered' }} </span>
+        </p>
+
+        <p class="review-correct" *ngIf="q.selectedAnswers !== q.correctAnswers">
+          <strong>Correct Answer:</strong> {{ q.correctAnswers }}
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Footer Actions -->
+    <div class="footer">
+      <button class="btn-primary" routerLink="/dashboard">
+        Go to Dashboard
+      </button>
+      <button class="btn-secondary" routerLink="/resultsDashboard">
+        Results Dashboard
+      </button>
+      <button class="btn-secondary" routerLink="/assessment">
+        Retake Assessment
+      </button>
+    </div>
+
+  </div>
+</div>

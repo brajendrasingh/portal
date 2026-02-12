@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { QuestionServiceService } from './../core/services/question-service.service';
+import { QuestionServiceService } from '../../core/services/question-service.service';
 
 @Component({
   selector: 'app-assessment-results-dashboard',
   standalone: false,
-  templateUrl: './assessment-results-dashboard.component.html',
-  styleUrl: './assessment-results-dashboard.component.css'
+  templateUrl: './assessment-all-results-dashboard.component.html',
+  styleUrl: './assessment-all-results-dashboard.component.css'
 })
-export class AssessmentResultsDashboardComponent {
+export class AssessmentAllResultsDashboardComponent {
 
   constructor(private questionService: QuestionServiceService) { }
 

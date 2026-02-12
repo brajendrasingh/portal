@@ -7,10 +7,7 @@ describe('AssessmentComponent', () => {
   let fixture: ComponentFixture<AssessmentComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [AssessmentComponent]
-    })
-    .compileComponents();
+    await TestBed.configureTestingModule({ declarations: [AssessmentComponent] }).compileComponents();
 
     fixture = TestBed.createComponent(AssessmentComponent);
     component = fixture.componentInstance;
