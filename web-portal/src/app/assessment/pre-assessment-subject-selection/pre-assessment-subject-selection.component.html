@@ -1,0 +1,70 @@
+<div class="filter-page-center">
+    <form class="gov-filter-card">
+
+        <h2 class="filter-title">Select Assessment Type</h2>
+        <!-- Exam Type -->
+        <div class="filter-row">
+            <label class="filter-label">Exam Type</label>
+            <select class="filter-select" [(ngModel)]="filter.examType" name="examType" (change)="onChange()">
+                <option value="">-- Select Exam Type --</option>
+                <option value="Govt">Govt.</option>
+                <option value="SubjectWise">Subject Wise</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        <!-- Exam Name -->
+        <div class="filter-row">
+            <label class="filter-label">Exam Name</label>
+            <select class="filter-select" [(ngModel)]="filter.examName" name="examName" [disabled]="!isGovtExam" (change)="onChange()">
+                <option value="">-- Select Exam Name --</option>
+                <option value="ssc">SSC</option>
+                <option value="upsc">UPSC</option>
+                <option value="railway">railway</option>
+            </select>
+        </div>
+
+        <!-- Subject -->
+        <div class="filter-row">
+            <label class="filter-label">Subject</label>
+            <select class="filter-select" [(ngModel)]="filter.subject" name="subject" [disabled]="isGovtExam"
+                (change)="onChange()">
+                <option value="">-- Select Subject --</option>
+                <option value="Math">Mathematics</option>
+                <option value="Science">Science</option>
+                <option value="GK">General Knowledge</option>
+            </select>
+        </div>
+
+        <!-- Question Type -->
+        <div class="filter-row">
+            <label class="filter-label">Question Type</label>
+            <select class="filter-select" [(ngModel)]="filter.questionType" name="questionType" [disabled]="isGovtExam"
+                (change)="onChange()">
+                <option value="">-- Select Type --</option>
+                <option value="MCQ">MCQ</option>
+                <option value="Numerical">Numerical</option>
+                <option value="TrueFalse">True / False</option>
+            </select>
+        </div>
+
+        <!-- Difficulty -->
+        <div class="filter-row">
+            <label class="filter-label">Difficulty Level</label>
+            <select class="filter-select" [(ngModel)]="filter.difficulty" name="difficulty" [disabled]="isGovtExam"
+                (change)="onChange()">
+                <option value="">-- Select Level --</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+            </select>
+        </div>
+
+        <!-- Action -->
+        <div class="filter-actions">
+            <button type="button" class="btn-primary" [disabled]="!canSubmit" (click)="startTest()">
+                Start Test
+            </button>
+        </div>
+
+    </form>
+</div>

@@ -1,0 +1,376 @@
+{
+	"data": {
+		"Math": [
+			{
+				"questionId": "1",
+				"questionText": "Capital of india",
+				"answerOptions": [
+					"Kanpur",
+					"Delhi",
+					"Lucknow",
+					"Indore",
+					"Mumbai"
+				],
+				"correctOption": 1,
+				"correctAnswer": "Delhi",
+				"subject": "GS",
+				"topic": "History",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "NA",
+				"tags": [
+					"GS",
+					"History",
+					"Govt",
+					"GeneralKnowledge"
+				]
+			},
+			{
+				"questionId": 2,
+				"questionText": "What is Angular?",
+				"answerOptions": [
+					"Database",
+					"Frontend framework",
+					"Backend framework",
+					"Operating System"
+				],
+				"correctOption": 1,
+				"correctAnswer": "Frontend framework",
+				"subject": "UI",
+				"topic": "Angular",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "NA",
+				"tags": [
+					"Angular",
+					"UI",
+					"Frontend",
+					"Tech"
+				]
+			},
+			{
+				"questionId": 3,
+				"questionText": "Which directive is used for looping in Angular?",
+				"answerOptions": [
+					"*ngIf",
+					"*ngFor",
+					"*ngSwitch",
+					"*ngLoop"
+				],
+				"correctOption": 1,
+				"correctAnswer": "ngFor",
+				"subject": "UI",
+				"topic": "Angular",
+				"category": "MCQ",
+				"difficulty": "EASY",
+				"explanation": "NA",
+				"tags": [
+					"Angular",
+					"Directives",
+					"UI",
+					"Tech"
+				]
+			},
+			{
+				"questionId": 4,
+				"questionText": "Which language is primarily used with Angular?",
+				"answerOptions": [
+					"Java",
+					"Python",
+					"TypeScript",
+					"C++"
+				],
+				"correctOption": 2,
+				"correctAnswer": "TypeScript",
+				"subject": "UI",
+				"topic": "Angular",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "NA",
+				"tags": [
+					"Angular",
+					"TypeScript",
+					"Frontend",
+					"Tech"
+				]
+			}
+		],
+		"Science": [
+			{
+				"questionId": "101",
+				"questionText": "What is the value of 12 × 8?",
+				"answerOptions": [
+					"86",
+					"94",
+					"96",
+					"108",
+					"88"
+				],
+				"correctOption": 2,
+				"correctAnswer": "96",
+				"subject": "Math",
+				"topic": "Arithmetic",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "12 multiplied by 8 equals 96.",
+				"tags": [
+					"Math",
+					"Arithmetic",
+					"Calculation",
+					"Govt"
+				]
+			},
+			{
+				"questionId": "102",
+				"questionText": "What is the square root of 144?",
+				"answerOptions": [
+					"10",
+					"11",
+					"12",
+					"14",
+					"16"
+				],
+				"correctOption": 2,
+				"correctAnswer": "12",
+				"subject": "Math",
+				"topic": "Squares and Roots",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "12 × 12 = 144.",
+				"tags": [
+					"Math",
+					"Roots",
+					"Govt",
+					"Basics"
+				]
+			},
+			{
+				"questionId": "103",
+				"questionText": "If x + 15 = 40, what is the value of x?",
+				"answerOptions": [
+					"15",
+					"20",
+					"25",
+					"30",
+					"35"
+				],
+				"correctOption": 2,
+				"correctAnswer": "25",
+				"subject": "Math",
+				"topic": "Linear Equations",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "x = 40 − 15 = 25.",
+				"tags": [
+					"Math",
+					"Algebra",
+					"Govt"
+				]
+			},
+			{
+				"questionId": "104",
+				"questionText": "What is the perimeter of a square with side length 5 cm?",
+				"answerOptions": [
+					"10 cm",
+					"15 cm",
+					"20 cm",
+					"25 cm",
+					"30 cm"
+				],
+				"correctOption": 2,
+				"correctAnswer": "20 cm",
+				"subject": "Math",
+				"topic": "Mensuration",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "Perimeter of a square = 4 × side = 20 cm.",
+				"tags": [
+					"Math",
+					"Mensuration",
+					"Geometry",
+					"Govt"
+				]
+			},
+			{
+				"questionId": "105",
+				"questionText": "Which of the following is a prime number?",
+				"answerOptions": [
+					"9",
+					"15",
+					"21",
+					"23",
+					"27"
+				],
+				"correctOption": 3,
+				"correctAnswer": "23",
+				"subject": "Math",
+				"topic": "Number System",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "MEDIUM",
+				"explanation": "23 has only two factors.",
+				"tags": [
+					"Math",
+					"NumberSystem",
+					"Prime",
+					"Govt"
+				]
+			}
+		],
+		"History": [
+			{
+				"questionId": "201",
+				"questionText": "Which gas is most abundant in the Earth's atmosphere?",
+				"answerOptions": [
+					"Oxygen",
+					"Carbon Dioxide",
+					"Nitrogen",
+					"Hydrogen",
+					"Argon"
+				],
+				"correctOption": 2,
+				"correctAnswer": "Nitrogen",
+				"subject": "Science",
+				"topic": "Atmosphere",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "Nitrogen makes up about 78% of the Earth's atmosphere.",
+				"tags": [
+					"Science",
+					"Geography",
+					"Govt"
+				]
+			},
+			{
+				"questionId": "202",
+				"questionText": "What is the chemical symbol for Sodium?",
+				"answerOptions": [
+					"So",
+					"Sn",
+					"Na",
+					"Sd",
+					"Sa"
+				],
+				"correctOption": 2,
+				"correctAnswer": "Na",
+				"subject": "Science",
+				"topic": "Chemistry Basics",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "Na comes from Natrium.",
+				"tags": [
+					"Science",
+					"Chemistry",
+					"Govt"
+				]
+			},
+			{
+				"questionId": "203",
+				"questionText": "Which part of the plant is responsible for photosynthesis?",
+				"answerOptions": [
+					"Root",
+					"Stem",
+					"Leaf",
+					"Flower",
+					"Fruit"
+				],
+				"correctOption": 2,
+				"correctAnswer": "Leaf",
+				"subject": "Science",
+				"topic": "Biology",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "Leaves contain chlorophyll.",
+				"tags": [
+					"Science",
+					"Biology",
+					"Govt"
+				]
+			},
+			{
+				"questionId": "204",
+				"questionText": "Which planet is known as the Red Planet?",
+				"answerOptions": [
+					"Venus",
+					"Mars",
+					"Jupiter",
+					"Saturn",
+					"Mercury"
+				],
+				"correctOption": 1,
+				"correctAnswer": "Mars",
+				"subject": "Science",
+				"topic": "Astronomy",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"explanation": "Iron oxide gives Mars its red color.",
+				"tags": [
+					"Science",
+					"Space",
+					"Govt"
+				]
+			},
+			{
+				"questionId": "205",
+				"questionText": "What is the SI unit of electric current?",
+				"answerOptions": [
+					"Volt",
+					"Ohm",
+					"Ampere",
+					"Watt",
+					"Coulomb"
+				],
+				"correctOption": 2,
+				"correctAnswer": "Ampere",
+				"subject": "Science",
+				"topic": "Physics",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "MEDIUM",
+				"explanation": "Electric current is measured in amperes (A).",
+				"tags": [
+					"Science",
+					"Physics",
+					"Govt"
+				]
+			}
+		],
+		"English": [
+			{
+				"questionId": "301",
+				"questionText": "What is the SI unit of electric current?",
+				"answerOptions": [
+					"Volt",
+					"Ohm",
+					"Ampere",
+					"Watt",
+					"Coulomb"
+				],
+				"correctOption": 2,
+				"correctAnswer": "Ampere",
+				"subject": "Science",
+				"topic": "Physics",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "MEDIUM",
+				"explanation": "Electric current is measured in amperes (A).",
+				"tags": [
+					"Science",
+					"Physics",
+					"Govt"
+				]
+			}
+		]
+	}
+}

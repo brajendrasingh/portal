@@ -5,15 +5,15 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import{DashboardComponent} from'./dashboard/dashboard.component';
-import{AuthGuard} from'./core/services/auth.guard';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AuthGuard } from './core/services/auth.guard';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ManageUsersComponent } from './manage-users/manage-users.component';
-import { AssessmentComponent } from './assessment/assessment.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
-import { ResultComponent } from './result/result.component';
-import { AssessmentResultsDashboardComponent } from './assessment-results-dashboard/assessment-results-dashboard.component';
+import { AssessmentResultComponent } from './assessment/assessment-result/assessment-result.component';
+import { AssessmentAllResultsDashboardComponent } from './assessment/assessment-all-results-dashboard/assessment-all-results-dashboard.component';
+import { AssessmentComponent } from './assessment/assessment.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signup', pathMatch: 'full' },
@@ -24,12 +24,12 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'profile', component: UserProfileComponent },
   { path: 'addUser', component: AddUserComponent },
-  { path: 'dashboard', component: DashboardComponent , canActivate: [AuthGuard]},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   { path: 'manageUser', component: ManageUsersComponent },
-  { path: 'assessment', component: AssessmentComponent },
-  { path: 'result/:userId/:assessmentId/:attemptNo', component: ResultComponent },
-  { path: 'resultsDashboard', component: AssessmentResultsDashboardComponent },
-  { path: 'fileUpload', component: FileUploadComponent}
+  { path: 'assessment', component: AssessmentComponent , data: { hideGlobalLayoutForAssessmentPage: true } },
+  { path: 'result/:userId/:assessmentId/:attemptNo', component: AssessmentResultComponent },
+  { path: 'resultsDashboard', component: AssessmentAllResultsDashboardComponent },
+  { path: 'fileUpload', component: FileUploadComponent }
 ];
 
 @NgModule({

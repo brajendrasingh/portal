@@ -1,8 +1,8 @@
-<app-header></app-header>
+<app-header *ngIf="!hideGlobalLayoutForAssessmentPage"></app-header>
 
 <!-- Your page content here -->
 <div class="content">
   <router-outlet></router-outlet> <!-- for routing -->
 </div>
 
-<app-footer></app-footer>  <!-- Footer component -->
+<app-footer *ngIf="!hideGlobalLayoutForAssessmentPage"></app-footer> <!-- Footer component -->
