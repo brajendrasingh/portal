@@ -7,6 +7,7 @@ import com.bksoft.questionbank.utils.QuestionEntityMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class QuestionBankService {
 
 	public Question getQuestionById(String questionId) {
 		log.info("Fetch question by question id");
+		String lang = LocaleContextHolder.getLocale().getLanguage();
 		com.bksoft.questionbank.dtos.Question question = QuestionEntityMapper.INSTANCE
 				.convertToDtosQuestion(questionRepository.findById(questionId).get());
 		return question;

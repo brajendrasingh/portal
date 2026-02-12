@@ -19,6 +19,8 @@ export class AssessmentInstructionsComponent {
   ];
 
   startTestClick() {
+    //Store in localStorage
+    localStorage.setItem('lang', this.selectedLanguage);
     this.startTest.emit(this.selectedLanguage);
   }
 }

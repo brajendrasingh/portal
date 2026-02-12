@@ -8,6 +8,7 @@ import com.bksoft.questionbank.entities.QuestionResponse;
 import com.bksoft.questionbank.repositories.AssessmentSubmissionRepository;
 import com.bksoft.questionbank.repositories.QuestionRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -31,6 +32,7 @@ public class AssessmentSubmissionService {
     }
 
     public AssessmentSubmission submit(AssessmentSubmissionRequest request) {
+        String lang = LocaleContextHolder.getLocale().getLanguage();
         int total = request.questionAnswers.size();
         int correct = 0;
 

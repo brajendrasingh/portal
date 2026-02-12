@@ -8,7 +8,6 @@ import com.bksoft.questionbank.service.QuestionBankService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,9 +19,6 @@ import java.util.Set;
 @RestController
 public class QuestionBankController {
 	private static final Logger log = LoggerFactory.getLogger(QuestionBankController.class);
-
-	@Autowired
-	private MessageSource messageSource;
 
 	@Autowired
 	private QuestionBankService questionBankService;
