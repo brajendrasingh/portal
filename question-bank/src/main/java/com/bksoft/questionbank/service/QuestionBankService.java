@@ -131,13 +131,13 @@ public class QuestionBankService {
 						.findByQuestionIdAndLanguage(questionId, "en")
 						.orElseThrow(() -> new RuntimeException("Question not found")));
 
-		return QuestionResponseDTO.builder().id(questionId)
+		return QuestionResponseDTO.builder().questionId(questionId)
 				.questionText(translation.getQuestionText())
-				.options(translation.getOptions().stream()
+				.answerOptions(translation.getOptions().stream()
 						.sorted(Comparator.comparing(QuestionOption::getOptionIndex))
 						.map(QuestionOption::getOptionText)
 						.toList())
-				.correctIndex(translation.getQuestion().getCorrectIndex()).explanation(translation.getExplanation()).build();
+				.correctOptionIndex(translation.getQuestion().getCorrectIndex()).explanation(translation.getExplanation()).build();
 	}
 
 	public List<QuestionResponseDTO> getAllQuestionsByLanguage() {
@@ -149,15 +149,15 @@ public class QuestionBankService {
 			translations = translationRepository.findAllByLanguage("en");
 		}
 		return translations.stream().map(t -> QuestionResponseDTO.builder()
-				.id(t.getQuestion().getId())
+				.questionId(t.getQuestion().getId())
 				.questionText(t.getQuestionText())
-				.options(t.getOptions()
+				.answerOptions(t.getOptions()
 						.stream()
 						.sorted(Comparator.comparing(QuestionOption::getOptionIndex))
 						.map(QuestionOption::getOptionText)
 						.toList()
 				)
-				.correctIndex(t.getQuestion().getCorrectIndex()).explanation(t.getExplanation()).build()
+				.correctOptionIndex(t.getQuestion().getCorrectIndex()).explanation(t.getExplanation()).build()
 		).toList();
 	}
 }

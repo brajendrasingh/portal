@@ -11,9 +11,9 @@ import java.util.List;
 @Builder
 public class QuestionResponseDTO {
 
-    private String id;
+    private String questionId;
     private String questionText;
-    private List<String> options;
-    private Integer correctIndex;
+    private List<String> answerOptions;
+    private Integer correctOptionIndex;
     private String explanation;
 }

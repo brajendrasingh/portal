@@ -95,8 +95,8 @@ public class QuestionBankController {
 		return ResponseEntity.ok("Question saved successfully");
 	}
 
-	@GetMapping("/i18n/questions/{id}")
-	public ResponseEntity<List<QuestionResponseDTO>> get(@PathVariable String id) {
+	@GetMapping({"/i18n/questions", "/i18n/questions/{id}"})
+	public ResponseEntity<List<QuestionResponseDTO>> get(@PathVariable(required = false) String id) {
 		if (id != null)
 			return ResponseEntity.ok(List.of(questionBankService.getQuestion(id)));
 		else {
