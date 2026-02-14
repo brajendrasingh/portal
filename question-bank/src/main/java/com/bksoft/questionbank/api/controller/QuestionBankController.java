@@ -103,4 +103,29 @@ public class QuestionBankController {
 			return ResponseEntity.ok(questionBankService.getAllQuestionsByLanguage());
 		}
 	}
+
+	@RequestMapping(value = "/i18n/v1/questions", method = RequestMethod.GET)
+	public ResponseEntity<ApiResponse<Map<String, List<QuestionResponseDTO>>>> getI18nQuestions(@RequestParam(required = false) String examType,
+																								@RequestParam(required = false) String examName, @RequestParam(required = false) Set<String> subjects,
+																								@RequestParam(required = false) String questionsType, @RequestParam(required = false) String difficulty) {
+		log.info("Fetch list of i18n questions by filters");
+		if (examType.equalsIgnoreCase("Govt")) {
+			subjects = Set.of("English", "Math", "Science", "History");
+			questionsType = "MCQ";
+			difficulty = "";
+		}
+		ApiResponse<Map<String, List<QuestionResponseDTO>>> response = new ApiResponse<>();
+		Map<String, List<QuestionResponseDTO>> map = new HashMap<>();
+		int totalQuestions = 0;
+		if (subjects != null && !subjects.isEmpty()) {
+			for (String subject : subjects) {
+				List<QuestionResponseDTO> questions = questionBankService.getI18nQuestions(examType, subject, questionsType, difficulty);
+				map.put(subject, questions);
+				totalQuestions += questions.size();
+			}
+		}
+		response.setData(map);
+		response.setMeta(new Meta(subjects != null ? subjects.size() : 0, totalQuestions, 1, totalQuestions));
+		return ResponseEntity.ok().body(response);
+	}
 }

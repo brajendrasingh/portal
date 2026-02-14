@@ -160,4 +160,19 @@ public class QuestionBankService {
 				.correctOptionIndex(t.getQuestion().getCorrectIndex()).explanation(t.getExplanation()).build()
 		).toList();
 	}
+
+	public List<QuestionResponseDTO> getI18nQuestions(String examType, String subject, String questionsType, String difficulty) {
+		log.info("Fetch i18n questions by filters");
+		String lang = LocaleContextHolder.getLocale().getLanguage();
+		List<QuestionTranslation> translations = translationRepository.findFilteredQuestions(subject, questionsType, difficulty, lang);
+		// Fallback to English if nothing found
+		if (translations.isEmpty() && !lang.equalsIgnoreCase("en")) {
+			translations = translationRepository.findFilteredQuestions(subject, questionsType, difficulty, "en");
+		}
+		return translations.stream().map(t -> QuestionResponseDTO.builder()
+				.questionId(t.getQuestion().getId()).questionText(t.getQuestionText())
+				.answerOptions(t.getOptions().stream().sorted(Comparator.comparing(QuestionOption::getOptionIndex))
+						.map(QuestionOption::getOptionText).toList()).correctOptionIndex(t.getQuestion().getCorrectIndex())
+				.explanation(t.getExplanation()).build()).toList();
+	}
 }
