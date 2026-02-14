@@ -89,14 +89,18 @@ public class QuestionBankController {
 		return ResponseEntity.ok().body(questionBankService.deleteQuestionById(questionsId));
 	}
 
-	@PostMapping
-	public ResponseEntity<String> save(@RequestBody QuestionRequestDTO dto) {
-		questionBankService.saveQuestion(dto);
+	@PostMapping(value = "/i18n/questions")
+	public ResponseEntity<String> save(@RequestBody List<QuestionRequestDTO> questionsRequest) {
+		questionBankService.saveQuestion(questionsRequest);
 		return ResponseEntity.ok("Question saved successfully");
 	}
 
-	@GetMapping("/{id}")
-	public ResponseEntity<QuestionResponseDTO> get(@PathVariable String id) {
-		return ResponseEntity.ok(questionBankService.getQuestion(id));
+	@GetMapping("/i18n/questions/{id}")
+	public ResponseEntity<List<QuestionResponseDTO>> get(@PathVariable String id) {
+		if (id != null)
+			return ResponseEntity.ok(List.of(questionBankService.getQuestion(id)));
+		else {
+			return ResponseEntity.ok(questionBankService.getAllQuestionsByLanguage());
+		}
 	}
 }

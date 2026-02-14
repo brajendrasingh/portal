@@ -18,7 +18,7 @@ public class QuestionOption {
     @Column(columnDefinition = "TEXT")
     private String optionText;
 
-    @ManyToOne
-    @JoinColumn(name = "translation_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "translation_id", nullable = false)
     private QuestionTranslation translation;
 }

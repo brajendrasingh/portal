@@ -3,7 +3,6 @@ package com.bksoft.questionbank.entities.i18n;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.data.annotation.Id;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +22,6 @@ public class Question {
     private Integer marks;
     private Integer correctIndex;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<QuestionTranslation> translations = new ArrayList<>();
 }

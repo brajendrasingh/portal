@@ -25,10 +25,10 @@ public class QuestionTranslation {
     @Column(columnDefinition = "TEXT")
     private String explanation;
 
-    @ManyToOne
-    @JoinColumn(name = "question_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "question_id", nullable = false)
     private Question question;
 
-    @OneToMany(mappedBy = "translation", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "translation", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<QuestionOption> options = new ArrayList<>();
 }

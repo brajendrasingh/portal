@@ -87,39 +87,41 @@ public class QuestionBankService {
 		return "success";
 	}
 
-	public void saveQuestion(QuestionRequestDTO dto) {
-		com.bksoft.questionbank.entities.i18n.Question question = new com.bksoft.questionbank.entities.i18n.Question();
-		question.setId(dto.getId());
-		question.setSubject(dto.getSubject());
-		question.setTopic(dto.getTopic());
-		question.setCategory(dto.getCategory());
-		question.setDifficulty(dto.getDifficulty());
-		question.setMarks(dto.getMarks());
-		question.setCorrectIndex(dto.getCorrectIndex());
+	public void saveQuestion(List<QuestionRequestDTO> questions) {
+		for (QuestionRequestDTO dto : questions) {
+			com.bksoft.questionbank.entities.i18n.Question question = new com.bksoft.questionbank.entities.i18n.Question();
+			question.setId(dto.getId());
+			question.setSubject(dto.getSubject());
+			question.setTopic(dto.getTopic());
+			question.setCategory(dto.getCategory());
+			question.setDifficulty(dto.getDifficulty());
+			question.setMarks(dto.getMarks());
+			question.setCorrectIndex(dto.getCorrectIndex());
 
-		List<QuestionTranslation> translations = new ArrayList<>();
+			List<QuestionTranslation> translations = new ArrayList<>();
 
-		for (TranslationDTO t : dto.getTranslations()) {
-			QuestionTranslation translation = new QuestionTranslation();
-			translation.setLanguage(t.getLanguage());
-			translation.setQuestionText(t.getQuestionText());
-			translation.setExplanation(t.getExplanation());
-			translation.setQuestion(question);
+			for (TranslationDTO t : dto.getTranslations()) {
+				QuestionTranslation translation = new QuestionTranslation();
+				translation.setLanguage(t.getLanguage());
+				translation.setQuestionText(t.getQuestionText());
+				translation.setExplanation(t.getExplanation());
+				translation.setQuestion(question);
 
-			List<QuestionOption> options = new ArrayList<>();
+				List<QuestionOption> options = new ArrayList<>();
 
-			for (int i = 0; i < t.getOptions().size(); i++) {
-				QuestionOption option = new QuestionOption();
-				option.setOptionIndex(i);
-				option.setOptionText(t.getOptions().get(i));
-				option.setTranslation(translation);
-				options.add(option);
+				for (int i = 0; i < t.getOptions().size(); i++) {
+					QuestionOption option = new QuestionOption();
+					option.setOptionIndex(i);
+					option.setOptionText(t.getOptions().get(i));
+					option.setTranslation(translation);
+					options.add(option);
+				}
+				translation.setOptions(options);
+				translations.add(translation);
 			}
-			translation.setOptions(options);
-			translations.add(translation);
+			question.setTranslations(translations);
+			questionRepository.save(question);
 		}
-		question.setTranslations(translations);
-		questionRepository.save(question);
 	}
 
 	public QuestionResponseDTO getQuestion(String questionId) {
@@ -136,5 +138,26 @@ public class QuestionBankService {
 						.map(QuestionOption::getOptionText)
 						.toList())
 				.correctIndex(translation.getQuestion().getCorrectIndex()).explanation(translation.getExplanation()).build();
+	}
+
+	public List<QuestionResponseDTO> getAllQuestionsByLanguage() {
+		String lang = LocaleContextHolder.getLocale().getLanguage();
+		List<QuestionTranslation> translations = translationRepository.findAllByLanguage(lang);
+
+		// If no translations found → fallback to English
+		if (translations.isEmpty() && !lang.equalsIgnoreCase("en")) {
+			translations = translationRepository.findAllByLanguage("en");
+		}
+		return translations.stream().map(t -> QuestionResponseDTO.builder()
+				.id(t.getQuestion().getId())
+				.questionText(t.getQuestionText())
+				.options(t.getOptions()
+						.stream()
+						.sorted(Comparator.comparing(QuestionOption::getOptionIndex))
+						.map(QuestionOption::getOptionText)
+						.toList()
+				)
+				.correctIndex(t.getQuestion().getCorrectIndex()).explanation(t.getExplanation()).build()
+		).toList();
 	}
 }
