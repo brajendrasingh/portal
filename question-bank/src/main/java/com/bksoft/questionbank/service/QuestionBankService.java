@@ -1,8 +1,15 @@
 package com.bksoft.questionbank.service;
 
 import com.bksoft.questionbank.dtos.Question;
+import com.bksoft.questionbank.dtos.i18n.QuestionRequestDTO;
+import com.bksoft.questionbank.dtos.i18n.QuestionResponseDTO;
+import com.bksoft.questionbank.dtos.i18n.TranslationDTO;
 import com.bksoft.questionbank.entities.QuestionEntity;
-import com.bksoft.questionbank.repositories.QuestionRepository;
+import com.bksoft.questionbank.entities.i18n.QuestionOption;
+import com.bksoft.questionbank.entities.i18n.QuestionTranslation;
+import com.bksoft.questionbank.repositories.QuestionEntityRepository;
+import com.bksoft.questionbank.repositories.i18n.QuestionRepository;
+import com.bksoft.questionbank.repositories.i18n.QuestionTranslationRepository;
 import com.bksoft.questionbank.utils.QuestionEntityMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -11,6 +18,7 @@ import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -18,26 +26,30 @@ public class QuestionBankService {
 	private static final Logger log = LoggerFactory.getLogger(QuestionBankService.class);
 
 	@Autowired
+	private QuestionEntityRepository questionEntityRepository;
+	@Autowired
+	private QuestionTranslationRepository translationRepository;
+	@Autowired
 	private QuestionRepository questionRepository;
 
 	public Question getQuestionById(String questionId) {
 		log.info("Fetch question by question id");
 		String lang = LocaleContextHolder.getLocale().getLanguage();
 		com.bksoft.questionbank.dtos.Question question = QuestionEntityMapper.INSTANCE
-				.convertToDtosQuestion(questionRepository.findById(questionId).get());
+				.convertToDtosQuestion(questionEntityRepository.findById(questionId).get());
 		return question;
 	}
 
 	public List<Question> getAllQuestions() {
 		log.info("Fetch all questions");
 		List<com.bksoft.questionbank.dtos.Question> questions = QuestionEntityMapper.INSTANCE
-				.convertToDtosQuestion(questionRepository.findAll());
+				.convertToDtosQuestion(questionEntityRepository.findAll());
 		return questions;
 	}
 
 	public List<Question> getQuestions(String examType, String subject, String questionsType, String difficulty) {
 		log.info("Fetch questions by filters");
-		List<com.bksoft.questionbank.dtos.Question> questions = QuestionEntityMapper.INSTANCE.convertToDtosQuestion(questionRepository.findAll());
+		List<com.bksoft.questionbank.dtos.Question> questions = QuestionEntityMapper.INSTANCE.convertToDtosQuestion(questionEntityRepository.findAll());
 		List<Question> filteredResponse = new ArrayList<>();
 		for (Question question : questions) {
 			if (question.getSubject().equals(subject) && question.getCategory().name().equals(questionsType)) {
@@ -51,7 +63,7 @@ public class QuestionBankService {
 		log.info("Add questions list");
 		List<com.bksoft.questionbank.entities.QuestionEntity> questionsEntities = QuestionEntityMapper.INSTANCE
 				.convertToQuestionEntity(questions);
-		questionRepository.saveAll(questionsEntities);
+		questionEntityRepository.saveAll(questionsEntities);
 		return "success";
 	}
 
@@ -59,20 +71,70 @@ public class QuestionBankService {
 		log.info("Update question by question id and payload");
 		com.bksoft.questionbank.entities.QuestionEntity questionEntity = QuestionEntityMapper.INSTANCE
 				.convertToQuestionEntity(question);
-		QuestionEntity response = questionRepository.save(questionEntity);
+		QuestionEntity response = questionEntityRepository.save(questionEntity);
 		return response.getQuestionId();
 	}
 
 	public String deleteQuestionById(String questionId) {
 		log.info("Delete question by question id");
-		questionRepository.deleteById(questionId);
+		questionEntityRepository.deleteById(questionId);
 		return "success";
 	}
 	
 	public String deleteAllQuestions() {
 		log.info("Delete all questions");
-		questionRepository.deleteAll();
+		questionEntityRepository.deleteAll();
 		return "success";
 	}
 
+	public void saveQuestion(QuestionRequestDTO dto) {
+		com.bksoft.questionbank.entities.i18n.Question question = new com.bksoft.questionbank.entities.i18n.Question();
+		question.setId(dto.getId());
+		question.setSubject(dto.getSubject());
+		question.setTopic(dto.getTopic());
+		question.setCategory(dto.getCategory());
+		question.setDifficulty(dto.getDifficulty());
+		question.setMarks(dto.getMarks());
+		question.setCorrectIndex(dto.getCorrectIndex());
+
+		List<QuestionTranslation> translations = new ArrayList<>();
+
+		for (TranslationDTO t : dto.getTranslations()) {
+			QuestionTranslation translation = new QuestionTranslation();
+			translation.setLanguage(t.getLanguage());
+			translation.setQuestionText(t.getQuestionText());
+			translation.setExplanation(t.getExplanation());
+			translation.setQuestion(question);
+
+			List<QuestionOption> options = new ArrayList<>();
+
+			for (int i = 0; i < t.getOptions().size(); i++) {
+				QuestionOption option = new QuestionOption();
+				option.setOptionIndex(i);
+				option.setOptionText(t.getOptions().get(i));
+				option.setTranslation(translation);
+				options.add(option);
+			}
+			translation.setOptions(options);
+			translations.add(translation);
+		}
+		question.setTranslations(translations);
+		questionRepository.save(question);
+	}
+
+	public QuestionResponseDTO getQuestion(String questionId) {
+		String lang = LocaleContextHolder.getLocale().getLanguage();
+		QuestionTranslation translation = translationRepository.findByQuestionIdAndLanguage(questionId, lang)
+				.orElseGet(() -> translationRepository
+						.findByQuestionIdAndLanguage(questionId, "en")
+						.orElseThrow(() -> new RuntimeException("Question not found")));
+
+		return QuestionResponseDTO.builder().id(questionId)
+				.questionText(translation.getQuestionText())
+				.options(translation.getOptions().stream()
+						.sorted(Comparator.comparing(QuestionOption::getOptionIndex))
+						.map(QuestionOption::getOptionText)
+						.toList())
+				.correctIndex(translation.getQuestion().getCorrectIndex()).explanation(translation.getExplanation()).build();
+	}
 }

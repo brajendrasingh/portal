@@ -18,8 +18,20 @@ export class AssessmentInstructionsComponent {
     { code: 'HI', label: 'Hindi' }
   ];
 
+  ngOnInit() {
+    this.setBrowserLanguage();
+  }
+
+  setBrowserLanguage() {
+    const browserLang = navigator.language || (navigator as any).userLanguage;
+    // browserLang example: "en-US", "hi-IN"
+    const langCode = browserLang.split('-')[0].toUpperCase();
+    const match = this.languages.find(l => l.code === langCode);
+    this.selectedLanguage = match ? match.code : 'EN'; // fallback to English
+  }
+
   startTestClick() {
-    //Store in localStorage
+    //Store language in localStorage
     localStorage.setItem('lang', this.selectedLanguage);
     this.startTest.emit(this.selectedLanguage);
   }

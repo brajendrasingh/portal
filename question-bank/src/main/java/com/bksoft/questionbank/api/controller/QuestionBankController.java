@@ -4,6 +4,8 @@ import com.bksoft.questionbank.api.mapper.QuestionMapper;
 import com.bksoft.questionbank.api.models.Question;
 import com.bksoft.questionbank.api.response.ApiResponse;
 import com.bksoft.questionbank.api.response.Meta;
+import com.bksoft.questionbank.dtos.i18n.QuestionRequestDTO;
+import com.bksoft.questionbank.dtos.i18n.QuestionResponseDTO;
 import com.bksoft.questionbank.service.QuestionBankService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -87,4 +89,14 @@ public class QuestionBankController {
 		return ResponseEntity.ok().body(questionBankService.deleteQuestionById(questionsId));
 	}
 
+	@PostMapping
+	public ResponseEntity<String> save(@RequestBody QuestionRequestDTO dto) {
+		questionBankService.saveQuestion(dto);
+		return ResponseEntity.ok("Question saved successfully");
+	}
+
+	@GetMapping("/{id}")
+	public ResponseEntity<QuestionResponseDTO> get(@PathVariable String id) {
+		return ResponseEntity.ok(questionBankService.getQuestion(id));
+	}
 }

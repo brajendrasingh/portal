@@ -6,7 +6,7 @@ import com.bksoft.questionbank.entities.AssessmentSubmission;
 import com.bksoft.questionbank.entities.QuestionEntity;
 import com.bksoft.questionbank.entities.QuestionResponse;
 import com.bksoft.questionbank.repositories.AssessmentSubmissionRepository;
-import com.bksoft.questionbank.repositories.QuestionRepository;
+import com.bksoft.questionbank.repositories.QuestionEntityRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
@@ -23,12 +23,12 @@ import java.util.stream.Collectors;
 @Transactional
 public class AssessmentSubmissionService {
 
-    private final QuestionRepository questionRepository;
+    private final QuestionEntityRepository questionEntityRepository;
     private final AssessmentSubmissionRepository submissionRepo;
 
-    public AssessmentSubmissionService(AssessmentSubmissionRepository submissionRepo, QuestionRepository questionRepository) {
+    public AssessmentSubmissionService(AssessmentSubmissionRepository submissionRepo, QuestionEntityRepository questionEntityRepository) {
         this.submissionRepo = submissionRepo;
-        this.questionRepository = questionRepository;
+        this.questionEntityRepository = questionEntityRepository;
     }
 
     public AssessmentSubmission submit(AssessmentSubmissionRequest request) {
@@ -47,7 +47,7 @@ public class AssessmentSubmissionService {
         List<QuestionResponse> responses = new ArrayList<>();
 
         for (var qna : request.questionAnswers) {
-            QuestionEntity q = questionRepository.findById(qna.questionId).orElseThrow(() -> new EntityNotFoundException("Question not found"));
+            QuestionEntity q = questionEntityRepository.findById(qna.questionId).orElseThrow(() -> new EntityNotFoundException("Question not found"));
             boolean isCorrect = evaluateAnswer(List.of(q.getCorrectAnswer()), qna.selectedAnswers);
 
             if (isCorrect) correct++;
@@ -101,7 +101,7 @@ public class AssessmentSubmissionService {
 
         for (QuestionResponse qr : res.getResponses()) {
             SubmittedAnswerDetail.QuestionAnswer qa = new SubmittedAnswerDetail.QuestionAnswer();
-            QuestionEntity q = questionRepository.findById(qr.getQuestionId()).orElseThrow(() -> new EntityNotFoundException("Question not found"));
+            QuestionEntity q = questionEntityRepository.findById(qr.getQuestionId()).orElseThrow(() -> new EntityNotFoundException("Question not found"));
             qa.questionId = qr.getQuestionId();
             qa.questionText = q.getQuestion();
             qa.correctAnswers = List.of(q.getCorrectAnswer());
