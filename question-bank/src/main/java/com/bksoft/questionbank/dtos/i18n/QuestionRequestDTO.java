@@ -13,6 +13,7 @@ public class QuestionRequestDTO {
     private String subject;
     private String topic;
     private String category;
+    private String questionType;
     private String difficulty;
     private Integer marks;
     private Integer correctIndex;

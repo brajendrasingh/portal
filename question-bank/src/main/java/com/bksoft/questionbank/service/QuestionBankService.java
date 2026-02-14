@@ -94,6 +94,7 @@ public class QuestionBankService {
 			question.setSubject(dto.getSubject());
 			question.setTopic(dto.getTopic());
 			question.setCategory(dto.getCategory());
+			question.setQuestionType(dto.getQuestionType());
 			question.setDifficulty(dto.getDifficulty());
 			question.setMarks(dto.getMarks());
 			question.setCorrectIndex(dto.getCorrectIndex());

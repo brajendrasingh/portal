@@ -112,7 +112,6 @@ public class QuestionBankController {
 		if (examType.equalsIgnoreCase("Govt")) {
 			subjects = Set.of("English", "Math", "Science", "History");
 			questionsType = "MCQ";
-			difficulty = "";
 		}
 		ApiResponse<Map<String, List<QuestionResponseDTO>>> response = new ApiResponse<>();
 		Map<String, List<QuestionResponseDTO>> map = new HashMap<>();

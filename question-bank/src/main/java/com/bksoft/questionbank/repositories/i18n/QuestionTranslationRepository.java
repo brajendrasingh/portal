@@ -33,10 +33,10 @@ public interface QuestionTranslationRepository extends JpaRepository<QuestionTra
                 LEFT JOIN FETCH qt.options
                 JOIN FETCH qt.question q
                 WHERE q.subject = :subject
-                AND q.category = :category
-                AND q.difficulty = :difficulty
+                AND q.questionType = :questionType
+                AND (:difficulty IS NULL OR q.difficulty = :difficulty)
                 AND qt.language = :lang
             """)
-    List<QuestionTranslation> findFilteredQuestions(@Param("subject") String subject, @Param("category") String category, @Param("difficulty") String difficulty, @Param("lang") String lang);
+    List<QuestionTranslation> findFilteredQuestions(@Param("subject") String subject, @Param("questionType") String questionType, @Param("difficulty") String difficulty, @Param("lang") String lang);
 }
 
