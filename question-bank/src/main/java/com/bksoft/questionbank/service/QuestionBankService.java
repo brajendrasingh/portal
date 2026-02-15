@@ -4,6 +4,8 @@ import com.bksoft.questionbank.dtos.Question;
 import com.bksoft.questionbank.dtos.i18n.QuestionRequestDTO;
 import com.bksoft.questionbank.dtos.i18n.QuestionResponseDTO;
 import com.bksoft.questionbank.dtos.i18n.TranslationDTO;
+import com.bksoft.questionbank.dtos.i18n.dual.DualLanguageQuestionDTO;
+import com.bksoft.questionbank.dtos.i18n.dual.TranslationViewDTO;
 import com.bksoft.questionbank.entities.QuestionEntity;
 import com.bksoft.questionbank.entities.i18n.QuestionOption;
 import com.bksoft.questionbank.entities.i18n.QuestionTranslation;
@@ -17,9 +19,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class QuestionBankService {
@@ -176,4 +177,28 @@ public class QuestionBankService {
 						.map(QuestionOption::getOptionText).toList()).correctOptionIndex(t.getQuestion().getCorrectIndex())
 				.explanation(t.getExplanation()).build()).toList();
 	}
+
+    public List<DualLanguageQuestionDTO> getDualLanguageQuestions(String subject, String category, String lang1, String lang2) {
+        List<String> languages = List.of(lang1, lang2);
+        List<QuestionTranslation> translations = translationRepository.findBySubjectAndCategoryAndLanguages(subject, category, languages);
+        // Group by Question ID
+        Map<String, List<QuestionTranslation>> grouped = translations.stream().collect(Collectors.groupingBy(t -> t.getQuestion().getId()));
+
+        List<DualLanguageQuestionDTO> response = new ArrayList<>();
+
+        for (Map.Entry<String, List<QuestionTranslation>> entry : grouped.entrySet()) {
+            String questionId = entry.getKey();
+            List<QuestionTranslation> questionTranslations = entry.getValue();
+            Map<String, TranslationViewDTO> translationMap = new HashMap<>();
+            for (QuestionTranslation t : questionTranslations) {
+                translationMap.put(t.getLanguage(), TranslationViewDTO.builder().questionText(t.getQuestionText())
+                        .options(t.getOptions().stream().sorted(Comparator.comparing(QuestionOption::getOptionIndex))
+                                .map(QuestionOption::getOptionText).toList()).explanation(t.getExplanation()).build());
+            }
+            response.add(DualLanguageQuestionDTO.builder().questionId(questionId)
+                    .correctIndex(questionTranslations.get(0).getQuestion().getCorrectIndex()).translations(translationMap).build());
+        }
+        return response;
+    }
+
 }

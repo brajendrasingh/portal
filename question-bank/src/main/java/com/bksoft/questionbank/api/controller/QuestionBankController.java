@@ -6,6 +6,7 @@ import com.bksoft.questionbank.api.response.ApiResponse;
 import com.bksoft.questionbank.api.response.Meta;
 import com.bksoft.questionbank.dtos.i18n.QuestionRequestDTO;
 import com.bksoft.questionbank.dtos.i18n.QuestionResponseDTO;
+import com.bksoft.questionbank.dtos.i18n.dual.DualLanguageQuestionDTO;
 import com.bksoft.questionbank.service.QuestionBankService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -119,6 +120,30 @@ public class QuestionBankController {
 		if (subjects != null && !subjects.isEmpty()) {
 			for (String subject : subjects) {
 				List<QuestionResponseDTO> questions = questionBankService.getI18nQuestions(examType, subject, questionsType, difficulty);
+				map.put(subject, questions);
+				totalQuestions += questions.size();
+			}
+		}
+		response.setData(map);
+		response.setMeta(new Meta(subjects != null ? subjects.size() : 0, totalQuestions, 1, totalQuestions));
+		return ResponseEntity.ok().body(response);
+	}
+
+	@GetMapping("/i18n/v1/questions/dual")
+	public ResponseEntity<ApiResponse<Map<String, List<DualLanguageQuestionDTO>>>> getDualLanguageQuestions(@RequestParam(required = false) String examType,
+																											@RequestParam(required = false) Set<String> subjects,
+																											@RequestParam(required = false) String questionsType, @RequestParam String lang1, @RequestParam String lang2) {
+		log.info("Fetch dual lang list of i18n questions by filters");
+		if (examType.equalsIgnoreCase("Govt")) {
+			subjects = Set.of("English", "Math", "Science", "History");
+			questionsType = "MCQ";
+		}
+		ApiResponse<Map<String, List<DualLanguageQuestionDTO>>> response = new ApiResponse<>();
+		Map<String, List<DualLanguageQuestionDTO>> map = new HashMap<>();
+		int totalQuestions = 0;
+		if (subjects != null && !subjects.isEmpty()) {
+			for (String subject : subjects) {
+				List<DualLanguageQuestionDTO> questions = questionBankService.getDualLanguageQuestions(subject, questionsType, lang1, lang2);
 				map.put(subject, questions);
 				totalQuestions += questions.size();
 			}
