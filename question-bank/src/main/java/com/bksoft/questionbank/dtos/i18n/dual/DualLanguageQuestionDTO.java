@@ -12,7 +12,7 @@ import java.util.Map;
 public class DualLanguageQuestionDTO {
 
     private String questionId;
-    private Integer correctIndex;
+    private Integer correctOptionIndex;
 
     private Map<String, TranslationViewDTO> translations;
 }

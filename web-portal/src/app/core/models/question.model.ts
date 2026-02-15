@@ -1,3 +1,4 @@
+import { TranslationViewDTO } from "./i18n/translation-view.model";
 
 export interface Question {
     questionId: number;
@@ -17,4 +18,6 @@ export interface Question {
     marks?: number;
     difficulty?: 'EASY' | 'MEDIUM' | 'HARD';
     explanation?: string; 
+
+    translation?: TranslationViewDTO;
 }

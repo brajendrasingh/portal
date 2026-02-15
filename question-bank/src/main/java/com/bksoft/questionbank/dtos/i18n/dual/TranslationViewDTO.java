@@ -12,6 +12,6 @@ import java.util.List;
 public class TranslationViewDTO {
 
     private String questionText;
-    private List<String> options;
+    private List<String> answerOptions;
     private String explanation;
 }
