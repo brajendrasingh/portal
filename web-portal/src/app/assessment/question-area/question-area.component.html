@@ -18,19 +18,28 @@
         </aside>
 
         <!-- CENTER: QUESTION -->
-        <section class="question-area">
+        <section class="question-area" *ngIf="currentQuestion as q">
             <h3>
-                {{ currentSection.sectionName  }} – Question {{ currentQuestionIndex + 1 }}
+                {{ currentSection.sectionName }} – Question {{ currentQuestionIndex + 1 }}
             </h3>
+            <div class="question-text">
+                <p><strong>English:</strong> {{ q.translations?.['en']?.questionText }}</p>
+                <p><strong>Hindi:</strong> {{ q.translations?.['hi']?.questionText }}</p>
+            </div>
 
-            <p class="question-text">
-                {{ currentQuestion.questionText }}
-            </p>
-
-            <label *ngFor="let opt of currentQuestion.answerOptions; let i = index" class="option">
-                <input type="radio" [checked]="currentQuestion.selectedIndex === i" (change)="selectOption(i)" />
-                {{ opt }}
-            </label>
+            <div class="option" *ngFor="let opt of q.translations?.['en']?.answerOptions; let i = index">
+                <label>
+                    <input type="radio" [name]="'q' + q.questionId" [value]="i" [(ngModel)]="q.selectedIndex" />
+                    <div class="option-text">
+                        <div class="en">
+                            {{ q.translations?.['en']?.answerOptions?.[i] }}
+                        </div>
+                        <div class="hi">
+                            {{ q.translations?.['hi']?.answerOptions?.[i] }}
+                        </div>
+                    </div>
+                </label>
+            </div>
         </section>
 
         <!-- RIGHT: QUESTION NAV -->

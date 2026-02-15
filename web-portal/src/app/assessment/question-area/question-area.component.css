@@ -107,14 +107,52 @@
   }
   
   .option {
-    display: block;
-    padding: 10px 12px;
-    margin-bottom: 10px;
-    border-radius: 6px;
+
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    border-radius: 8px;
     border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+  }
+  
+  .option:hover {
+    border-color: #0b3c5d;
+    background: #f4f8fb;
+  }
+  
+  .option label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
     cursor: pointer;
   }
   
+  .option input[type="radio"] {
+    margin-top: 4px;
+    cursor: pointer;
+  }
+  
+  .option-text {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+  }
+  
+  .lang {
+    width: 50%;
+    line-height: 1.4;
+  }
+  
+  .option-text .en {
+    font-weight: 500;
+  }
+  
+  .option-text .hi {
+    color: #555;
+    font-size: 14px;
+  }
   /* ======================
      FOOTER
   ====================== */

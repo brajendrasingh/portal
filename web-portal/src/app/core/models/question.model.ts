@@ -19,5 +19,7 @@ export interface Question {
     difficulty?: 'EASY' | 'MEDIUM' | 'HARD';
     explanation?: string; 
 
-    translation?: TranslationViewDTO;
+    translations: {
+        [lang: string]: TranslationViewDTO;
+    };
 }

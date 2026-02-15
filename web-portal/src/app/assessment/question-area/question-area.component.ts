@@ -73,7 +73,8 @@ export class QuestionAreaComponent implements OnInit, OnDestroy, OnChanges {
           sectionName,
           questions: response.data[sectionName].map(q => ({
             ...q,
-            selectedIndex: null   // ensure UI field exists
+            selectedIndex: null,   // ensure UI field exists
+            translation: q.translations[this.language] ?? q.translations['en']   // fallback
           }))
         }));
         // reset navigation
