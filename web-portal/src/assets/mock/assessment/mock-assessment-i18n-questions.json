@@ -1,0 +1,324 @@
+{
+	"data": {
+		"Math": [
+			{
+				"questionId": "1",
+				"translations": {
+					"en": {
+						"questionText": "Capital of India",
+						"answerOptions": [
+							"Kanpur",
+							"Delhi",
+							"Lucknow",
+							"Indore",
+							"Mumbai"
+						],
+						"explanation": "New Delhi is the capital of India."
+					},
+					"hi": {
+						"questionText": "भारत की राजधानी क्या है?",
+						"answerOptions": [
+							"कानपुर",
+							"दिल्ली",
+							"लखनऊ",
+							"इंदौर",
+							"मुंबई"
+						],
+						"explanation": "नई दिल्ली भारत की राजधानी है।"
+					}
+				},
+				"correctOption": 1,
+				"correctAnswer": "Delhi",
+				"subject": "GS",
+				"topic": "History",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"tags": [
+					"GS",
+					"History",
+					"Govt",
+					"GeneralKnowledge"
+				]
+			},
+			{
+				"questionId": "2",
+				"translations": {
+					"en": {
+						"questionText": "What is Angular?",
+						"answerOptions": [
+							"Database",
+							"Frontend framework",
+							"Backend framework",
+							"Operating System"
+						],
+						"explanation": "Angular is a frontend framework."
+					},
+					"hi": {
+						"questionText": "Angular क्या है?",
+						"answerOptions": [
+							"डेटाबेस",
+							"फ्रंटएंड फ्रेमवर्क",
+							"बैकएंड फ्रेमवर्क",
+							"ऑपरेटिंग सिस्टम"
+						],
+						"explanation": "Angular एक फ्रंटएंड फ्रेमवर्क है।"
+					}
+				},
+				"correctOption": 1,
+				"correctAnswer": "Frontend framework",
+				"subject": "UI",
+				"topic": "Angular",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"tags": [
+					"Angular",
+					"UI",
+					"Frontend",
+					"Tech"
+				]
+			},
+			{
+				"questionId": "3",
+				"translations": {
+					"en": {
+						"questionText": "Which directive is used for looping in Angular?",
+						"answerOptions": [
+							"*ngIf",
+							"*ngFor",
+							"*ngSwitch",
+							"*ngLoop"
+						],
+						"explanation": "*ngFor is used for looping in Angular."
+					},
+					"hi": {
+						"questionText": "Angular में लूपिंग के लिए कौन-सा डायरेक्टिव उपयोग होता है?",
+						"answerOptions": [
+							"*ngIf",
+							"*ngFor",
+							"*ngSwitch",
+							"*ngLoop"
+						],
+						"explanation": "*ngFor का उपयोग Angular में लूपिंग के लिए किया जाता है।"
+					}
+				},
+				"correctOption": 1,
+				"correctAnswer": "*ngFor",
+				"subject": "UI",
+				"topic": "Angular",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"tags": [
+					"Angular",
+					"Directives",
+					"UI",
+					"Tech"
+				]
+			},
+			{
+				"questionId": "4",
+				"translations": {
+					"en": {
+						"questionText": "Which language is primarily used with Angular?",
+						"answerOptions": [
+							"Java",
+							"Python",
+							"TypeScript",
+							"C++"
+						],
+						"explanation": "Angular primarily uses TypeScript."
+					},
+					"hi": {
+						"questionText": "Angular के साथ मुख्य रूप से कौन-सी भाषा उपयोग होती है?",
+						"answerOptions": [
+							"Java",
+							"Python",
+							"TypeScript",
+							"C++"
+						],
+						"explanation": "Angular मुख्य रूप से TypeScript का उपयोग करता है।"
+					}
+				},
+				"correctOption": 2,
+				"correctAnswer": "TypeScript",
+				"subject": "UI",
+				"topic": "Angular",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"tags": [
+					"Angular",
+					"TypeScript",
+					"Frontend",
+					"Tech"
+				]
+			}
+		],
+		"Science": [
+			{
+				"questionId": "101",
+				"translations": {
+					"en": {
+						"questionText": "What is the value of 12 × 8?",
+						"answerOptions": [
+							"86",
+							"94",
+							"96",
+							"108",
+							"88"
+						],
+						"explanation": "12 multiplied by 8 equals 96."
+					},
+					"hi": {
+						"questionText": "12 × 8 का मान क्या है?",
+						"answerOptions": [
+							"86",
+							"94",
+							"96",
+							"108",
+							"88"
+						],
+						"explanation": "12 गुणा 8 बराबर 96 होता है।"
+					}
+				},
+				"correctOption": 2,
+				"correctAnswer": "96",
+				"subject": "Math",
+				"topic": "Arithmetic",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"tags": [
+					"Math",
+					"Arithmetic",
+					"Calculation",
+					"Govt"
+				]
+			},
+			{
+				"questionId": "102",
+				"translations": {
+					"en": {
+						"questionText": "What is the square root of 144?",
+						"answerOptions": [
+							"10",
+							"11",
+							"12",
+							"14",
+							"16"
+						],
+						"explanation": "12 × 12 = 144."
+					},
+					"hi": {
+						"questionText": "144 का वर्गमूल क्या है?",
+						"answerOptions": [
+							"10",
+							"11",
+							"12",
+							"14",
+							"16"
+						],
+						"explanation": "12 × 12 = 144।"
+					}
+				},
+				"correctOption": 2,
+				"correctAnswer": "12",
+				"subject": "Math",
+				"topic": "Squares and Roots",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"tags": [
+					"Math",
+					"Roots",
+					"Govt",
+					"Basics"
+				]
+			}
+		],
+		"History": [
+			{
+				"questionId": "201",
+				"translations": {
+					"en": {
+						"questionText": "Which gas is most abundant in the Earth's atmosphere?",
+						"answerOptions": [
+							"Oxygen",
+							"Carbon Dioxide",
+							"Nitrogen",
+							"Hydrogen",
+							"Argon"
+						],
+						"explanation": "Nitrogen makes up about 78% of the Earth's atmosphere."
+					},
+					"hi": {
+						"questionText": "पृथ्वी के वायुमंडल में सबसे अधिक मात्रा में कौन-सी गैस है?",
+						"answerOptions": [
+							"ऑक्सीजन",
+							"कार्बन डाइऑक्साइड",
+							"नाइट्रोजन",
+							"हाइड्रोजन",
+							"आर्गन"
+						],
+						"explanation": "पृथ्वी के वायुमंडल का लगभग 78% नाइट्रोजन है।"
+					}
+				},
+				"correctOption": 2,
+				"correctAnswer": "Nitrogen",
+				"subject": "Science",
+				"topic": "Atmosphere",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "EASY",
+				"tags": [
+					"Science",
+					"Geography",
+					"Govt"
+				]
+			}
+		],
+		"English": [
+			{
+				"questionId": "301",
+				"translations": {
+					"en": {
+						"questionText": "What is the SI unit of electric current?",
+						"answerOptions": [
+							"Volt",
+							"Ohm",
+							"Ampere",
+							"Watt",
+							"Coulomb"
+						],
+						"explanation": "Electric current is measured in amperes (A)."
+					},
+					"hi": {
+						"questionText": "विद्युत धारा की SI इकाई क्या है?",
+						"answerOptions": [
+							"वोल्ट",
+							"ओम",
+							"एम्पीयर",
+							"वाट",
+							"कूलॉम्ब"
+						],
+						"explanation": "विद्युत धारा एम्पीयर (A) में मापी जाती है।"
+					}
+				},
+				"correctOption": 2,
+				"correctAnswer": "Ampere",
+				"subject": "Science",
+				"topic": "Physics",
+				"category": "MCQ",
+				"marks": 1,
+				"difficulty": "MEDIUM",
+				"tags": [
+					"Science",
+					"Physics",
+					"Govt"
+				]
+			}
+		]
+	}
+}
