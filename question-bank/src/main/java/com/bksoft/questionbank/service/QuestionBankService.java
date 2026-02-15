@@ -178,9 +178,9 @@ public class QuestionBankService {
 				.explanation(t.getExplanation()).build()).toList();
 	}
 
-    public List<DualLanguageQuestionDTO> getDualLanguageQuestions(String subject, String questionsType, String lang1, String lang2) {
+    public List<DualLanguageQuestionDTO> getDualLanguageQuestions(String subject, String questionType, String lang1, String lang2) {
         List<String> languages = List.of(lang1, lang2);
-        List<QuestionTranslation> translations = translationRepository.findBySubjectAndCategoryAndLanguages(subject, questionsType, languages);
+        List<QuestionTranslation> translations = translationRepository.findBySubjectAndCategoryAndLanguages(subject, questionType, languages);
         // Group by Question ID
         Map<String, List<QuestionTranslation>> grouped = translations.stream().collect(Collectors.groupingBy(t -> t.getQuestion().getId()));
 

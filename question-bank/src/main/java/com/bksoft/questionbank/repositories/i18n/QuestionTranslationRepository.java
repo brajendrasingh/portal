@@ -48,6 +48,6 @@ public interface QuestionTranslationRepository extends JpaRepository<QuestionTra
                 AND q.questionType = :questionType
                 AND qt.language IN (:languages)
             """)
-    List<QuestionTranslation> findBySubjectAndCategoryAndLanguages(@Param("subject") String subject, @Param("questionsType") String questionsType, @Param("languages") List<String> languages);
+    List<QuestionTranslation> findBySubjectAndCategoryAndLanguages(@Param("subject") String subject, @Param("questionType") String questionType, @Param("languages") List<String> languages);
 }
 

@@ -132,20 +132,20 @@ public class QuestionBankController {
 	@GetMapping("/i18n/v1/questions/dual")
 	public ResponseEntity<ApiResponse<Map<String, List<DualLanguageQuestionDTO>>>> getDualLanguageQuestions(@RequestParam(required = false) String examType,
 																											@RequestParam(required = false) Set<String> subjects,
-																											@RequestParam(required = false) String questionsType,
+																											@RequestParam(required = false) String questionType,
 																											@RequestParam(required = false, defaultValue = "en") String lang1,
 																											@RequestParam(required = false, defaultValue = "hi") String lang2) {
 		log.info("Fetch dual lang list of i18n questions by filters");
 		if (examType.equalsIgnoreCase("Govt")) {
 			subjects = Set.of("English", "Math", "Science", "History");
-			questionsType = "MCQ";
+			questionType = "MCQ";
 		}
 		ApiResponse<Map<String, List<DualLanguageQuestionDTO>>> response = new ApiResponse<>();
 		Map<String, List<DualLanguageQuestionDTO>> map = new HashMap<>();
 		int totalQuestions = 0;
 		if (subjects != null && !subjects.isEmpty()) {
 			for (String subject : subjects) {
-				List<DualLanguageQuestionDTO> questions = questionBankService.getDualLanguageQuestions(subject, questionsType, lang1, lang2);
+				List<DualLanguageQuestionDTO> questions = questionBankService.getDualLanguageQuestions(subject, questionType, lang1, lang2);
 				map.put(subject, questions);
 				totalQuestions += questions.size();
 			}
