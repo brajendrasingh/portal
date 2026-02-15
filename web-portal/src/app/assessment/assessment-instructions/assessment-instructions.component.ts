@@ -15,7 +15,8 @@ export class AssessmentInstructionsComponent {
   selectedLanguage!: string;
   languages = [
     { code: 'EN', label: 'English' },
-    { code: 'HI', label: 'Hindi' }
+    { code: 'HI', label: 'Hindi' },
+    { code: 'EN-HI', label: 'English+Hindi' },
   ];
 
   ngOnInit() {

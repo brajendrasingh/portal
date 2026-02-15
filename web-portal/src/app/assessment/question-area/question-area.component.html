@@ -23,19 +23,19 @@
                 {{ currentSection.sectionName }} – Question {{ currentQuestionIndex + 1 }}
             </h3>
             <div class="question-text">
-                <p><strong>English:</strong> {{ q.translations?.['en']?.questionText }}</p>
-                <p><strong>Hindi:</strong> {{ q.translations?.['hi']?.questionText }}</p>
+                <p *ngIf="q.translations?.['en']"><strong>English:</strong> {{ q.translations['en'].questionText }} </p>
+                <p *ngIf="q.translations?.['hi']"><strong>Hindi:</strong> {{ q.translations['hi'].questionText }} </p>
             </div>
 
-            <div class="option" *ngFor="let opt of q.translations?.['en']?.answerOptions; let i = index">
+            <div class="option" *ngFor="let opt of (q.translations?.['en']?.answerOptions || q.translations?.['hi']?.answerOptions) let i = index">
                 <label>
                     <input type="radio" [name]="'q' + q.questionId" [value]="i" [(ngModel)]="q.selectedIndex" />
                     <div class="option-text">
-                        <div class="en">
-                            {{ q.translations?.['en']?.answerOptions?.[i] }}
+                        <div class="en"  *ngIf="q.translations?.['en']">
+                            {{ q.translations['en']?.answerOptions?.[i] }}
                         </div>
-                        <div class="hi">
-                            {{ q.translations?.['hi']?.answerOptions?.[i] }}
+                        <div class="hi" *ngIf="q.translations?.['hi']">
+                            {{ q.translations['hi']?.answerOptions?.[i] }}
                         </div>
                     </div>
                 </label>
