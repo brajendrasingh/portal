@@ -134,7 +134,7 @@ public class QuestionBankController {
 																											@RequestParam(required = false) Set<String> subjects,
 																											@RequestParam(required = false) String questionType,
 																											@RequestParam(required = false, defaultValue = "en") String lang1,
-																											@RequestParam(required = false, defaultValue = "hi") String lang2) {
+																											@RequestParam(required = false) String lang2) {
 		log.info("Fetch dual lang list of i18n questions by filters");
 		if (examType.equalsIgnoreCase("Govt")) {
 			subjects = Set.of("English", "Math", "Science", "History");

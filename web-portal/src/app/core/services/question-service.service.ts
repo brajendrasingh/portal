@@ -72,12 +72,11 @@ export class QuestionServiceService {
     // if (assessmentLanguage) {
     //   params = params.set('assessmentLanguage', assessmentLanguage);
     // }
-    // if (assessmentLanguage === 'EN-HI') {
+    // if (assessmentLanguage === 'en-hi') {
     //   params = params.set('lang1', 'en');
     //   params = params.set('lang2', 'hi');
     // } else {
-    //   params = params.set('lang1', assessmentLanguage);
-    //   params = params.set('lang2', '');
+    //   params = params.set('lang1', assessmentLanguage ?? 'en');
     // }
     // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/v1/questions`, { params });
   }

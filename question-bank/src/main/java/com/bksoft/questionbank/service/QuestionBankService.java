@@ -179,7 +179,11 @@ public class QuestionBankService {
 	}
 
     public List<DualLanguageQuestionDTO> getDualLanguageQuestions(String subject, String questionType, String lang1, String lang2) {
-        List<String> languages = List.of(lang1, lang2);
+		List<String> languages = new ArrayList<>();
+		languages.add(lang1);
+		if (lang2 != null) {
+			languages.add(lang2);
+		}
         List<QuestionTranslation> translations = translationRepository.findBySubjectAndCategoryAndLanguages(subject, questionType, languages);
         // Group by Question ID
         Map<String, List<QuestionTranslation>> grouped = translations.stream().collect(Collectors.groupingBy(t -> t.getQuestion().getId()));
