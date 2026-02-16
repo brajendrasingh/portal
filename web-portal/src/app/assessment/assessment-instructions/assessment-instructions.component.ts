@@ -28,7 +28,7 @@ export class AssessmentInstructionsComponent {
     // browserLang example: "en-US", "hi-IN"
     const langCode = browserLang.split('-')[0].toUpperCase();
     const match = this.languages.find(l => l.code === langCode);
-    this.selectedLanguage = match ? match.code : 'EN'; // fallback to English
+    this.selectedLanguage = match ? match.code : 'en'; // fallback to English
   }
 
   startTestClick() {

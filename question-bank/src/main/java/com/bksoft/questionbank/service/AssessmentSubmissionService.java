@@ -5,8 +5,10 @@ import com.bksoft.questionbank.api.models.SubmittedAnswerDetail;
 import com.bksoft.questionbank.entities.AssessmentSubmission;
 import com.bksoft.questionbank.entities.QuestionEntity;
 import com.bksoft.questionbank.entities.QuestionResponse;
+import com.bksoft.questionbank.entities.i18n.Question;
 import com.bksoft.questionbank.repositories.AssessmentSubmissionRepository;
 import com.bksoft.questionbank.repositories.QuestionEntityRepository;
+import com.bksoft.questionbank.repositories.i18n.QuestionRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
@@ -23,11 +25,13 @@ import java.util.stream.Collectors;
 @Transactional
 public class AssessmentSubmissionService {
 
+    private final QuestionRepository questionRepository;
     private final QuestionEntityRepository questionEntityRepository;
     private final AssessmentSubmissionRepository submissionRepo;
 
-    public AssessmentSubmissionService(AssessmentSubmissionRepository submissionRepo, QuestionEntityRepository questionEntityRepository) {
+    public AssessmentSubmissionService(AssessmentSubmissionRepository submissionRepo, QuestionEntityRepository questionEntityRepository, QuestionRepository questionRepository) {
         this.submissionRepo = submissionRepo;
+        this.questionRepository = questionRepository;
         this.questionEntityRepository = questionEntityRepository;
     }
 
@@ -47,8 +51,9 @@ public class AssessmentSubmissionService {
         List<QuestionResponse> responses = new ArrayList<>();
 
         for (var qna : request.questionAnswers) {
-            QuestionEntity q = questionEntityRepository.findById(qna.questionId).orElseThrow(() -> new EntityNotFoundException("Question not found"));
-            boolean isCorrect = evaluateAnswer(List.of(q.getCorrectAnswer()), qna.selectedAnswers);
+            //QuestionEntity qe = questionEntityRepository.findById(qna.questionId).orElseThrow(() -> new EntityNotFoundException("Question not found"));
+            Question q = questionRepository.findById(qna.questionId).orElseThrow(() -> new EntityNotFoundException("Question not found"));
+            boolean isCorrect = evaluateAnswer(List.of(q.getTranslations().get(0).getOptions().get(q.getCorrectIndex()).getOptionText()), qna.selectedAnswers);
 
             if (isCorrect) correct++;
 

@@ -185,14 +185,15 @@ export class QuestionAreaComponent implements OnInit, OnDestroy, OnChanges {
   /* ================= For SUBMIT payload================= */
 
   prepareSubmissionPayload(): AssessmentSubmissionPayload {
+    const userLang = this.language === 'en-hi' ? 'en' : this.language;
     const questionAnswers: AnswerSubmission[] = this.sections
       .flatMap(section =>
         section.questions.map(q => ({
           questionId: q.questionId,
-          questionText: q.questionText,
-          answerOptions: q.answerOptions,
+          questionText: q.translations[userLang].questionText,
+          answerOptions: q.translations[userLang].answerOptions,
           // if MCQ single select
-          selectedAnswers: q.selectedIndex != null ? [q.answerOptions[q.selectedIndex]] : [],
+          selectedAnswers: q.selectedIndex != null ? [q.translations[userLang].answerOptions[q.selectedIndex]] : [],
           questionType: 'MCQ',
           subject: section.sectionName
         }))
