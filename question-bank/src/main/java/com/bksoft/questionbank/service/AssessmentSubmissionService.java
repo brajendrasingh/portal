@@ -106,10 +106,11 @@ public class AssessmentSubmissionService {
 
         for (QuestionResponse qr : res.getResponses()) {
             SubmittedAnswerDetail.QuestionAnswer qa = new SubmittedAnswerDetail.QuestionAnswer();
-            QuestionEntity q = questionEntityRepository.findById(qr.getQuestionId()).orElseThrow(() -> new EntityNotFoundException("Question not found"));
+            //QuestionEntity qe = questionEntityRepository.findById(qr.getQuestionId()).orElseThrow(() -> new EntityNotFoundException("Question not found"));
+            Question q = questionRepository.findById(qr.getQuestionId()).orElseThrow(() -> new EntityNotFoundException("Question not found"));
             qa.questionId = qr.getQuestionId();
-            qa.questionText = q.getQuestion();
-            qa.correctAnswers = List.of(q.getCorrectAnswer());
+            qa.questionText = q.getTranslations().get(0).getQuestionText();
+            qa.correctAnswers = List.of(q.getTranslations().get(0).getOptions().get(q.getCorrectIndex()).getOptionText());
             qa.questionType = qr.getQuestionType();
             qa.selectedAnswers = qr.getSelectedAnswers();
             submittedAnswerDetail.questionAnswers.add(qa);
@@ -131,6 +132,6 @@ public class AssessmentSubmissionService {
             return submissionRepo.findByAssessmentId(assessmentId);
         }
 
-        return submissionRepo.findAll();
+        return submissionRepo.findAllByOrderBySubmittedAtDesc();
     }
 }
