@@ -55,4 +55,11 @@ export class AssessmentResultComponent {
   get resultStatus(): string {
     return this.scorePercentage >= this.passingPercentage ? 'PASS' : 'FAIL';
   }
+
+  isCorrect(q: AnswerSubmission): boolean {
+    if (!q.selectedAnswers || !q.correctAnswers) {
+      return false;
+    }
+    return JSON.stringify(q.selectedAnswers.sort()) === JSON.stringify(q.correctAnswers.sort());
+  }
 }

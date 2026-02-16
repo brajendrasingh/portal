@@ -43,11 +43,11 @@
 
         <p class="review-answer">
           <strong>Your Answer:</strong>
-          <span [ngClass]="q.selectedAnswers === q.correctAnswers ? 'correct' : 'wrong'">
-            {{ q.selectedAnswers || 'Not Answered' }} </span>
+          <span [ngClass]="isCorrect(q) ? 'correct' : 'wrong'">
+            {{ q.selectedAnswers && q.selectedAnswers.length ?q.selectedAnswers : 'Not Answered' }} </span>
         </p>
 
-        <p class="review-correct" *ngIf="q.selectedAnswers !== q.correctAnswers">
+        <p class="review-correct" *ngIf="!isCorrect(q)">
           <strong>Correct Answer:</strong> {{ q.correctAnswers }}
         </p>
 

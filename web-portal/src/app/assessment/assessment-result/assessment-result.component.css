@@ -94,6 +94,7 @@
     padding: 16px;
     margin-bottom: 12px;
     background: #fafafa;
+    transition: all 0.2s ease;
   }
   
   .review-question {
@@ -156,4 +157,8 @@
     background: #d6d6d6;
   }
 
+  .review-card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
   
