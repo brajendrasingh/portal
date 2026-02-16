@@ -24,6 +24,11 @@ repositories {
 }
 
 dependencies {
+	// JWT token Authentication: extract user from jwt
+	implementation("io.jsonwebtoken:jjwt-api:0.12.6")
+	implementation("io.jsonwebtoken:jjwt-impl:0.12.6")
+	runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.12.6")
+
 	implementation("net.logstash.logback:logstash-logback-encoder:9.0") //For converting text base log to json based log
     // Actuator
     implementation("org.springframework.boot:spring-boot-starter-actuator")
