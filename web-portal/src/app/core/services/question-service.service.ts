@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Question } from '../../core/models/question.model';
+import { AssessmentSubmissionPayload } from '../../core/models/assessmentSubmissionPayload.model';
 import { AnswerSubmission } from '../../core/models/answerSubmission.model';
 import { environment } from '../../../environments/environment';
 
@@ -12,14 +13,71 @@ export class QuestionServiceService {
 
   constructor(private http: HttpClient) { }
 
-  getQuestions(): Observable<Question[]> {
+  getQuestions(filters?: {
+    examType: string;
+    examName: string;
+    subject: string;
+    questionType: string;
+    difficulty: string;
+  }): Observable<Question[]> {
     const mockurl = './../../../assets/mock/assessment/mock-assessment-questions.json';
     return this.http.get<Question[]>(mockurl);
-    // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`);
+
+    // let params = new HttpParams();
+    // if (filters?.examType) {
+    //   params = params.set('examType', filters.examType);
+    // }
+    // if (filters?.examName) {
+    //   params = params.set('examName', filters.examName);
+    // }
+    // if (filters?.subject) {
+    //   params = params.set('subject', filters.subject);
+    // }
+    // if (filters?.questionType) {
+    //   params = params.set('questionsType', filters.questionType);
+    // }
+    // if (filters?.difficulty) {
+    //   params = params.set('difficulty', filters.difficulty);
+    // }
+
+    // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/questions`, { params });
   }
 
-  submitAssessment(payload: AnswerSubmission[]) {
-    return this.http.post<AnswerSubmission[]>(`${environment.apiUrl}/qbs/assessment/submit`, payload);
+  getV1Questions(filters?: {
+    examType: string;
+    examName: string;
+    subject: string;
+    questionType: string;
+    difficulty: string;
+  }, assessmentLanguage?: string): Observable<any> {
+    console.log("QuestionServiceService:assessmentLanguage: ", assessmentLanguage);
+    const mockurl = './../../../assets/mock/assessment/mock-assessment-v1-questions.json';
+    return this.http.get<Question[]>(mockurl);
+    // let params = new HttpParams();
+    // if (filters?.examType) {
+    //   params = params.set('examType', filters.examType);
+    // }
+    // if (filters?.subject) {
+    //   params = params.set('subjects', filters.subject);
+    // }
+    // if (filters?.examName) {
+    //   params = params.set('examName', filters.examName);
+    // }
+    // if (filters?.questionType) {
+    //   params = params.set('questionsType', filters.questionType);
+    // }
+    // if (filters?.difficulty) {
+    //   params = params.set('difficulty', filters.difficulty);
+    // }
+    // if (assessmentLanguage) {
+    //   params = params.set('assessmentLanguage', assessmentLanguage);
+    // }
+
+    // return this.http.get<Question[]>(`${environment.apiUrl}/qbs/v1/questions`, { params });
+  }
+
+  submitAssessment(payload: AssessmentSubmissionPayload) {
+    return this.http.post<AssessmentSubmissionPayload>(`${environment.apiUrl}/qbs/assessment/submit`, payload);
   }
 
   getResult(userId: string, assessmentId: string, attemptNo: number): Observable<AnswerSubmission[]> {
@@ -28,10 +86,24 @@ export class QuestionServiceService {
     // return this.http.get<AnswerSubmission[]>(`${environment.apiUrl}/qbs/assessment/result/${userId}/${assessmentId}/${attemptNo}`);
   }
 
+  getResultByAssessmentId(userId: string, assessmentId: string, attemptNo: number): Observable<any> {
+    let params = new HttpParams();
+    if (assessmentId) {
+      params = params.set('assessmentId', assessmentId);
+    }
+    if (userId) {
+      params = params.set('userId', userId);
+    }
+    if (attemptNo !== null && attemptNo !== undefined) {
+      params = params.set('attemptNo', attemptNo.toString());
+    }
+    return this.http.get<any>(`${environment.apiUrl}/qbs/assessment/submittedAnswerDetail`, { params });
+  }
+
   getAllResults(): Observable<any[]> {
     const mockurl = './../../../assets/mock/assessment/mock-assessment-resultsDashboard.json';
     return this.http.get<any[]>(mockurl);
-    // return this.http.get<any[]>(`${environment.apiUrl}/qbs/assessment/allResults`);
+    // return this.http.get<any[]>(`${environment.apiUrl}/qbs/assessment/submissions`);
   }
 
 }

@@ -31,4 +31,5 @@ public class QuestionEntity {
 	private Integer marks;
 	private QuestionDifficulty difficulty;
 	private String explanation;
+	private List<String> tags;
 }

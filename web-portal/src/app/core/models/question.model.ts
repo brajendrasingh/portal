@@ -5,7 +5,7 @@ export interface Question {
     answerOptions: string[];
 
     // selected by user
-    selectedIndex?: number;
+    selectedIndex?: number | null;
     // correct answer index
     correctOption?: number;
     correctAnswer?: string;

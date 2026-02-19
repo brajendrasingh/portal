@@ -1,15 +1,15 @@
 import { Component, Input } from '@angular/core';
-import { AnswerSubmission } from '../core/models/answerSubmission.model';
-import { QuestionServiceService } from './../core/services/question-service.service';
+import { AnswerSubmission } from '../../core/models/answerSubmission.model';
+import { QuestionServiceService } from '../../core/services/question-service.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-result',
   standalone: false,
-  templateUrl: './result.component.html',
-  styleUrl: './result.component.css'
+  templateUrl: './assessment-result.component.html',
+  styleUrl: './assessment-result.component.css'
 })
-export class ResultComponent {
+export class AssessmentResultComponent {
   userId!: string;
   assessmentId!: string
   attemptNo!: number
@@ -32,13 +32,12 @@ export class ResultComponent {
   }
 
   loadResults(): void {
-    this.questionService.getResult(this.userId, this.assessmentId, this.attemptNo).subscribe({
-      next: (response: AnswerSubmission[]) => {
-        this.questions = response || [];
-
+    this.questionService.getResultByAssessmentId(this.userId, this.assessmentId, this.attemptNo).subscribe({
+      next: (response: any) => {
+        this.questions = response.questionAnswers;
         // Calculate summary values
-        this.totalQuestions = this.questions.length;
-        this.correctAnswers = this.questions.filter(q => q.selectedAnswer === q.correctAnswer).length;
+        this.totalQuestions = response.totalQuestions;
+        this.correctAnswers = response.correctAnswers;
       },
       error: () => {
         alert('Failed to load assessment results. Please try again.');
