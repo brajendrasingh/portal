@@ -1,0 +1,25 @@
+services:
+  oracle-db:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle-xe
+    ports:
+      - "1521:1521"
+      - "5500:5500"      
+    environment:
+      ORACLE_PASSWORD: root
+      APP_USER: portal
+      APP_USER_PASSWORD: root
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+    restart: unless-stopped
+    networks:
+      - portal-network      
+      
+volumes:
+  oracle-data:
+    driver: local
+
+networks:
+  portal-network:
+    driver: bridge
+    #external: true #Use an existing network (created via: docker network create portal-network)
