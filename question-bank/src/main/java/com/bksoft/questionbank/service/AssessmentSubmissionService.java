@@ -11,6 +11,10 @@ import com.bksoft.questionbank.repositories.QuestionEntityRepository;
 import com.bksoft.questionbank.repositories.i18n.QuestionRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.context.i18n.LocaleContextHolder;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -133,5 +137,18 @@ public class AssessmentSubmissionService {
         }
 
         return submissionRepo.findAllByOrderBySubmittedAtDesc();
+    }
+
+    public Page<AssessmentSubmission> getAllSubmissions(String userId, String assessmentId, int page, int size) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by("submittedAt").descending());
+        if (userId != null && assessmentId != null) {
+            return submissionRepo.findByUserIdAndAssessmentId(userId, assessmentId, pageable);
+        } else if (userId != null) {
+            return submissionRepo.findByUserId(userId, pageable);
+        } else if (assessmentId != null) {
+            return submissionRepo.findByAssessmentId(assessmentId, pageable);
+        } else {
+            return submissionRepo.findAllByOrderBySubmittedAtDesc(pageable);
+        }
     }
 }

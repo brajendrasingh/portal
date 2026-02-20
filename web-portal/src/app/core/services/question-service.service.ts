@@ -111,4 +111,7 @@ export class QuestionServiceService {
     // return this.http.get<any[]>(`${environment.apiUrl}/qbs/assessment/submissions`);
   }
 
+  getResults(page: number, size: number) {
+    return this.http.get<any>(`${environment.apiUrl}/qbs/assessment/submissions?page=${page}&size=${size}`);
+  }
 }
