@@ -32,14 +32,28 @@
         <p>{{ passingPercentage }}%</p>
       </div>
     </div>
+    <div class="table-controls">
+      <div>
+        <label>Show</label>
+        <select [(ngModel)]="pageSize" (change)="changePageSize(pageSize)">
+          <option *ngFor="let size of pageSizeOptions" [value]="size">
+            {{ size }}
+          </option>
+        </select>
+        <label>questions per page</label>
+      </div>
 
+      <div>
+        Total Questions: {{ questions?.length }}
+      </div>
+    </div>
     <!-- Question Review -->
     <section class="result-panel">
       <h3 class="review-title">Question Review</h3>
 
-      <div class="review-card" *ngFor="let q of questions; let i = index">
+      <div class="review-card" *ngFor="let q of paginatedQuestions; let i = index">
 
-        <p class="review-question"> {{ i + 1 }}. {{ q.questionText }} </p>
+        <p class="review-question"> {{ currentPage * pageSize + i + 1 }}. {{ q.questionText }} </p>
 
         <p class="review-answer">
           <strong>Your Answer:</strong>
@@ -53,7 +67,29 @@
 
       </div>
     </section>
+    <div class="pagination" *ngIf="totalPages > 1">
 
+      <button (click)="changePage(0)" [disabled]="currentPage === 0">
+        ⏮ First
+      </button>
+
+      <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 0">
+        ⬅ Previous
+      </button>
+
+      <span>
+        Page {{ currentPage + 1 }} of {{ totalPages }}
+      </span>
+
+      <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages - 1">
+        Next ➡
+      </button>
+
+      <button (click)="changePage(totalPages - 1)" [disabled]="currentPage === totalPages - 1">
+        Last ⏭
+      </button>
+
+    </div>
     <!-- Footer Actions -->
     <div class="footer">
       <button class="btn-primary" routerLink="/dashboard">

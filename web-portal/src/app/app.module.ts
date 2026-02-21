@@ -26,6 +26,7 @@ import { AssessmentAllResultsDashboardComponent } from './assessment/assessment-
 import { PreAssessmentSubjectSelectionComponent } from './assessment/pre-assessment-subject-selection/pre-assessment-subject-selection.component';
 import { QuestionAreaComponent } from './assessment/question-area/question-area.component';
 import { AssessmentInstructionsComponent } from './assessment/assessment-instructions/assessment-instructions.component';
+import { SubmissionConfirmationComponent } from './assessment/submission-confirmation/submission-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AssessmentInstructionsComponent } from './assessment/assessment-instruc
     AssessmentAllResultsDashboardComponent,
     PreAssessmentSubjectSelectionComponent,
     QuestionAreaComponent,
-    AssessmentInstructionsComponent
+    AssessmentInstructionsComponent,
+    SubmissionConfirmationComponent
   ],
   imports: [
     BrowserModule,

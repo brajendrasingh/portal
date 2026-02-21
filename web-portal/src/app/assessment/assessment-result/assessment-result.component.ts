@@ -16,6 +16,10 @@ export class AssessmentResultComponent {
 
   // Result data
   questions: AnswerSubmission[] = [];
+  // Pagination properties
+  currentPage: number = 0;
+  pageSize: number = 5;
+  pageSizeOptions: number[] = [5, 10, 20];
 
   // Summary values
   @Input() totalQuestions = 0;
@@ -61,5 +65,33 @@ export class AssessmentResultComponent {
       return false;
     }
     return JSON.stringify(q.selectedAnswers.sort()) === JSON.stringify(q.correctAnswers.sort());
+  }
+
+  // Total pages
+  get totalPages(): number {
+    return Math.ceil((this.questions?.length || 0) / this.pageSize);
+  }
+
+  // Paginated questions
+  get paginatedQuestions(): AnswerSubmission[] {
+    const start = this.currentPage * this.pageSize;
+    const end = start + this.pageSize;
+    return this.questions.slice(start, end);
+  }
+
+  // Change page
+  changePage(page: number): void {
+    if (page >= 0 && page < this.totalPages) {
+      this.currentPage = page;
+
+      // Optional: scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  // Change page size
+  changePageSize(size: number): void {
+    this.pageSize = size;
+    this.currentPage = 0;
   }
 }

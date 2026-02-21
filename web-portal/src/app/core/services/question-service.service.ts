@@ -105,6 +105,22 @@ export class QuestionServiceService {
     return this.http.get<any>(`${environment.apiUrl}/qbs/assessment/submittedAnswerDetail`, { params });
   }
 
+  getResultsByAssessmentIdAndUserId(userId: string, assessmentId: string, attemptNo: number, page: number, size: number) {
+    let params = new HttpParams();
+    if (assessmentId) {
+      params = params.set('assessmentId', assessmentId);
+    }
+    if (userId) {
+      params = params.set('userId', userId);
+    }
+    if (attemptNo !== null && attemptNo !== undefined) {
+      params = params.set('attemptNo', attemptNo.toString());
+    }
+    params = params.set('page', page);
+    params = params.set('side', size);
+    return this.http.get(`${environment.apiUrl}/qbs/assessment/v1/submittedAnswerDetail`, { params });
+  }
+
   getAllResults(): Observable<any[]> {
     const mockurl = './../../../assets/mock/assessment/mock-assessment-resultsDashboard.json';
     return this.http.get<any[]>(mockurl);
