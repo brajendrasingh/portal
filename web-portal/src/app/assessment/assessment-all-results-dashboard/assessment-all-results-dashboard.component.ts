@@ -13,7 +13,8 @@ export class AssessmentAllResultsDashboardComponent {
 
   results: any[] = [];
   currentPage: number = 0;
-  pageSize: number = 5;
+  pageSize: number = 10;
+  pageSizeOptions: number[] = [5, 10, 20, 30, 40, 50, 100];
   totalPages: number = 0;
   totalElements: number = 0;
 
@@ -52,5 +53,10 @@ export class AssessmentAllResultsDashboardComponent {
     }
   }
 
+  changePageSize(size: number): void {
+    this.pageSize = size;
+    this.currentPage = 0; // reset to first page
+    this.loadResultsDashboard();
+  }
 }
 

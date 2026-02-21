@@ -11,10 +11,7 @@ import com.bksoft.questionbank.repositories.QuestionEntityRepository;
 import com.bksoft.questionbank.repositories.i18n.QuestionRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.context.i18n.LocaleContextHolder;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -120,6 +117,14 @@ public class AssessmentSubmissionService {
             submittedAnswerDetail.questionAnswers.add(qa);
         }
         return submittedAnswerDetail;
+    }
+
+    public Page<SubmittedAnswerDetail.QuestionAnswer> getSubmittedAnswerDetail(String userId, String assessmentId, Integer attemptNo, int page, int size) {
+
+        Pageable pageable = PageRequest.of(page, size, Sort.by("submittedAt").descending());
+
+
+        return null;
     }
 
     public List<AssessmentSubmission> getAllSubmissions(String userId, String assessmentId) {

@@ -79,3 +79,26 @@ h2 {
     opacity: 0.5;
     cursor: not-allowed;
 }
+
+.table-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.table-controls select {
+    padding: 4px 8px;
+    margin: 0 5px;
+}
+
+.pagination {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pagination button {
+    padding: 6px 12px;
+}

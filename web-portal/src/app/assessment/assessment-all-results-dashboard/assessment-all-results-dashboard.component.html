@@ -1,5 +1,20 @@
 <div class="dashboard-wrapper">
     <h2>Assessment Results Dashboard</h2>
+    <div class="table-controls">
+        <div>
+            <label>Show</label>
+            <select [(ngModel)]="pageSize" (change)="changePageSize(pageSize)">
+                <option *ngFor="let size of pageSizeOptions" [value]="size">
+                    {{ size }}
+                </option>
+            </select>
+            <label>entries</label>
+        </div>
+    
+        <div>
+            Total Records: {{ totalElements }}
+        </div>
+    </div>
     <table class="result-table">
         <thead>
             <tr>
