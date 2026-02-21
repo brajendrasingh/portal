@@ -1,1 +1,20 @@
-<p>submission-confirmation works!</p>
+<div class="confirmation-card">
+    <h2>Submission Successful ✅</h2>
+
+    <p><strong>User ID:</strong> {{ userId }}</p>
+    <p><strong>Assessment ID:</strong> {{ assessmentId }}</p>
+    <p><strong>Attempt No:</strong> {{ attemptNo }}</p>
+
+    <button routerLink="/dashboard" class="btn-primary">
+        Go to Dashboard
+    </button>
+</div>
+
+<div class="footer">
+    <button class="btn-secondary" routerLink="/resultsDashboard">
+        Results Dashboard
+    </button>
+    <button class="btn-secondary" routerLink="/assessment">
+        Retake Assessment
+    </button>
+</div>

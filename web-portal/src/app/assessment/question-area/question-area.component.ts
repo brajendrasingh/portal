@@ -179,7 +179,7 @@ export class QuestionAreaComponent implements OnInit, OnDestroy, OnChanges {
     const payload = this.prepareSubmissionPayload();
     console.log("Final submission payload: ", payload);
     this.submitToBackend(payload);
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/submitConfirmation', payload.userId, payload.assessmentId, payload.attemptNo]);
   }
 
   /* ================= For SUBMIT payload================= */

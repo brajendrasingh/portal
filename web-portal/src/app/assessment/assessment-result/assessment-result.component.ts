@@ -18,8 +18,8 @@ export class AssessmentResultComponent {
   questions: AnswerSubmission[] = [];
   // Pagination properties
   currentPage: number = 0;
-  pageSize: number = 5;
-  pageSizeOptions: number[] = [5, 10, 20];
+  pageSize: number = 2;
+  pageSizeOptions: number[] = [1, 2, 5, 10, 20, 50, 100];
 
   // Summary values
   @Input() totalQuestions = 0;
