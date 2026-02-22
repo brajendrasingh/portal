@@ -91,7 +91,7 @@ public class QuestionBankService {
 	public void saveQuestion(List<QuestionRequestDTO> questions) {
 		for (QuestionRequestDTO dto : questions) {
 			com.bksoft.questionbank.entities.i18n.Question question = new com.bksoft.questionbank.entities.i18n.Question();
-			question.setId(dto.getId());
+			question.setId(UUID.randomUUID().toString().replace("-", ""));
 			question.setSubject(dto.getSubject());
 			question.setTopic(dto.getTopic());
 			question.setCategory(dto.getCategory());

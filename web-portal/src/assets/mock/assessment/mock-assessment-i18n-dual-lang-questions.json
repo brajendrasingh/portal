@@ -166,5 +166,1112 @@
 				"explanation": "विशिष्ट समय बिंदु के साथ 'since' का प्रयोग होता है।"
 			}
 		]
+	},
+	{
+		"id": "4",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "were",
+		"subject": "English",
+		"topic": "Tenses",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Tense"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "They _____ playing football.",
+				"options": [
+					"were",
+					"was",
+					"is",
+					"be"
+				],
+				"explanation": "'They' takes plural verb 'were' in past continuous tense."
+			},
+			{
+				"language": "hi",
+				"questionText": "वे फुटबॉल _____ रहे थे।",
+				"options": [
+					"थे",
+					"था",
+					"है",
+					"हो"
+				],
+				"explanation": "'They' के साथ बहुवचन क्रिया 'were' प्रयोग होती है।"
+			}
+		]
+	},
+	{
+		"id": "5",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "doesn't",
+		"subject": "English",
+		"topic": "Auxiliary Verbs",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Auxiliary"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "He _____ like coffee.",
+				"options": [
+					"don't",
+					"doesn't",
+					"didn't",
+					"isn't"
+				],
+				"explanation": "Singular subject 'He' takes 'doesn't'."
+			},
+			{
+				"language": "hi",
+				"questionText": "उसे कॉफी पसंद _____।",
+				"options": [
+					"नहीं करते",
+					"नहीं करता",
+					"नहीं किया",
+					"नहीं है"
+				],
+				"explanation": "'He' के साथ 'doesn't' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "6",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "better",
+		"subject": "English",
+		"topic": "Adjectives",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Adjective"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "This book is _____ than that one.",
+				"options": [
+					"good",
+					"best",
+					"better",
+					"more good"
+				],
+				"explanation": "Comparative form of 'good' is 'better'."
+			},
+			{
+				"language": "hi",
+				"questionText": "यह किताब उस से _____ है।",
+				"options": [
+					"अच्छा",
+					"सबसे अच्छा",
+					"बेहतर",
+					"अधिक अच्छा"
+				],
+				"explanation": "'Good' का comparative रूप 'better' है।"
+			}
+		]
+	},
+	{
+		"id": "7",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "has",
+		"subject": "English",
+		"topic": "Verb Forms",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Verb"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "She _____ finished her work.",
+				"options": [
+					"has",
+					"have",
+					"had",
+					"having"
+				],
+				"explanation": "'She' takes 'has' in present perfect tense."
+			},
+			{
+				"language": "hi",
+				"questionText": "उसने अपना काम _____ लिया है।",
+				"options": [
+					"कर लिया है",
+					"कर लिया हैं",
+					"कर लिया था",
+					"करते हुए"
+				],
+				"explanation": "Present perfect में 'She' के साथ 'has' लगता है।"
+			}
+		]
+	},
+	{
+		"id": "8",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "quickly",
+		"subject": "English",
+		"topic": "Adverbs",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Adverb"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "He runs very _____.",
+				"options": [
+					"quick",
+					"quicker",
+					"quickest",
+					"quickly"
+				],
+				"explanation": "Adverb form of 'quick' is 'quickly'."
+			},
+			{
+				"language": "hi",
+				"questionText": "वह बहुत _____ दौड़ता है।",
+				"options": [
+					"तेज़",
+					"अधिक तेज़",
+					"सबसे तेज़",
+					"तेज़ी से"
+				],
+				"explanation": "'Quickly' क्रिया विशेषण है।"
+			}
+		]
+	},
+	{
+		"id": "9",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "much",
+		"subject": "English",
+		"topic": "Determiners",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Determiners"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "There isn’t _____ water left.",
+				"options": [
+					"many",
+					"much",
+					"few",
+					"several"
+				],
+				"explanation": "'Much' is used with uncountable nouns like water."
+			},
+			{
+				"language": "hi",
+				"questionText": "यहाँ _____ पानी बचा है।",
+				"options": [
+					"कई",
+					"ज्यादा",
+					"कुछ",
+					"अनेक"
+				],
+				"explanation": "'Water' अगणनीय संज्ञा है, इसलिए 'much' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "10",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "whom",
+		"subject": "English",
+		"topic": "Pronouns",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Pronoun"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "To _____ did you speak?",
+				"options": [
+					"who",
+					"whose",
+					"whom",
+					"which"
+				],
+				"explanation": "'Whom' is used as the object of a preposition."
+			},
+			{
+				"language": "hi",
+				"questionText": "आपने _____ से बात की?",
+				"options": [
+					"कौन",
+					"किसका",
+					"किसे",
+					"कौन सा"
+				],
+				"explanation": "Preposition के बाद 'whom' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "11",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "if",
+		"subject": "English",
+		"topic": "Conjunctions",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Conjunction"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Call me _____ you need help.",
+				"options": [
+					"if",
+					"but",
+					"so",
+					"because"
+				],
+				"explanation": "'If' shows condition."
+			},
+			{
+				"language": "hi",
+				"questionText": "मुझे कॉल करें _____ आपको मदद चाहिए।",
+				"options": [
+					"यदि",
+					"लेकिन",
+					"इसलिए",
+					"क्योंकि"
+				],
+				"explanation": "'If' शर्त दर्शाता है।"
+			}
+		]
+	},
+	{
+		"id": "12",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "the",
+		"subject": "English",
+		"topic": "Articles",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Articles"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "_____ sun rises in the east.",
+				"options": [
+					"A",
+					"An",
+					"No article",
+					"The"
+				],
+				"explanation": "'The' is used for unique objects like the sun."
+			},
+			{
+				"language": "hi",
+				"questionText": "_____ सूर्य पूर्व से उगता है।",
+				"options": [
+					"एक",
+					"अन",
+					"कोई नहीं",
+					"The"
+				],
+				"explanation": "विशिष्ट वस्तु के लिए 'the' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "13",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "had",
+		"subject": "English",
+		"topic": "Tenses",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Tense"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "She _____ already left when I arrived.",
+				"options": [
+					"has",
+					"had",
+					"have",
+					"is"
+				],
+				"explanation": "Past perfect tense uses 'had'."
+			},
+			{
+				"language": "hi",
+				"questionText": "मेरे पहुँचने से पहले वह जा _____ थी।",
+				"options": [
+					"चुकी है",
+					"चुकी थी",
+					"चुके हैं",
+					"है"
+				],
+				"explanation": "Past perfect में 'had' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "14",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "fewer",
+		"subject": "English",
+		"topic": "Quantifiers",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Quantifier"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "There are _____ students in the class today.",
+				"options": [
+					"fewer",
+					"less",
+					"much",
+					"little"
+				],
+				"explanation": "'Fewer' is used with countable nouns."
+			},
+			{
+				"language": "hi",
+				"questionText": "आज कक्षा में _____ छात्र हैं।",
+				"options": [
+					"कम",
+					"कम मात्रा",
+					"अधिक",
+					"थोड़ा"
+				],
+				"explanation": "Countable noun के साथ 'fewer' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "15",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "unless",
+		"subject": "English",
+		"topic": "Conjunctions",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Conjunction"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "You will fail _____ you work hard.",
+				"options": [
+					"if",
+					"because",
+					"unless",
+					"so"
+				],
+				"explanation": "'Unless' means 'if not'."
+			},
+			{
+				"language": "hi",
+				"questionText": "आप असफल होंगे _____ आप मेहनत करें।",
+				"options": [
+					"यदि",
+					"क्योंकि",
+					"जब तक नहीं",
+					"इसलिए"
+				],
+				"explanation": "'Unless' का अर्थ है 'यदि नहीं'।"
+			}
+		]
+	},
+	{
+		"id": "16",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "himself",
+		"subject": "English",
+		"topic": "Reflexive Pronouns",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Pronoun"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "He hurt _____ while playing.",
+				"options": [
+					"him",
+					"himself",
+					"his",
+					"he"
+				],
+				"explanation": "Reflexive pronoun 'himself' is used."
+			},
+			{
+				"language": "hi",
+				"questionText": "खेलते समय उसने _____ चोट पहुँचाई।",
+				"options": [
+					"उसे",
+					"स्वयं को",
+					"उसका",
+					"वह"
+				],
+				"explanation": "Reflexive pronoun 'himself' का प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "17",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "were",
+		"subject": "English",
+		"topic": "Conditional Sentences",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Conditional"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "If I _____ you, I would apologize.",
+				"options": [
+					"am",
+					"was",
+					"be",
+					"were"
+				],
+				"explanation": "In unreal condition, 'were' is used."
+			},
+			{
+				"language": "hi",
+				"questionText": "यदि मैं तुम्हारी जगह _____, तो माफी मांगता।",
+				"options": [
+					"हूँ",
+					"था",
+					"हो",
+					"होता"
+				],
+				"explanation": "काल्पनिक स्थिति में 'were' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "18",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "has been",
+		"subject": "English",
+		"topic": "Tenses",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Tense"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "She _____ working here since 2015.",
+				"options": [
+					"has been",
+					"have been",
+					"was",
+					"is"
+				],
+				"explanation": "Present perfect continuous tense is used."
+			},
+			{
+				"language": "hi",
+				"questionText": "वह 2015 से यहाँ काम _____ रही है।",
+				"options": [
+					"कर रही है",
+					"कर रहे हैं",
+					"कर रही थी",
+					"है"
+				],
+				"explanation": "Present perfect continuous का प्रयोग है।"
+			}
+		]
+	},
+	{
+		"id": "19",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "between",
+		"subject": "English",
+		"topic": "Prepositions",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Preposition"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Divide the cake _____ the two children.",
+				"options": [
+					"among",
+					"between",
+					"in",
+					"with"
+				],
+				"explanation": "'Between' is used for two persons."
+			},
+			{
+				"language": "hi",
+				"questionText": "केक को दो बच्चों _____ बाँट दो।",
+				"options": [
+					"में",
+					"के बीच",
+					"के साथ",
+					"के अंदर"
+				],
+				"explanation": "दो व्यक्तियों के लिए 'between' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "20",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "more intelligent",
+		"subject": "English",
+		"topic": "Comparatives",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Comparative"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "She is _____ than her sister.",
+				"options": [
+					"intelligent",
+					"most intelligent",
+					"more intelligent",
+					"intelligenter"
+				],
+				"explanation": "Comparative form is 'more intelligent'."
+			},
+			{
+				"language": "hi",
+				"questionText": "वह अपनी बहन से _____ है।",
+				"options": [
+					"बुद्धिमान",
+					"सबसे बुद्धिमान",
+					"अधिक बुद्धिमान",
+					"बुद्धिमानतर"
+				],
+				"explanation": "Comparative रूप 'more intelligent' है।"
+			}
+		]
+	},
+	{
+		"id": "21",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "does",
+		"subject": "English",
+		"topic": "Question Tags",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"QuestionTag"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "She sings well, _____ she?",
+				"options": [
+					"does",
+					"doesn't",
+					"is",
+					"isn't"
+				],
+				"explanation": "Positive statement takes negative tag 'doesn't she?'."
+			},
+			{
+				"language": "hi",
+				"questionText": "वह अच्छा गाती है, _____?",
+				"options": [
+					"है ना",
+					"नहीं है",
+					"करती है",
+					"नहीं करती"
+				],
+				"explanation": "Positive वाक्य के बाद negative tag आता है।"
+			}
+		]
+	},
+	{
+		"id": "22",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "being",
+		"subject": "English",
+		"topic": "Gerunds",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Gerund"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "He was punished for _____ late.",
+				"options": [
+					"be",
+					"been",
+					"is",
+					"being"
+				],
+				"explanation": "Gerund form is used after preposition."
+			},
+			{
+				"language": "hi",
+				"questionText": "उसे देर से _____ के लिए दंडित किया गया।",
+				"options": [
+					"होना",
+					"हुआ",
+					"है",
+					"होने"
+				],
+				"explanation": "Preposition के बाद gerund आता है।"
+			}
+		]
+	},
+	{
+		"id": "23",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "neither",
+		"subject": "English",
+		"topic": "Correlative Conjunctions",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Conjunction"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "_____ Ram nor Shyam was present.",
+				"options": [
+					"Either",
+					"Neither",
+					"Both",
+					"All"
+				],
+				"explanation": "'Neither...nor' is correct pair."
+			},
+			{
+				"language": "hi",
+				"questionText": "_____ राम और श्याम उपस्थित थे।",
+				"options": [
+					"या तो",
+					"न तो",
+					"दोनों",
+					"सभी"
+				],
+				"explanation": "'Neither...nor' सही युग्म है।"
+			}
+		]
+	},
+	{
+		"id": "24",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "had",
+		"subject": "English",
+		"topic": "Modals",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "HARD",
+		"tags": [
+			"English",
+			"Grammar",
+			"Modal"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "You _____ have informed me earlier.",
+				"options": [
+					"had",
+					"must",
+					"should",
+					"could"
+				],
+				"explanation": "'Should have' indicates past advice (correct usage contextually)."
+			},
+			{
+				"language": "hi",
+				"questionText": "तुम्हें मुझे पहले सूचित _____ था।",
+				"options": [
+					"करना चाहिए था",
+					"करना होगा",
+					"कर सकते थे",
+					"करते"
+				],
+				"explanation": "Past advice के लिए 'should have' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "25",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "whose",
+		"subject": "English",
+		"topic": "Relative Pronouns",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Pronoun"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "The boy _____ father is a doctor is my friend.",
+				"options": [
+					"who",
+					"whom",
+					"whose",
+					"which"
+				],
+				"explanation": "'Whose' shows possession."
+			},
+			{
+				"language": "hi",
+				"questionText": "वह लड़का _____ पिता डॉक्टर हैं, मेरा मित्र है।",
+				"options": [
+					"जो",
+					"जिसे",
+					"जिसका",
+					"जो कि"
+				],
+				"explanation": "Possession दिखाने के लिए 'whose' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "26",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "has",
+		"subject": "English",
+		"topic": "Subject Verb Agreement",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Verb"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Each of the students _____ submitted the assignment.",
+				"options": [
+					"have",
+					"has",
+					"are",
+					"were"
+				],
+				"explanation": "'Each' is singular, so 'has' is used."
+			},
+			{
+				"language": "hi",
+				"questionText": "प्रत्येक छात्र ने कार्य जमा _____।",
+				"options": [
+					"किए हैं",
+					"किया है",
+					"कर रहे",
+					"किए थे"
+				],
+				"explanation": "'Each' एकवचन है।"
+			}
+		]
+	},
+	{
+		"id": "27",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "didn't",
+		"subject": "English",
+		"topic": "Auxiliary Verbs",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Auxiliary"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "She _____ finish the work yesterday.",
+				"options": [
+					"doesn't",
+					"hasn't",
+					"wasn't",
+					"didn't"
+				],
+				"explanation": "Past simple negative uses 'didn't'."
+			},
+			{
+				"language": "hi",
+				"questionText": "उसने कल काम _____।",
+				"options": [
+					"नहीं करती",
+					"नहीं किया है",
+					"नहीं थी",
+					"नहीं किया"
+				],
+				"explanation": "Past negative में 'didn't' प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "28",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "so",
+		"subject": "English",
+		"topic": "Adverbs",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Adverb"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "She was _____ tired that she slept early.",
+				"options": [
+					"so",
+					"too",
+					"very",
+					"much"
+				],
+				"explanation": "'So...that' structure is correct."
+			},
+			{
+				"language": "hi",
+				"questionText": "वह _____ थकी हुई थी कि जल्दी सो गई।",
+				"options": [
+					"इतनी",
+					"बहुत",
+					"अत्यधिक",
+					"काफी"
+				],
+				"explanation": "'So...that' संरचना सही है।"
+			}
+		]
+	},
+	{
+		"id": "29",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "had been",
+		"subject": "English",
+		"topic": "Tenses",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "HARD",
+		"tags": [
+			"English",
+			"Grammar",
+			"Tense"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "They _____ waiting for two hours before the bus arrived.",
+				"options": [
+					"have been",
+					"were",
+					"had been",
+					"are"
+				],
+				"explanation": "Past perfect continuous is used."
+			},
+			{
+				"language": "hi",
+				"questionText": "बस आने से पहले वे दो घंटे से _____ रहे थे।",
+				"options": [
+					"इंतजार कर रहे हैं",
+					"रहे थे",
+					"इंतजार कर रहे थे",
+					"हैं"
+				],
+				"explanation": "Past perfect continuous का प्रयोग।"
+			}
+		]
+	},
+	{
+		"id": "30",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "although",
+		"subject": "English",
+		"topic": "Conjunctions",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Conjunction"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "_____ it was raining, they continued playing.",
+				"options": [
+					"Because",
+					"Although",
+					"So",
+					"If"
+				],
+				"explanation": "'Although' shows contrast."
+			},
+			{
+				"language": "hi",
+				"questionText": "_____ बारिश हो रही थी, वे खेलते रहे।",
+				"options": [
+					"क्योंकि",
+					"हालांकि",
+					"इसलिए",
+					"यदि"
+				],
+				"explanation": "'Although' विरोध दर्शाता है।"
+			}
+		]
 	}
 ]
