@@ -1,0 +1,170 @@
+[
+	{
+		"id": "1",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "Delhi",
+		"subject": "GS",
+		"topic": "History",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"GS",
+			"History",
+			"Govt",
+			"GeneralKnowledge"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Capital of India",
+				"options": [
+					"Kanpur",
+					"Delhi",
+					"Lucknow",
+					"Indore",
+					"Mumbai"
+				],
+				"explanation": "New Delhi is the capital of India."
+			},
+			{
+				"language": "hi",
+				"questionText": "भारत की राजधानी क्या है?",
+				"options": [
+					"कानपुर",
+					"दिल्ली",
+					"लखनऊ",
+					"इंदौर",
+					"मुंबई"
+				],
+				"explanation": "नई दिल्ली भारत की राजधानी है।"
+			}
+		]
+	},
+	{
+		"id": "1",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "goes",
+		"subject": "English",
+		"topic": "Subject Verb Agreement",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Verb",
+			"Tense"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "She _____ to school every day.",
+				"options": [
+					"go",
+					"goes",
+					"gone",
+					"going"
+				],
+				"explanation": "Singular subject 'She' takes singular verb 'goes'."
+			},
+			{
+				"language": "hi",
+				"questionText": "वह हर दिन स्कूल _____ है।",
+				"options": [
+					"जाना",
+					"जाती",
+					"गई",
+					"जाना है"
+				],
+				"explanation": "एकवचन कर्ता के साथ 'goes' का प्रयोग होता है।"
+			}
+		]
+	},
+	{
+		"id": "2",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "an",
+		"subject": "English",
+		"topic": "Articles",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"English",
+			"Grammar",
+			"Articles"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "He is _____ honest man.",
+				"options": [
+					"an",
+					"a",
+					"the",
+					"no article"
+				],
+				"explanation": "'Honest' begins with a vowel sound, so 'an' is used."
+			},
+			{
+				"language": "hi",
+				"questionText": "वह _____ ईमानदार आदमी है।",
+				"options": [
+					"an",
+					"a",
+					"the",
+					"कोई नहीं"
+				],
+				"explanation": "'Honest' स्वर ध्वनि से शुरू होता है, इसलिए 'an' लगेगा।"
+			}
+		]
+	},
+	{
+		"id": "3",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "since",
+		"subject": "English",
+		"topic": "Prepositions",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"English",
+			"Grammar",
+			"Preposition"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "I have lived here _____ 2010.",
+				"options": [
+					"for",
+					"from",
+					"since",
+					"by"
+				],
+				"explanation": "'Since' is used with a specific point of time."
+			},
+			{
+				"language": "hi",
+				"questionText": "मैं यहाँ 2010 _____ रह रहा हूँ।",
+				"options": [
+					"से",
+					"तक",
+					"के लिए",
+					"द्वारा"
+				],
+				"explanation": "विशिष्ट समय बिंदु के साथ 'since' का प्रयोग होता है।"
+			}
+		]
+	}
+]
