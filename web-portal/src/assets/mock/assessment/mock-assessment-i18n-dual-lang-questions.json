@@ -1273,5 +1273,2008 @@
 				"explanation": "'Although' विरोध दर्शाता है।"
 			}
 		]
+	},
+	{
+		"id": "1",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "25",
+		"subject": "Mathematics",
+		"topic": "Arithmetic",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Arithmetic",
+			"Addition"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 15 + 10?",
+				"options": [
+					"20",
+					"25",
+					"30",
+					"35"
+				],
+				"explanation": "15 + 10 = 25."
+			},
+			{
+				"language": "hi",
+				"questionText": "15 + 10 कितना होता है?",
+				"options": [
+					"20",
+					"25",
+					"30",
+					"35"
+				],
+				"explanation": "15 + 10 = 25।"
+			}
+		]
+	},
+	{
+		"id": "2",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "36",
+		"subject": "Mathematics",
+		"topic": "Arithmetic",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Multiplication"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 6 × 6?",
+				"options": [
+					"30",
+					"32",
+					"36",
+					"42"
+				],
+				"explanation": "6 × 6 = 36."
+			},
+			{
+				"language": "hi",
+				"questionText": "6 × 6 कितना होता है?",
+				"options": [
+					"30",
+					"32",
+					"36",
+					"42"
+				],
+				"explanation": "6 × 6 = 36।"
+			}
+		]
+	},
+	{
+		"id": "3",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "5",
+		"subject": "Mathematics",
+		"topic": "Division",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Division"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 20 ÷ 4?",
+				"options": [
+					"5",
+					"4",
+					"6",
+					"8"
+				],
+				"explanation": "20 ÷ 4 = 5."
+			},
+			{
+				"language": "hi",
+				"questionText": "20 ÷ 4 कितना होता है?",
+				"options": [
+					"5",
+					"4",
+					"6",
+					"8"
+				],
+				"explanation": "20 ÷ 4 = 5।"
+			}
+		]
+	},
+	{
+		"id": "4",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "49",
+		"subject": "Mathematics",
+		"topic": "Squares",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Square"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 7²?",
+				"options": [
+					"42",
+					"36",
+					"56",
+					"49"
+				],
+				"explanation": "7 × 7 = 49."
+			},
+			{
+				"language": "hi",
+				"questionText": "7² कितना होता है?",
+				"options": [
+					"42",
+					"36",
+					"56",
+					"49"
+				],
+				"explanation": "7 × 7 = 49।"
+			}
+		]
+	},
+	{
+		"id": "5",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "8",
+		"subject": "Mathematics",
+		"topic": "Algebra",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Algebra"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Solve: x + 3 = 11",
+				"options": [
+					"6",
+					"8",
+					"9",
+					"7"
+				],
+				"explanation": "x = 11 - 3 = 8."
+			},
+			{
+				"language": "hi",
+				"questionText": "हल करें: x + 3 = 11",
+				"options": [
+					"6",
+					"8",
+					"9",
+					"7"
+				],
+				"explanation": "x = 11 - 3 = 8।"
+			}
+		]
+	},
+	{
+		"id": "6",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "180",
+		"subject": "Mathematics",
+		"topic": "Geometry",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Geometry"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Sum of angles in a triangle is?",
+				"options": [
+					"180",
+					"360",
+					"90",
+					"270"
+				],
+				"explanation": "Sum of interior angles of a triangle is 180°."
+			},
+			{
+				"language": "hi",
+				"questionText": "त्रिभुज के कोणों का योग कितना होता है?",
+				"options": [
+					"180",
+					"360",
+					"90",
+					"270"
+				],
+				"explanation": "त्रिभुज के कोणों का योग 180° होता है।"
+			}
+		]
+	},
+	{
+		"id": "7",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "12",
+		"subject": "Mathematics",
+		"topic": "LCM",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"LCM"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "LCM of 3 and 4 is?",
+				"options": [
+					"7",
+					"9",
+					"12",
+					"6"
+				],
+				"explanation": "Multiples of 3 and 4 meet at 12."
+			},
+			{
+				"language": "hi",
+				"questionText": "3 और 4 का LCM क्या है?",
+				"options": [
+					"7",
+					"9",
+					"12",
+					"6"
+				],
+				"explanation": "3 और 4 का LCM 12 है।"
+			}
+		]
+	},
+	{
+		"id": "8",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "9",
+		"subject": "Mathematics",
+		"topic": "HCF",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"HCF"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "HCF of 18 and 27 is?",
+				"options": [
+					"6",
+					"9",
+					"3",
+					"12"
+				],
+				"explanation": "Common factors highest is 9."
+			},
+			{
+				"language": "hi",
+				"questionText": "18 और 27 का HCF क्या है?",
+				"options": [
+					"6",
+					"9",
+					"3",
+					"12"
+				],
+				"explanation": "सबसे बड़ा समान गुणनखंड 9 है।"
+			}
+		]
+	},
+	{
+		"id": "9",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "100",
+		"subject": "Mathematics",
+		"topic": "Percentage",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Percentage"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 50% of 200?",
+				"options": [
+					"150",
+					"50",
+					"75",
+					"100"
+				],
+				"explanation": "50% of 200 = 100."
+			},
+			{
+				"language": "hi",
+				"questionText": "200 का 50% कितना है?",
+				"options": [
+					"150",
+					"50",
+					"75",
+					"100"
+				],
+				"explanation": "200 का 50% = 100।"
+			}
+		]
+	},
+	{
+		"id": "10",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "5",
+		"subject": "Mathematics",
+		"topic": "Average",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"Average"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Average of 2, 4, 6, 8 is?",
+				"options": [
+					"5",
+					"4",
+					"6",
+					"3"
+				],
+				"explanation": "(2+4+6+8)/4 = 5."
+			},
+			{
+				"language": "hi",
+				"questionText": "2, 4, 6, 8 का औसत क्या है?",
+				"options": [
+					"5",
+					"4",
+					"6",
+					"3"
+				],
+				"explanation": "(2+4+6+8)/4 = 5।"
+			}
+		]
+	},
+	{
+		"id": "11",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "3/4",
+		"subject": "Mathematics",
+		"topic": "Fractions",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"Fractions"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Simplify: 6/8",
+				"options": [
+					"2/3",
+					"3/4",
+					"4/5",
+					"5/6"
+				],
+				"explanation": "6/8 simplifies to 3/4."
+			},
+			{
+				"language": "hi",
+				"questionText": "सरलीकृत करें: 6/8",
+				"options": [
+					"2/3",
+					"3/4",
+					"4/5",
+					"5/6"
+				],
+				"explanation": "6/8 = 3/4।"
+			}
+		]
+	},
+	{
+		"id": "12",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "64",
+		"subject": "Mathematics",
+		"topic": "Cubes",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Cube"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 4³?",
+				"options": [
+					"12",
+					"16",
+					"64",
+					"32"
+				],
+				"explanation": "4 × 4 × 4 = 64."
+			},
+			{
+				"language": "hi",
+				"questionText": "4³ कितना होता है?",
+				"options": [
+					"12",
+					"16",
+					"64",
+					"32"
+				],
+				"explanation": "4 × 4 × 4 = 64।"
+			}
+		]
+	},
+	{
+		"id": "13",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "14",
+		"subject": "Mathematics",
+		"topic": "Arithmetic",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Subtraction"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 20 - 6?",
+				"options": [
+					"14",
+					"16",
+					"12",
+					"18"
+				],
+				"explanation": "20 - 6 = 14."
+			},
+			{
+				"language": "hi",
+				"questionText": "20 - 6 कितना होता है?",
+				"options": [
+					"14",
+					"16",
+					"12",
+					"18"
+				],
+				"explanation": "20 - 6 = 14।"
+			}
+		]
+	},
+	{
+		"id": "14",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "81",
+		"subject": "Mathematics",
+		"topic": "Squares",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Square"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 9²?",
+				"options": [
+					"72",
+					"18",
+					"90",
+					"81"
+				],
+				"explanation": "9 × 9 = 81."
+			},
+			{
+				"language": "hi",
+				"questionText": "9² कितना होता है?",
+				"options": [
+					"72",
+					"18",
+					"90",
+					"81"
+				],
+				"explanation": "9 × 9 = 81।"
+			}
+		]
+	},
+	{
+		"id": "15",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "45",
+		"subject": "Mathematics",
+		"topic": "Percentage",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"Percentage"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 25% of 180?",
+				"options": [
+					"40",
+					"45",
+					"50",
+					"60"
+				],
+				"explanation": "25% of 180 = 45."
+			},
+			{
+				"language": "hi",
+				"questionText": "180 का 25% कितना है?",
+				"options": [
+					"40",
+					"45",
+					"50",
+					"60"
+				],
+				"explanation": "180 का 25% = 45।"
+			}
+		]
+	},
+	{
+		"id": "16",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "120",
+		"subject": "Mathematics",
+		"topic": "Profit and Loss",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"ProfitLoss"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "A product bought for 100 is sold for 120. What is the profit?",
+				"options": [
+					"10",
+					"15",
+					"120",
+					"20"
+				],
+				"explanation": "Profit = 120 - 100 = 20."
+			},
+			{
+				"language": "hi",
+				"questionText": "एक वस्तु 100 में खरीदी और 120 में बेची गई। लाभ कितना है?",
+				"options": [
+					"10",
+					"15",
+					"120",
+					"20"
+				],
+				"explanation": "लाभ = 120 - 100 = 20।"
+			}
+		]
+	},
+	{
+		"id": "17",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "10%",
+		"subject": "Mathematics",
+		"topic": "Percentage",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"Percentage"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is the percentage increase from 50 to 55?",
+				"options": [
+					"5%",
+					"8%",
+					"12%",
+					"10%"
+				],
+				"explanation": "Increase = 5, (5/50)*100 = 10%."
+			},
+			{
+				"language": "hi",
+				"questionText": "50 से 55 तक प्रतिशत वृद्धि कितनी है?",
+				"options": [
+					"5%",
+					"8%",
+					"12%",
+					"10%"
+				],
+				"explanation": "वृद्धि = 5, (5/50)*100 = 10%।"
+			}
+		]
+	},
+	{
+		"id": "18",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "5",
+		"subject": "Mathematics",
+		"topic": "Ratio",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"Ratio"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "If ratio of A:B is 2:3 and A = 10, find B.",
+				"options": [
+					"15",
+					"15",
+					"20",
+					"25"
+				],
+				"explanation": "2x=10 → x=5, so B=3x=15."
+			},
+			{
+				"language": "hi",
+				"questionText": "यदि A:B = 2:3 और A = 10, तो B क्या है?",
+				"options": [
+					"15",
+					"15",
+					"20",
+					"25"
+				],
+				"explanation": "2x=10 → x=5, B=3x=15।"
+			}
+		]
+	},
+	{
+		"id": "19",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "60",
+		"subject": "Mathematics",
+		"topic": "Time and Work",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "HARD",
+		"tags": [
+			"Math",
+			"TimeWork"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "If a train travels at 60 km/h for 1 hour, distance covered?",
+				"options": [
+					"60",
+					"120",
+					"30",
+					"90"
+				],
+				"explanation": "Distance = Speed × Time = 60×1=60."
+			},
+			{
+				"language": "hi",
+				"questionText": "यदि ट्रेन 60 किमी/घंटा की गति से 1 घंटे चले, दूरी कितनी होगी?",
+				"options": [
+					"60",
+					"120",
+					"30",
+					"90"
+				],
+				"explanation": "दूरी = गति × समय = 60।"
+			}
+		]
+	},
+	{
+		"id": "20",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "πr²",
+		"subject": "Mathematics",
+		"topic": "Mensuration",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Mensuration"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Area of a circle formula is?",
+				"options": [
+					"2πr",
+					"πd",
+					"πr²",
+					"r²"
+				],
+				"explanation": "Area of circle = πr²."
+			},
+			{
+				"language": "hi",
+				"questionText": "वृत्त का क्षेत्रफल सूत्र क्या है?",
+				"options": [
+					"2πr",
+					"πd",
+					"πr²",
+					"r²"
+				],
+				"explanation": "क्षेत्रफल = πr²।"
+			}
+		]
+	},
+	{
+		"id": "21",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "1000",
+		"subject": "Mathematics",
+		"topic": "Number System",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Numbers"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 10³?",
+				"options": [
+					"100",
+					"10",
+					"30",
+					"1000"
+				],
+				"explanation": "10×10×10 = 1000."
+			},
+			{
+				"language": "hi",
+				"questionText": "10³ कितना होता है?",
+				"options": [
+					"100",
+					"10",
+					"30",
+					"1000"
+				],
+				"explanation": "10×10×10 = 1000।"
+			}
+		]
+	},
+	{
+		"id": "22",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "√81",
+		"subject": "Mathematics",
+		"topic": "Square Roots",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"SquareRoot"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Square root of 81 is?",
+				"options": [
+					"8",
+					"9",
+					"7",
+					"6"
+				],
+				"explanation": "√81 = 9."
+			},
+			{
+				"language": "hi",
+				"questionText": "81 का वर्गमूल क्या है?",
+				"options": [
+					"8",
+					"9",
+					"7",
+					"6"
+				],
+				"explanation": "√81 = 9।"
+			}
+		]
+	},
+	{
+		"id": "23",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "45",
+		"subject": "Mathematics",
+		"topic": "Geometry",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"Angles"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "If one angle of a right triangle is 45°, the other acute angle is?",
+				"options": [
+					"45",
+					"90",
+					"30",
+					"60"
+				],
+				"explanation": "Sum of angles =180; 90+45+45=180."
+			},
+			{
+				"language": "hi",
+				"questionText": "यदि समकोण त्रिभुज का एक कोण 45° है, दूसरा न्यून कोण कितना है?",
+				"options": [
+					"45",
+					"90",
+					"30",
+					"60"
+				],
+				"explanation": "90+45+45=180।"
+			}
+		]
+	},
+	{
+		"id": "24",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "24",
+		"subject": "Mathematics",
+		"topic": "Multiplication",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Multiplication"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 8 × 3?",
+				"options": [
+					"18",
+					"21",
+					"24",
+					"30"
+				],
+				"explanation": "8×3=24."
+			},
+			{
+				"language": "hi",
+				"questionText": "8 × 3 कितना होता है?",
+				"options": [
+					"18",
+					"21",
+					"24",
+					"30"
+				],
+				"explanation": "8×3=24।"
+			}
+		]
+	},
+	{
+		"id": "25",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "16",
+		"subject": "Mathematics",
+		"topic": "Algebra",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"Algebra"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Solve: 2x = 32",
+				"options": [
+					"8",
+					"12",
+					"14",
+					"16"
+				],
+				"explanation": "x = 32/2 =16."
+			},
+			{
+				"language": "hi",
+				"questionText": "हल करें: 2x = 32",
+				"options": [
+					"8",
+					"12",
+					"14",
+					"16"
+				],
+				"explanation": "x = 16।"
+			}
+		]
+	},
+	{
+		"id": "26",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "360",
+		"subject": "Mathematics",
+		"topic": "Geometry",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Geometry"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Sum of angles in a quadrilateral is?",
+				"options": [
+					"180",
+					"360",
+					"270",
+					"90"
+				],
+				"explanation": "Sum = 360°."
+			},
+			{
+				"language": "hi",
+				"questionText": "चतुर्भुज के कोणों का योग कितना है?",
+				"options": [
+					"180",
+					"360",
+					"270",
+					"90"
+				],
+				"explanation": "योग = 360°।"
+			}
+		]
+	},
+	{
+		"id": "27",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "11",
+		"subject": "Mathematics",
+		"topic": "Prime Numbers",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"Prime"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Which is a prime number?",
+				"options": [
+					"11",
+					"12",
+					"15",
+					"21"
+				],
+				"explanation": "11 has only two factors."
+			},
+			{
+				"language": "hi",
+				"questionText": "निम्न में से कौन अभाज्य संख्या है?",
+				"options": [
+					"11",
+					"12",
+					"15",
+					"21"
+				],
+				"explanation": "11 के केवल दो गुणनखंड हैं।"
+			}
+		]
+	},
+	{
+		"id": "28",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "7",
+		"subject": "Mathematics",
+		"topic": "Arithmetic",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"Math",
+			"Division"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "What is 49 ÷ 7?",
+				"options": [
+					"6",
+					"8",
+					"7",
+					"9"
+				],
+				"explanation": "49 ÷ 7 = 7."
+			},
+			{
+				"language": "hi",
+				"questionText": "49 ÷ 7 कितना होता है?",
+				"options": [
+					"6",
+					"8",
+					"7",
+					"9"
+				],
+				"explanation": "49 ÷ 7 = 7।"
+			}
+		]
+	},
+	{
+		"id": "29",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "40",
+		"subject": "Mathematics",
+		"topic": "Average",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"Average"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Average of 30, 40, 50 is?",
+				"options": [
+					"35",
+					"40",
+					"45",
+					"30"
+				],
+				"explanation": "(30+40+50)/3 = 40."
+			},
+			{
+				"language": "hi",
+				"questionText": "30, 40, 50 का औसत क्या है?",
+				"options": [
+					"35",
+					"40",
+					"45",
+					"30"
+				],
+				"explanation": "(30+40+50)/3 = 40।"
+			}
+		]
+	},
+	{
+		"id": "30",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "15",
+		"subject": "Mathematics",
+		"topic": "LCM",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"Math",
+			"LCM"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "LCM of 5 and 3 is?",
+				"options": [
+					"8",
+					"10",
+					"12",
+					"15"
+				],
+				"explanation": "LCM of 5 and 3 = 15."
+			},
+			{
+				"language": "hi",
+				"questionText": "5 और 3 का LCM क्या है?",
+				"options": [
+					"8",
+					"10",
+					"12",
+					"15"
+				],
+				"explanation": "5 और 3 का LCM = 15।"
+			}
+		]
+	},
+	{
+		"id": "1",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "Harappan Civilization",
+		"subject": "History",
+		"topic": "Ancient India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"History",
+			"Ancient",
+			"Indus Valley"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Which is the earliest known civilization of India?",
+				"options": [
+					"Vedic Civilization",
+					"Harappan Civilization",
+					"Mauryan Empire",
+					"Gupta Empire"
+				],
+				"explanation": "The Harappan Civilization is the earliest known civilization of India."
+			},
+			{
+				"language": "hi",
+				"questionText": "भारत की सबसे प्राचीन सभ्यता कौन सी है?",
+				"options": [
+					"वैदिक सभ्यता",
+					"हड़प्पा सभ्यता",
+					"मौर्य साम्राज्य",
+					"गुप्त साम्राज्य"
+				],
+				"explanation": "हड़प्पा सभ्यता भारत की सबसे प्राचीन सभ्यता है।"
+			}
+		]
+	},
+	{
+		"id": "2",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "Ashoka",
+		"subject": "History",
+		"topic": "Mauryan Empire",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"History",
+			"Mauryan"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Who was the famous ruler of the Mauryan Empire after Chandragupta?",
+				"options": [
+					"Bindusara",
+					"Samudragupta",
+					"Ashoka",
+					"Harsha"
+				],
+				"explanation": "Ashoka was the most famous ruler of the Mauryan Empire."
+			},
+			{
+				"language": "hi",
+				"questionText": "चंद्रगुप्त के बाद मौर्य साम्राज्य का प्रसिद्ध शासक कौन था?",
+				"options": [
+					"बिंदुसार",
+					"समुद्रगुप्त",
+					"अशोक",
+					"हर्ष"
+				],
+				"explanation": "अशोक मौर्य साम्राज्य का सबसे प्रसिद्ध शासक था।"
+			}
+		]
+	},
+	{
+		"id": "3",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "1526",
+		"subject": "History",
+		"topic": "Medieval India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"History",
+			"Mughal"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "In which year was the First Battle of Panipat fought?",
+				"options": [
+					"1526",
+					"1556",
+					"1761",
+					"1857"
+				],
+				"explanation": "The First Battle of Panipat was fought in 1526."
+			},
+			{
+				"language": "hi",
+				"questionText": "पहला पानीपत का युद्ध किस वर्ष लड़ा गया था?",
+				"options": [
+					"1526",
+					"1556",
+					"1761",
+					"1857"
+				],
+				"explanation": "पहला पानीपत का युद्ध 1526 में हुआ था।"
+			}
+		]
+	},
+	{
+		"id": "4",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "1857",
+		"subject": "History",
+		"topic": "Modern India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"History",
+			"Revolt"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "The Revolt of 1857 is also known as?",
+				"options": [
+					"Civil War",
+					"World War",
+					"French Revolution",
+					"First War of Independence"
+				],
+				"explanation": "The Revolt of 1857 is known as the First War of Independence."
+			},
+			{
+				"language": "hi",
+				"questionText": "1857 के विद्रोह को किस नाम से भी जाना जाता है?",
+				"options": [
+					"गृह युद्ध",
+					"विश्व युद्ध",
+					"फ्रांसीसी क्रांति",
+					"प्रथम स्वतंत्रता संग्राम"
+				],
+				"explanation": "1857 का विद्रोह प्रथम स्वतंत्रता संग्राम कहलाता है।"
+			}
+		]
+	},
+	{
+		"id": "5",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "1947",
+		"subject": "History",
+		"topic": "Modern India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"History",
+			"Independence"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "India became independent in which year?",
+				"options": [
+					"1950",
+					"1947",
+					"1930",
+					"1920"
+				],
+				"explanation": "India got independence in 1947."
+			},
+			{
+				"language": "hi",
+				"questionText": "भारत को स्वतंत्रता किस वर्ष मिली?",
+				"options": [
+					"1950",
+					"1947",
+					"1930",
+					"1920"
+				],
+				"explanation": "भारत को 1947 में स्वतंत्रता मिली।"
+			}
+		]
+	},
+	{
+		"id": "6",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "Rigveda",
+		"subject": "History",
+		"topic": "Vedic Period",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"History",
+			"Vedic"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Which is the oldest Veda?",
+				"options": [
+					"Rigveda",
+					"Samaveda",
+					"Yajurveda",
+					"Atharvaveda"
+				],
+				"explanation": "Rigveda is the oldest of the four Vedas."
+			},
+			{
+				"language": "hi",
+				"questionText": "सबसे प्राचीन वेद कौन सा है?",
+				"options": [
+					"ऋग्वेद",
+					"सामवेद",
+					"यजुर्वेद",
+					"अथर्ववेद"
+				],
+				"explanation": "ऋग्वेद चारों वेदों में सबसे प्राचीन है।"
+			}
+		]
+	},
+	{
+		"id": "7",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "Qutub Minar",
+		"subject": "History",
+		"topic": "Delhi Sultanate",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"History",
+			"Sultanate"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Which monument was built by Qutb-ud-din Aibak?",
+				"options": [
+					"Red Fort",
+					"Taj Mahal",
+					"Qutub Minar",
+					"Charminar"
+				],
+				"explanation": "Qutub Minar was started by Qutb-ud-din Aibak."
+			},
+			{
+				"language": "hi",
+				"questionText": "कुतुबुद्दीन ऐबक ने कौन सा स्मारक बनवाया?",
+				"options": [
+					"लाल किला",
+					"ताजमहल",
+					"कुतुब मीनार",
+					"चारमीनार"
+				],
+				"explanation": "कुतुब मीनार का निर्माण कुतुबुद्दीन ऐबक ने शुरू करवाया था।"
+			}
+		]
+	},
+	{
+		"id": "8",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "Akbar",
+		"subject": "History",
+		"topic": "Mughal Empire",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"History",
+			"Mughal"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Who introduced Din-i-Ilahi?",
+				"options": [
+					"Babur",
+					"Akbar",
+					"Aurangzeb",
+					"Shah Jahan"
+				],
+				"explanation": "Akbar introduced Din-i-Ilahi."
+			},
+			{
+				"language": "hi",
+				"questionText": "दीन-ए-इलाही की शुरुआत किसने की?",
+				"options": [
+					"बाबर",
+					"अकबर",
+					"औरंगजेब",
+					"शाहजहाँ"
+				],
+				"explanation": "दीन-ए-इलाही की शुरुआत अकबर ने की थी।"
+			}
+		]
+	},
+	{
+		"id": "9",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "Mahatma Gandhi",
+		"subject": "History",
+		"topic": "Freedom Movement",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"History",
+			"Freedom"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Who led the Non-Cooperation Movement?",
+				"options": [
+					"Bhagat Singh",
+					"Subhas Chandra Bose",
+					"Jawaharlal Nehru",
+					"Mahatma Gandhi"
+				],
+				"explanation": "The Non-Cooperation Movement was led by Mahatma Gandhi."
+			},
+			{
+				"language": "hi",
+				"questionText": "असहयोग आंदोलन का नेतृत्व किसने किया?",
+				"options": [
+					"भगत सिंह",
+					"सुभाष चंद्र बोस",
+					"जवाहरलाल नेहरू",
+					"महात्मा गांधी"
+				],
+				"explanation": "असहयोग आंदोलन का नेतृत्व महात्मा गांधी ने किया।"
+			}
+		]
+	},
+	{
+		"id": "10",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "Indian National Congress",
+		"subject": "History",
+		"topic": "Modern India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "EASY",
+		"tags": [
+			"History",
+			"Congress"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Which organization was founded in 1885?",
+				"options": [
+					"Indian National Congress",
+					"Muslim League",
+					"Forward Bloc",
+					"Ghadar Party"
+				],
+				"explanation": "Indian National Congress was founded in 1885."
+			},
+			{
+				"language": "hi",
+				"questionText": "1885 में किस संगठन की स्थापना हुई?",
+				"options": [
+					"भारतीय राष्ट्रीय कांग्रेस",
+					"मुस्लिम लीग",
+					"फॉरवर्ड ब्लॉक",
+					"गदर पार्टी"
+				],
+				"explanation": "भारतीय राष्ट्रीय कांग्रेस की स्थापना 1885 में हुई थी।"
+			}
+		]
+	},
+	,
+	{
+		"id": "16",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "Nalanda",
+		"subject": "History",
+		"topic": "Ancient India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"History",
+			"Education"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Which ancient university was located in Bihar?",
+				"options": [
+					"Takshashila",
+					"Vikramshila",
+					"Nalanda",
+					"Ujjain"
+				],
+				"explanation": "Nalanda University was located in present-day Bihar."
+			},
+			{
+				"language": "hi",
+				"questionText": "कौन सा प्राचीन विश्वविद्यालय बिहार में स्थित था?",
+				"options": [
+					"तक्षशिला",
+					"विक्रमशिला",
+					"नालंदा",
+					"उज्जैन"
+				],
+				"explanation": "नालंदा विश्वविद्यालय वर्तमान बिहार में स्थित था।"
+			}
+		]
+	},
+	{
+		"id": "17",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "Sher Shah Suri",
+		"subject": "History",
+		"topic": "Medieval India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"History",
+			"Administration"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Who introduced the silver coin 'Rupiya'?",
+				"options": [
+					"Akbar",
+					"Sher Shah Suri",
+					"Babur",
+					"Humayun"
+				],
+				"explanation": "Sher Shah Suri introduced the silver coin Rupiya."
+			},
+			{
+				"language": "hi",
+				"questionText": "चांदी का सिक्का 'रुपया' किसने शुरू किया?",
+				"options": [
+					"अकबर",
+					"शेरशाह सूरी",
+					"बाबर",
+					"हुमायूँ"
+				],
+				"explanation": "शेरशाह सूरी ने रुपया नामक चांदी का सिक्का चलाया।"
+			}
+		]
+	},
+	{
+		"id": "18",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "Dandi March",
+		"subject": "History",
+		"topic": "Freedom Movement",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"History",
+			"Gandhi"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "The Salt March is also known as?",
+				"options": [
+					"Quit India Movement",
+					"Non-Cooperation Movement",
+					"Swadeshi Movement",
+					"Dandi March"
+				],
+				"explanation": "The Salt March of 1930 is also known as the Dandi March."
+			},
+			{
+				"language": "hi",
+				"questionText": "नमक सत्याग्रह को किस नाम से भी जाना जाता है?",
+				"options": [
+					"भारत छोड़ो आंदोलन",
+					"असहयोग आंदोलन",
+					"स्वदेशी आंदोलन",
+					"दांडी मार्च"
+				],
+				"explanation": "1930 का नमक सत्याग्रह दांडी मार्च के नाम से भी जाना जाता है।"
+			}
+		]
+	},
+	{
+		"id": "19",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "Gupta Empire",
+		"subject": "History",
+		"topic": "Ancient India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"History",
+			"Golden Age"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Which period is known as the Golden Age of India?",
+				"options": [
+					"Gupta Empire",
+					"Mauryan Empire",
+					"Mughal Empire",
+					"Delhi Sultanate"
+				],
+				"explanation": "The Gupta period is known as the Golden Age of India."
+			},
+			{
+				"language": "hi",
+				"questionText": "भारत का स्वर्ण युग किस काल को कहा जाता है?",
+				"options": [
+					"गुप्त काल",
+					"मौर्य काल",
+					"मुगल काल",
+					"दिल्ली सल्तनत"
+				],
+				"explanation": "गुप्त काल को भारत का स्वर्ण युग कहा जाता है।"
+			}
+		]
+	},
+	{
+		"id": "20",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "Lord Mountbatten",
+		"subject": "History",
+		"topic": "Modern India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"History",
+			"British Rule"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Who was the last Viceroy of India?",
+				"options": [
+					"Lord Curzon",
+					"Lord Dalhousie",
+					"Lord Mountbatten",
+					"Lord Wellesley"
+				],
+				"explanation": "Lord Mountbatten was the last Viceroy of India."
+			},
+			{
+				"language": "hi",
+				"questionText": "भारत का अंतिम वायसराय कौन था?",
+				"options": [
+					"लॉर्ड कर्जन",
+					"लॉर्ड डलहौजी",
+					"लॉर्ड माउंटबेटन",
+					"लॉर्ड वेलेजली"
+				],
+				"explanation": "लॉर्ड माउंटबेटन भारत के अंतिम वायसराय थे।"
+			}
+		]
+	},
+	{
+		"id": "16",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "Nalanda",
+		"subject": "History",
+		"topic": "Ancient India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"History",
+			"Education"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Which ancient university was located in Bihar?",
+				"options": [
+					"Takshashila",
+					"Vikramshila",
+					"Nalanda",
+					"Ujjain"
+				],
+				"explanation": "Nalanda University was located in present-day Bihar."
+			},
+			{
+				"language": "hi",
+				"questionText": "कौन सा प्राचीन विश्वविद्यालय बिहार में स्थित था?",
+				"options": [
+					"तक्षशिला",
+					"विक्रमशिला",
+					"नालंदा",
+					"उज्जैन"
+				],
+				"explanation": "नालंदा विश्वविद्यालय वर्तमान बिहार में स्थित था।"
+			}
+		]
+	},
+	{
+		"id": "17",
+		"correctOption": 2,
+		"correctIndex": 2,
+		"correctAnswer": "Sher Shah Suri",
+		"subject": "History",
+		"topic": "Medieval India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"History",
+			"Administration"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Who introduced the silver coin 'Rupiya'?",
+				"options": [
+					"Akbar",
+					"Sher Shah Suri",
+					"Babur",
+					"Humayun"
+				],
+				"explanation": "Sher Shah Suri introduced the silver coin Rupiya."
+			},
+			{
+				"language": "hi",
+				"questionText": "चांदी का सिक्का 'रुपया' किसने शुरू किया?",
+				"options": [
+					"अकबर",
+					"शेरशाह सूरी",
+					"बाबर",
+					"हुमायूँ"
+				],
+				"explanation": "शेरशाह सूरी ने रुपया नामक चांदी का सिक्का चलाया।"
+			}
+		]
+	},
+	{
+		"id": "18",
+		"correctOption": 4,
+		"correctIndex": 4,
+		"correctAnswer": "Dandi March",
+		"subject": "History",
+		"topic": "Freedom Movement",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"History",
+			"Gandhi"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "The Salt March is also known as?",
+				"options": [
+					"Quit India Movement",
+					"Non-Cooperation Movement",
+					"Swadeshi Movement",
+					"Dandi March"
+				],
+				"explanation": "The Salt March of 1930 is also known as the Dandi March."
+			},
+			{
+				"language": "hi",
+				"questionText": "नमक सत्याग्रह को किस नाम से भी जाना जाता है?",
+				"options": [
+					"भारत छोड़ो आंदोलन",
+					"असहयोग आंदोलन",
+					"स्वदेशी आंदोलन",
+					"दांडी मार्च"
+				],
+				"explanation": "1930 का नमक सत्याग्रह दांडी मार्च के नाम से भी जाना जाता है।"
+			}
+		]
+	},
+	{
+		"id": "19",
+		"correctOption": 1,
+		"correctIndex": 1,
+		"correctAnswer": "Gupta Empire",
+		"subject": "History",
+		"topic": "Ancient India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"History",
+			"Golden Age"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Which period is known as the Golden Age of India?",
+				"options": [
+					"Gupta Empire",
+					"Mauryan Empire",
+					"Mughal Empire",
+					"Delhi Sultanate"
+				],
+				"explanation": "The Gupta period is known as the Golden Age of India."
+			},
+			{
+				"language": "hi",
+				"questionText": "भारत का स्वर्ण युग किस काल को कहा जाता है?",
+				"options": [
+					"गुप्त काल",
+					"मौर्य काल",
+					"मुगल काल",
+					"दिल्ली सल्तनत"
+				],
+				"explanation": "गुप्त काल को भारत का स्वर्ण युग कहा जाता है।"
+			}
+		]
+	},
+	{
+		"id": "20",
+		"correctOption": 3,
+		"correctIndex": 3,
+		"correctAnswer": "Lord Mountbatten",
+		"subject": "History",
+		"topic": "Modern India",
+		"category": "Govt Exam",
+		"questionType": "MCQ",
+		"marks": 1,
+		"difficulty": "MEDIUM",
+		"tags": [
+			"History",
+			"British Rule"
+		],
+		"translations": [
+			{
+				"language": "en",
+				"questionText": "Who was the last Viceroy of India?",
+				"options": [
+					"Lord Curzon",
+					"Lord Dalhousie",
+					"Lord Mountbatten",
+					"Lord Wellesley"
+				],
+				"explanation": "Lord Mountbatten was the last Viceroy of India."
+			},
+			{
+				"language": "hi",
+				"questionText": "भारत का अंतिम वायसराय कौन था?",
+				"options": [
+					"लॉर्ड कर्जन",
+					"लॉर्ड डलहौजी",
+					"लॉर्ड माउंटबेटन",
+					"लॉर्ड वेलेजली"
+				],
+				"explanation": "लॉर्ड माउंटबेटन भारत के अंतिम वायसराय थे।"
+			}
+		]
 	}
 ]
