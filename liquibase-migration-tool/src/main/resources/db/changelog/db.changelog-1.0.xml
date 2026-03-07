@@ -19,7 +19,7 @@
         </createTable>
     </changeSet>
   <!-- Insert Data -->
-    <changeSet id="3" author="bsingh">
+    <changeSet id="2" author="bsingh">
 
         <insert tableName="users">
             <column name="name" value="B Singh"/>
