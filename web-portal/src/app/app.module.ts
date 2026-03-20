@@ -27,6 +27,7 @@ import { PreAssessmentSubjectSelectionComponent } from './assessment/pre-assessm
 import { QuestionAreaComponent } from './assessment/question-area/question-area.component';
 import { AssessmentInstructionsComponent } from './assessment/assessment-instructions/assessment-instructions.component';
 import { SubmissionConfirmationComponent } from './assessment/submission-confirmation/submission-confirmation.component';
+import { SeedJsonQuestionsComponent } from './seed-json-questions/seed-json-questions.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { SubmissionConfirmationComponent } from './assessment/submission-confirm
     PreAssessmentSubjectSelectionComponent,
     QuestionAreaComponent,
     AssessmentInstructionsComponent,
-    SubmissionConfirmationComponent
+    SubmissionConfirmationComponent,
+    SeedJsonQuestionsComponent
   ],
   imports: [
     BrowserModule,

@@ -130,4 +130,8 @@ export class QuestionServiceService {
   getResults(page: number, size: number) {
     return this.http.get<any>(`${environment.apiUrl}/qbs/assessment/v1/submissions?page=${page}&size=${size}`);
   }
+
+  uploadQuestions(payload: any) {
+    return this.http.post<any>(`${environment.apiUrl}/qbs/i18n/questions`, payload);
+  }
 }

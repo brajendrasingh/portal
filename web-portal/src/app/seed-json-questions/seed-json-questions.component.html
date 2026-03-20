@@ -1,0 +1,66 @@
+<div class="json-seed-container">
+
+    <h2>JSON Question Seeding</h2>
+  
+    <form #jsonForm="ngForm" (ngSubmit)="submitJson()">
+  
+      <!-- JSON Input Box -->
+      <div class="form-group">
+        <label>Paste JSON Data</label>
+  
+        <textarea
+          name="jsonData"
+          [(ngModel)]="jsonInput"
+          required
+          rows="14"
+          placeholder='Paste your JSON here...'>
+        </textarea>
+  
+        <!-- Validation -->
+        <small class="hint">
+          Enter valid JSON array of questions
+        </small>
+      </div>
+  
+      <!-- Buttons -->
+      <div class="form-actions">
+        <button type="submit" [disabled]="jsonForm.invalid || loading">
+          {{ loading ? 'Uploading...' : 'Upload JSON' }}
+        </button>
+  
+        <button type="button" (click)="formatJson()" [disabled]="!jsonInput">
+          Format JSON
+        </button>
+  
+        <button type="button" (click)="clearJson()">
+          Clear
+        </button>
+      </div>
+  
+    </form>
+  
+    <!-- Status Messages -->
+    <div class="status success" *ngIf="message">
+      {{ message }}
+    </div>
+  
+    <div class="status error" *ngIf="error">
+      {{ error }}
+    </div>
+  
+    <!-- Loader -->
+    <div class="loader" *ngIf="loading">
+      ⏳ Uploading questions, please wait...
+    </div>
+  
+    <!-- Preview Section -->
+    <div class="preview-box" *ngIf="jsonInput">
+      <div class="preview-header">
+        <h3>Preview</h3>
+        <span class="char-count">{{ jsonInput.length }} chars</span>
+      </div>
+  
+      <pre>{{ jsonInput }}</pre>
+    </div>
+  
+  </div>

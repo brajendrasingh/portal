@@ -15,6 +15,7 @@ import { AssessmentResultComponent } from './assessment/assessment-result/assess
 import { AssessmentAllResultsDashboardComponent } from './assessment/assessment-all-results-dashboard/assessment-all-results-dashboard.component';
 import { AssessmentComponent } from './assessment/assessment.component';
 import { SubmissionConfirmationComponent } from './assessment/submission-confirmation/submission-confirmation.component';
+import { SeedJsonQuestionsComponent } from './seed-json-questions/seed-json-questions.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signup', pathMatch: 'full' },
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'result/:userId/:assessmentId/:attemptNo', component: AssessmentResultComponent },
   { path: 'submitConfirmation/:userId/:assessmentId/:attemptNo', component: SubmissionConfirmationComponent },
   { path: 'resultsDashboard', component: AssessmentAllResultsDashboardComponent },
-  { path: 'fileUpload', component: FileUploadComponent }
+  { path: 'fileUpload', component: FileUploadComponent },
+  { path: 'seedJsonQuestions', component: SeedJsonQuestionsComponent}
 ];
 
 @NgModule({
