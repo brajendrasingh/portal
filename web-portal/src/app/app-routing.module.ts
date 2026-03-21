@@ -16,6 +16,7 @@ import { AssessmentAllResultsDashboardComponent } from './assessment/assessment-
 import { AssessmentComponent } from './assessment/assessment.component';
 import { SubmissionConfirmationComponent } from './assessment/submission-confirmation/submission-confirmation.component';
 import { SeedJsonQuestionsComponent } from './seed-json-questions/seed-json-questions.component';
+import { QuestionViewerComponent } from './question-viewer/question-viewer.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/signup', pathMatch: 'full' },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'submitConfirmation/:userId/:assessmentId/:attemptNo', component: SubmissionConfirmationComponent },
   { path: 'resultsDashboard', component: AssessmentAllResultsDashboardComponent },
   { path: 'fileUpload', component: FileUploadComponent },
+  { path: 'viewQuestions', component: QuestionViewerComponent },
   { path: 'seedJsonQuestions', component: SeedJsonQuestionsComponent}
 ];
 

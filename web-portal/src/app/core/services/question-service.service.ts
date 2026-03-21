@@ -134,4 +134,13 @@ export class QuestionServiceService {
   uploadQuestions(payload: any) {
     return this.http.post<any>(`${environment.apiUrl}/qbs/i18n/questions`, payload);
   }
+
+  deleteQuestion(payload: any) {
+    return this.http.delete<any>(`${environment.apiUrl}/qbs/i18n/questions`, payload);
+  }
+
+  updateQuestion(payload: any) {
+    return this.http.put<any>(`${environment.apiUrl}/qbs/i18n/questions`, payload);
+  }
+
 }

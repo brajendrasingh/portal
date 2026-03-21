@@ -1,0 +1,151 @@
+<div class="container">
+    <h2>Question Manager</h2>
+    <!-- Language Switch -->
+    <div class="lang">
+        <button (click)="selectLang('en')" [class.active]="selectedLang === 'en'">
+            EN
+        </button>
+        <button (click)="selectLang('hi')" [class.active]="selectedLang === 'hi'">
+            HI
+        </button>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filters" *ngIf="!editMode">
+        <!-- Search -->
+        <input type="text" placeholder="Search question..." [(ngModel)]="searchText" (input)="applyFilters()" />
+        <!-- Subject Filter -->
+        <select [(ngModel)]="filterSubject" (change)="applyFilters()">
+            <option value="">All Subjects</option>
+            <option *ngFor="let s of subjects" [value]="s">{{ s }}</option>
+        </select>
+        <!-- Difficulty Filter -->
+        <select [(ngModel)]="filterDifficulty" (change)="applyFilters()">
+            <option value="">All Difficulty</option>
+            <option value="EASY">EASY</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="HARD">HARD</option>
+        </select>
+        <!-- Reset Button -->
+        <button (click)="resetFilters()">Reset</button>
+    </div>
+
+    <!-- BULK DELETE BUTTON -->
+    <button class="bulk-delete" *ngIf="!editMode" (click)="deleteSelected()" [disabled]="selectedIds.size === 0">
+        Delete Selected
+    </button>
+
+    <!-- TABLE VIEW -->
+    <table *ngIf="!editMode">
+        <thead>
+            <tr>
+                <th>
+                    <!-- Select All -->
+                    <input type="checkbox" (change)="toggleAll($event)" />
+                </th>
+                <th>ID</th>
+                <th>Question</th>
+                <th>Subject</th>
+                <th>Difficulty</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let q of paginatedQuestions">
+                <td>
+                    <input type="checkbox" [checked]="selectedIds.has(q.id)" (change)="toggleSelection(q.id, $event)" />
+                </td>
+                <td>{{ q.id }}</td>
+                <td>{{ getText(q) }}</td>
+                <td>{{ q.subject }}</td>
+                <td>{{ q.difficulty }}</td>
+                <td>
+                    <button class="btn-view" (click)="view(q)">View</button>
+                    <button class="btn-edit" (click)="edit(q)">Edit</button>
+                    <button class="btn-delete" (click)="delete(q.id)">Delete</button>
+                </td>
+            </tr>
+            <!-- No Data -->
+            <tr *ngIf="filteredQuestions.length === 0">
+                <td colspan="6" style="text-align:center;">No questions found</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- EDIT FORM -->
+    <div *ngIf="editMode && editableQuestion" class="edit-form">
+        <h3>Edit Question</h3>
+        <label>Question</label>
+        <textarea [(ngModel)]="editableQuestion.questionText"></textarea>
+        <label>Options</label>
+        <div *ngFor="let opt of editableQuestion.answerOptions; let i=index">
+            <input [(ngModel)]="editableQuestion.answerOptions[i]" />
+        </div>
+        <label>Correct Option Index</label>
+        <input type="number" [(ngModel)]="editableQuestion.correctOption" />
+        <label>Subject</label>
+        <input [(ngModel)]="editableQuestion.subject" />
+        <label>Topic</label>
+        <input [(ngModel)]="editableQuestion.topic" />
+        <label>Difficulty</label>
+        <select [(ngModel)]="editableQuestion.difficulty">
+            <option value="EASY">EASY</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="HARD">HARD</option>
+        </select>
+        <label>Explanation</label>
+        <textarea [(ngModel)]="editableQuestion.explanation"></textarea>
+        <div class="actions">
+            <button (click)="update()">Save</button>
+            <button (click)="cancel()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- VIEW MODAL -->
+    <div class="modal-backdrop" *ngIf="viewMode">
+        <div class="modal">
+            <h3>Question Details</h3>
+            <p><strong>ID:</strong> {{ selectedQuestion?.id }}</p>
+            <p><strong>Question:</strong></p>
+            <p>{{ getText(selectedQuestion) }}</p>
+            <p><strong>Options:</strong></p>
+            <ul>
+                <li *ngFor="let opt of getOptions(selectedQuestion); let i = index">
+                    {{ i }}. {{ opt }}
+                </li>
+            </ul>
+            <p><strong>Correct Index:</strong>
+                {{ selectedQuestion?.correctOption }}
+            </p>
+            <p><strong>Subject:</strong> {{ selectedQuestion?.subject }}</p>
+            <p><strong>Topic:</strong> {{ selectedQuestion?.topic }}</p>
+            <p><strong>Difficulty:</strong> {{ selectedQuestion?.difficulty }}</p>
+            <p><strong>Explanation:</strong></p>
+            <p>{{ getExplanation(selectedQuestion) }}</p>
+            <div class="actions">
+                <button (click)="closeView()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination" *ngIf="!editMode && filteredQuestions.length > 0">
+        <button (click)="prevPage()" [disabled]="currentPage === 1">
+            Prev
+        </button>
+        <span>
+            Page {{ currentPage }} of {{ totalPages }}
+        </span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+            Next
+        </button>
+        <!-- Page Size -->
+        <select [(ngModel)]="pageSize" (change)="changePageSize()">
+            <option [value]="5">5</option>
+            <option [value]="10">10</option>
+            <option [value]="20">20</option>
+            <option [value]="50">50</option>
+            <option [value]="100">100</option>
+        </select>
+    </div>
+</div>
